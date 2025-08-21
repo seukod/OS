@@ -1,16 +1,32 @@
 #include <iostream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    int opcion = 0;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+    while (true) {
+        std::cout << "\n===== MENU =====" << std::endl;
+        std::cout << "1. Opcion 1" << std::endl;
+        std::cout << "2. Opcion 2" << std::endl;
+        std::cout << "3. Opcion 3" << std::endl;
+        std::cout << "0. Salir" << std::endl;
+        std::cout << "Elige una opcion: ";
+        std::cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                std::cout << "Elegiste la opcion 1" << std::endl;
+                break;
+            case 2:
+                std::cout << "Elegiste la opcion 2" << std::endl;
+                break;
+            case 3:
+                std::cout << "Elegiste la opcion 3" << std::endl;
+                break;
+            case 0:
+                std::cout << "Saliendo del programa..." << std::endl;
+                return 0;
+            default:
+                std::cout << "Opcion invalida, intenta de nuevo." << std::endl;
+        }
     }
-
-    return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
