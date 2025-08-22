@@ -1,5 +1,7 @@
 #include <iostream>
 #include <limits>
+#include <vector>
+#include <string>
 #include "Users.h"
 using namespace std;
 

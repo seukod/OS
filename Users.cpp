@@ -5,6 +5,8 @@
 #include "Users.h"
 #include <vector>
 #include <iostream>
+#include <limits>
+#include <string>
 using namespace std;
 
 void agregarUser(vector<User>& lista) {
