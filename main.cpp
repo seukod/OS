@@ -13,7 +13,7 @@ void agregarUser(vector<User>& lista);
 void listarUsers(const vector<User>& lista);
 
 bool validarUsuario(const string& inUser, const string& inPass, Usuario& userEncontrado) {
-    ifstream archivo("USUARIOS.txt");//POR QUE NO ME ABRE EL ARCHIVOOOOOOOO
+    ifstream archivo("C:/Users/benja/Documents/GitHub/OS/USUARIOS.txt");//POR QUE NO ME ABRE EL ARCHIVOOOOOOOO
     if (!archivo.is_open()) {
         cout << "Error: no se pudo abrir el archivo USUARIOS.TXT" << endl;
         return false;
@@ -39,6 +39,32 @@ bool validarUsuario(const string& inUser, const string& inPass, Usuario& userEnc
     return false;
 }
 
+void listarUsuarios() {
+    ifstream archivo("C:/Users/benja/Documents/GitHub/OS/USUARIOS.txt");  // Abrir archivo en modo lectura
+    if (!archivo.is_open()) {
+        cout << "Error: no se pudo abrir el archivo USUARIOS.txt" << endl;
+        return;
+    }
+
+    string linea;
+    while (getline(archivo, linea)) { // Leer línea completa
+        stringstream ss(linea);
+        string campo;
+        int contador = 0;
+
+        // Leer los campos separados por coma
+        while (getline(ss, campo, ',')) {
+            contador++;
+            if (contador == 3) { // El tercer campo (username)
+                // Quitar ; si está al fina
+                cout << campo << endl;
+                break; // ya no necesitamos leer más campos
+            }
+        }
+    }
+
+    archivo.close();
+}
 
 void menu(const Usuario& user) {
     vector<User> lista_users;
@@ -50,7 +76,7 @@ void menu(const Usuario& user) {
         cout << "3. Modulo por implementar " << endl;
         cout << "0. Salir" << endl;
         cout << "Elige una opcion: ";
-        while (!(cin >> opcion)) {
+        while (!(cin >> opcion) || opcion < 0||opcion > 3) {
             cout << "Entrada no valida, Intenta denuevo" << endl;
             cin.clear(); // limpia estado de error
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // limpia buffer de cin
@@ -74,19 +100,42 @@ void menu(const Usuario& user) {
                 }
                 if (admin_opcion == 1) {
                     char continuar = 'n';
-                    do{
-                        agregarUser(lista_users);
-                        cout << "Desea agregar otro usuario? (s/n): ";
-                        cin >> continuar;
+                        do{
+                            string usuario = "1"; //El ID esta hardcodeado por ahora
+                            string entrada;
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');//Limpia el buffer
+                            cout << "ingrese nombre: ";
+                            getline(cin, entrada);
+                            usuario += "," + entrada;
+                            cout << "ingrese username: ";
+                            getline(cin, entrada);
+                            usuario += "," + entrada;
+                            cout << "ingrese password: ";
+                            getline(cin, entrada);
+                            usuario += "," + entrada;
+                            cout << "ingrese perfil: ";
+                            getline(cin, entrada);
+                            usuario += "," + entrada + ";";
+                            // Abrimos el archivo en modo append
+                            ofstream archivo("C:/Users/benja/Documents/GitHub/OS/USUARIOS.txt", ios::app);
+                            if (!archivo.is_open()) {
+                                cout << "Error: no se pudo abrir el archivo USUARIOS.txt" << endl;
+                            }
+                            archivo << usuario << "\n";archivo.close(); // cerramos el archivo
+                            cout << usuario << endl;
+                            cout << "Usuario agregado correctamente." << endl;
+                            cout << "Desea agregar otro usuario? (s/n): ";
+                            cin >> continuar;
                     } while (continuar == 's' || continuar == 'S');
                 }
                 if (admin_opcion == 2) {
                     // por implementar
                 }
                 if (admin_opcion == 3) {
-                    listarUsers(lista_users);
+                    listarUsuarios();
                 }
-            }while (admin_opcion != 0);
+            }
+            while (admin_opcion != 0);
 
         }
         if (opcion == 2) {
