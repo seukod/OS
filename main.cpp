@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <limits>
 #include <vector>
@@ -8,6 +9,8 @@
 #include "Menu.h"
 
 using namespace std;
+
+
 
 void agregarUser(vector<User>& lista);
 void listarUsers(const vector<User>& lista);
