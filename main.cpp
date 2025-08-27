@@ -87,6 +87,7 @@ void menu(const Usuario& user) {
             break;
         }
         if (opcion == 1) {
+            //sansman me debe 5 chelines
             int admin_opcion = 0;
             do {
                 cout << "\n===== Modulo ADMIN =====" << endl;
