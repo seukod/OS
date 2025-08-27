@@ -3,4 +3,5 @@ project(OS)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(OS main.cpp Users.cpp)
+add_executable(OS main.cpp Users.cpp
+        Menu.h)

@@ -1,14 +1,46 @@
 #include <iostream>
 #include <limits>
 #include <vector>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include "Users.h"
+#include "Menu.h"
+
 using namespace std;
 
 void agregarUser(vector<User>& lista);
 void listarUsers(const vector<User>& lista);
 
-int main() {
+bool validarUsuario(const string& inUser, const string& inPass, Usuario& userEncontrado) {
+    ifstream archivo("USUARIOS.txt");//POR QUE NO ME ABRE EL ARCHIVOOOOOOOO
+    if (!archivo.is_open()) {
+        cout << "Error: no se pudo abrir el archivo USUARIOS.TXT" << endl;
+        return false;
+    }
+
+    string linea;
+    while (getline(archivo, linea, ';')) {
+        if (linea.empty()) continue;
+
+        stringstream datos(linea);
+        Usuario u;
+        getline(datos, u.id, ',');
+        getline(datos, u.nombre, ',');
+        getline(datos, u.username, ',');
+        getline(datos, u.password, ',');
+        getline(datos, u.perfil, ',');
+
+        if (u.username == inUser && u.password == inPass) {
+            userEncontrado = u;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+void menu(const Usuario& user) {
     vector<User> lista_users;
     int opcion = 0;
     while (true) {
@@ -64,4 +96,36 @@ int main() {
             //to do
         }
     }
+}
+
+int main() {
+    string username, password;
+    Usuario user;
+    bool loginExitoso = false;
+
+    cout << "==============================" << endl;
+    cout << "         INICIAR SESION       " << endl;
+    cout << "==============================" << endl;
+
+    while (!loginExitoso) {
+        cout << "\nUsername: ";
+        getline(cin, username);
+
+        cout << "Password: ";
+        getline(cin, password);
+
+        if (validarUsuario(username, password, user)) {
+            cout << "\n✅ Inicio de sesión exitoso." << endl;
+            cout << "Bienvenido, " << user.nombre << endl;
+            loginExitoso = true;
+
+            // Llamar al menú único, pasándole el usuario
+            menu(user);
+
+        } else {
+            cout << "\n❌ Usuario o contraseña incorrectos. Intente nuevamente." << endl;
+        }
+    }
+
+    return 0;
 }
