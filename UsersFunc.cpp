@@ -1,0 +1,33 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+// Función que carga variables del archivo .env
+string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env") {
+    ifstream envFile(archivoEnv);
+    if (!envFile.is_open()) {
+        cerr << "No se pudo abrir " << archivoEnv << endl;
+        return "";
+    }
+
+    string linea;
+    while (getline(envFile, linea)) {
+        if (linea.empty() || linea[0] == '#') continue; // ignorar comentarios
+        size_t pos = linea.find('=');
+        if (pos == string::npos) continue;
+
+        string key = linea.substr(0, pos);
+        string value = linea.substr(pos + 1);
+
+        if (key == nombreVariable) return value; // devolvemos el valor buscado
+    }
+
+    return ""; // no encontrado
+}
+
+// Función listarUsuarios usando la variable USER_FILE
+
+
+
