@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+
 using namespace std;
 
 // Función que carga variables del archivo .env
@@ -28,6 +29,30 @@ string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = 
 }
 
 // Función listarUsuarios usando la variable USER_FILE
+void listarUsuarios() {
+    string filePath = leerVariableEnv("USER_FILE");
+    ifstream archivo(filePath);
 
+    string linea;
+    cout << "ID\tNombre\tPerfil" << endl;
+    cout << "-----------------------" << endl;
+
+    while (getline(archivo, linea, ';')) {
+        if (linea.empty()) continue;
+
+        stringstream datos(linea);
+        string id, nombre, username, password, perfil;
+
+        getline(datos, id, ',');
+        getline(datos, nombre, ',');
+        getline(datos, username, ',');
+        getline(datos, password, ',');
+        getline(datos, perfil, ',');
+
+        cout << id << "\t" << nombre << "\t" << perfil;
+    }
+
+    archivo.close();
+}
 
 
