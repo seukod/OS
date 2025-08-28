@@ -1,4 +1,5 @@
-1,Javier,notos,123,1;
-2,Matias,boreas,1234,0;
-1,Parra,naky,sansmanmon,222;
-1,Seuko,Seukokos,kokos,kokitos;
+2,Matias,boreas,1234,GENERAL
+3,Parra,naky,sansmanmon,ADMIN
+4,Seuko,Seukokos,kokos,ADMIN
+12,roberto,muss,123,GENERAL
+1,alexi,copa,america,ADMIN
