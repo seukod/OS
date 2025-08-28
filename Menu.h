@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Usuario {
-    string id;
+    int id;
     string nombre;
     string username;
     string password;

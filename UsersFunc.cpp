@@ -52,6 +52,38 @@ string leerVariableEnv(const string &nombreVariable, const string &archivoEnv = 
     return intenta("../.env");
 }
 
+static int getNextUserId(const string& filePath) {
+    ifstream in(filePath);
+    int maxId = 0;
+    if (in.is_open()) {
+        string line;
+        while (getline(in, line)) {
+            string s = line; trim(s);
+            if (s.empty() || s[0] == '#') continue;
+            string idField;
+            stringstream ss(line);
+            getline(ss, idField, ',');
+            trim(idField);
+            if (idField.empty()) continue;
+            try {
+                int id = stoi(idField);
+                if (id > maxId) maxId = id;
+            } catch (...) { /* ignora IDs no numéricos */ }
+        }
+    }
+    return maxId + 1;
+}
+static bool fileEndsWithNewline(const string& path) {
+    ifstream in(path, ios::binary);
+    if (!in.is_open()) return false;
+    in.seekg(0, ios::end);
+    auto size = in.tellg();
+    if (size <= 0) return false;
+    in.seekg(-1, ios::end);
+    char last = '\n';
+    in.read(&last, 1);
+    return last == '\n';
+}
 
 void ingresarUsuario() {
     string filePath = leerVariableEnv("USERS_FILE");
@@ -60,42 +92,98 @@ void ingresarUsuario() {
         return;
     }
 
-    string id, nombre, username, password, perfil;
+    int id = getNextUserId(filePath);
 
-    cout << "ID: ";
-    getline(cin >> ws, id);  // consume '\n' pendiente
-    trim(id);
+    string nombre, username, password, perfil;
     cout << "Nombre: ";
-    getline(cin, nombre);
+    if (!getline(cin >> ws, nombre)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
     trim(nombre);
+
     cout << "Username: ";
-    getline(cin, username);
+    if (!getline(cin, username)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
     trim(username);
+
     cout << "Contraseña: ";
-    getline(cin, password);
+    if (!getline(cin, password)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
     trim(password);
+
     cout << "Perfil: ";
-    getline(cin, perfil);
+    if (!getline(cin, perfil)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
     trim(perfil);
 
-    // Valida campos obligatorios que 'listarUsuarios' exige
-    if (id.empty() || nombre.empty() || perfil.empty()) {
-        cerr << "[ingresarUsuario] Campos obligatorios vacíos (id, nombre, perfil)." << endl;
+    if (nombre.empty() || perfil.empty()) {
+        cerr << "[ingresarUsuario] Campos obligatorios vacíos (nombre, perfil)." << endl;
         return;
     }
 
-    ofstream archivo(filePath, ios::app);
-    if (!archivo.is_open()) {
-        cerr << "[ingresarUsuario] No se pudo abrir: " << filePath << endl;
-        return;
-    }
+    ofstream out(filePath, ios::app | ios::binary);
+    if (!out.is_open()) { cerr << "[ingresarUsuario] No se pudo abrir: " << filePath << endl; return; }
+    if (!fileEndsWithNewline(filePath)) out << '\n';
 
-    archivo << id << "," << nombre << "," << username << "," << password << "," << perfil << "\n";
-    archivo.flush();
-
-    cout << "Usuario ingresado correctamente en " << filePath << "." << endl;
+    out << id << "," << nombre << "," << username << "," << password << "," << perfil << '\n';
+    out.flush();
+    cout << "Usuario ingresado con ID " << id << "." << endl;
 }
 
+void eliminarUsuario() {
+    string filePath = leerVariableEnv("USERS_FILE");
+    if (filePath.empty()) {
+        cerr << "[eliminarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
+        return;
+    }
+
+    string target;
+    cout << "ID a eliminar (vacío o 'c' para cancelar): ";
+    if (!getline(cin >> ws, target)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
+    trim(target);
+    if (target.empty() || target == "c" || target == "C") { cout << "Operación cancelada." << endl; return; }
+
+    int targetId = -1;
+    try {
+        targetId = stoi(target);
+        if (targetId < 0) throw std::invalid_argument("negativo");
+    } catch (...) {
+        cerr << "[eliminarUsuario] ID inválido." << endl;
+        return;
+    }
+
+    ifstream in(filePath);
+    if (!in.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir: " << filePath << endl; return; }
+
+    size_t removed = 0;
+    string outContent, line;
+    while (getline(in, line)) {
+        string s = line; trim(s);
+        if (s.empty() || s[0] == '#') { outContent += line; outContent.push_back('\n'); continue; }
+
+        string idField;
+        stringstream ss(line);
+        getline(ss, idField, ',');
+        trim(idField);
+
+        bool match = false;
+        try {
+            int id = stoi(idField);
+            match = (id == targetId);
+        } catch (...) { /* si no es numérico, no coincide */ }
+
+        if (match) { ++removed; continue; }
+        outContent += line; outContent.push_back('\n');
+    }
+    in.close();
+
+    if (removed == 0) { cout << "No se encontró usuario con ID " << targetId << "." << endl; return; }
+
+    cout << "Se eliminarán " << removed << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
+    string resp; if (!getline(cin, resp)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
+    trim(resp); for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
+    if (!(resp == "s" || resp == "si" || resp == "sí")) { cout << "Operación cancelada." << endl; return; }
+
+    ofstream out(filePath, ios::trunc | ios::binary);
+    if (!out.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir para escribir: " << filePath << endl; return; }
+    out << outContent; out.flush();
+    cout << "Eliminado(s) " << removed << " registro(s)." << endl;
+}
 
 
 // Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
@@ -141,86 +229,7 @@ void listarUsuarios() {
 }
 
 
-void eliminarUsuario() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[eliminarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
-        return;
-    }
 
-    string targetId;
-    cout << "ID a eliminar (deje vacío o escriba 'c' para cancelar): ";
-    if (!getline(cin, targetId)) {
-        cerr << "[eliminarUsuario] Error de entrada." << endl;
-        return;
-    }
-    trim(targetId);
-    if (targetId.empty() || targetId == "c" || targetId == "C") {
-        cout << "Operación cancelada." << endl;
-        return;
-    }
-
-    ifstream in(filePath);
-    if (!in.is_open()) {
-        cerr << "[eliminarUsuario] No se pudo abrir: " << filePath << endl;
-        return;
-    }
-
-    size_t removedCount = 0;
-    string outContent, line;
-
-    while (getline(in, line)) {
-        string s = line;
-        trim(s);
-        if (s.empty() || s[0] == '#') {
-            outContent += line;
-            outContent.push_back('\n');
-            continue;
-        }
-
-        string idField;
-        stringstream ss(line);
-        getline(ss, idField, ',');
-        trim(idField);
-
-        if (!idField.empty() && idField == targetId) {
-            ++removedCount; // omite la línea (elimina)
-            continue;
-        }
-
-        outContent += line;
-        outContent.push_back('\n');
-    }
-    in.close();
-
-    if (removedCount == 0) {
-        cout << "No se encontró usuario con ID " << targetId << "." << endl;
-        return;
-    }
-
-    cout << "Se eliminarán " << removedCount << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
-    string resp;
-    if (!getline(cin, resp)) {
-        cerr << "[eliminarUsuario] Error de entrada." << endl;
-        return;
-    }
-    trim(resp);
-    for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
-    if (!(resp == "s" || resp == "si" || resp == "sí")) {
-        cout << "Operación cancelada." << endl;
-        return;
-    }
-
-    ofstream out(filePath, ios::trunc);
-    if (!out.is_open()) {
-        cerr << "[eliminarUsuario] No se pudo abrir para escribir: " << filePath << endl;
-        return;
-    }
-    out << outContent;
-    out.flush();
-
-    cout << "Eliminado(s) " << removedCount << " registro(s) con ID " << targetId << "." << endl;
-}
 // aqui van los perfiles
 // brigido
 
