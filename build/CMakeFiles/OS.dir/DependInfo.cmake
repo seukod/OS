@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/Users.cpp" "CMakeFiles/OS.dir/Users.cpp.o" "gcc" "CMakeFiles/OS.dir/Users.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.cpp" "CMakeFiles/OS.dir/UI_Func.cpp.o" "gcc" "CMakeFiles/OS.dir/UI_Func.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.cpp" "CMakeFiles/OS.dir/UsersFunc.cpp.o" "gcc" "CMakeFiles/OS.dir/UsersFunc.cpp.o.d"
   "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/main.cpp" "CMakeFiles/OS.dir/main.cpp.o" "gcc" "CMakeFiles/OS.dir/main.cpp.o.d"
   "" "OS" "gcc" "CMakeFiles/OS.dir/link.d"
   )

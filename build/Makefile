@@ -136,29 +136,53 @@ OS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/build
 .PHONY : OS/fast
 
-Users.o: Users.cpp.o
-.PHONY : Users.o
+UI_Func.o: UI_Func.cpp.o
+.PHONY : UI_Func.o
 
 # target to build an object file
-Users.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/Users.cpp.o
-.PHONY : Users.cpp.o
+UI_Func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UI_Func.cpp.o
+.PHONY : UI_Func.cpp.o
 
-Users.i: Users.cpp.i
-.PHONY : Users.i
+UI_Func.i: UI_Func.cpp.i
+.PHONY : UI_Func.i
 
 # target to preprocess a source file
-Users.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/Users.cpp.i
-.PHONY : Users.cpp.i
+UI_Func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UI_Func.cpp.i
+.PHONY : UI_Func.cpp.i
 
-Users.s: Users.cpp.s
-.PHONY : Users.s
+UI_Func.s: UI_Func.cpp.s
+.PHONY : UI_Func.s
 
 # target to generate assembly for a file
-Users.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/Users.cpp.s
-.PHONY : Users.cpp.s
+UI_Func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UI_Func.cpp.s
+.PHONY : UI_Func.cpp.s
+
+UsersFunc.o: UsersFunc.cpp.o
+.PHONY : UsersFunc.o
+
+# target to build an object file
+UsersFunc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UsersFunc.cpp.o
+.PHONY : UsersFunc.cpp.o
+
+UsersFunc.i: UsersFunc.cpp.i
+.PHONY : UsersFunc.i
+
+# target to preprocess a source file
+UsersFunc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UsersFunc.cpp.i
+.PHONY : UsersFunc.cpp.i
+
+UsersFunc.s: UsersFunc.cpp.s
+.PHONY : UsersFunc.s
+
+# target to generate assembly for a file
+UsersFunc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/UsersFunc.cpp.s
+.PHONY : UsersFunc.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -194,9 +218,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... OS"
-	@echo "... Users.o"
-	@echo "... Users.i"
-	@echo "... Users.s"
+	@echo "... UI_Func.o"
+	@echo "... UI_Func.i"
+	@echo "... UI_Func.s"
+	@echo "... UsersFunc.o"
+	@echo "... UsersFunc.i"
+	@echo "... UsersFunc.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

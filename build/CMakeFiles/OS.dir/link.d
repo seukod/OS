@@ -3,7 +3,8 @@ OS: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/OS.dir/main.cpp.o \
-  CMakeFiles/OS.dir/Users.cpp.o \
+  CMakeFiles/OS.dir/UsersFunc.cpp.o \
+  CMakeFiles/OS.dir/UI_Func.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -40,7 +41,9 @@ OS: \
 
 CMakeFiles/OS.dir/main.cpp.o:
 
-CMakeFiles/OS.dir/Users.cpp.o:
+CMakeFiles/OS.dir/UsersFunc.cpp.o:
+
+CMakeFiles/OS.dir/UI_Func.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

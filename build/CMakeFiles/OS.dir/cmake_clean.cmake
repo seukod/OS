@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/OS.dir/link.d"
-  "CMakeFiles/OS.dir/Users.cpp.o"
-  "CMakeFiles/OS.dir/Users.cpp.o.d"
+  "CMakeFiles/OS.dir/UI_Func.cpp.o"
+  "CMakeFiles/OS.dir/UI_Func.cpp.o.d"
+  "CMakeFiles/OS.dir/UsersFunc.cpp.o"
+  "CMakeFiles/OS.dir/UsersFunc.cpp.o.d"
   "CMakeFiles/OS.dir/main.cpp.o"
   "CMakeFiles/OS.dir/main.cpp.o.d"
   "OS"
