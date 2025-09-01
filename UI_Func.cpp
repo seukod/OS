@@ -19,7 +19,7 @@ void mostrarBienvenida() {
 void mostrarMenuPrincipal() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "              MENU PRINCIPAL                     " << endl;
+    cout << "                 ADMINISTRACION                  " << endl;
     cout << "=================================================" << endl;
     cout << "1. Ingresar Usuario" << endl;
     cout << "2. Eliminar Usuario" << endl;
@@ -29,7 +29,7 @@ void mostrarMenuPrincipal() {
     cout << "6. Listar Perfiles" << endl;
     cout << "0. Salir" << endl;
     cout << "=================================================" << endl;
-    cout << "Seleccione una opción: ";
+    cout << "Seleccione una opcion: ";
 }
 
 int leerOpcion() {
