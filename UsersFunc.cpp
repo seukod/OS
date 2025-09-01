@@ -4,6 +4,9 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
+#include "centro.h"
+#include <algorithm>
+#include <limits>
 
 using namespace std;
 
@@ -85,30 +88,35 @@ static bool fileEndsWithNewline(const string& path) {
     return last == '\n';
 }
 
-void ingresarUsuario() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[ingresarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
+void ingresarUsuario(vector<Usuario>& usuarios, const string& filePath) {
+    string nombre, username, password, perfil;
+
+    cout << "Nombre: ";
+    if (!getline(cin >> ws, nombre)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
         return;
     }
-
-    int id = getNextUserId(filePath);
-
-    string nombre, username, password, perfil;
-    cout << "Nombre: ";
-    if (!getline(cin >> ws, nombre)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
     trim(nombre);
 
     cout << "Username: ";
-    if (!getline(cin, username)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
+    if (!getline(cin, username)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
     trim(username);
 
     cout << "Contraseña: ";
-    if (!getline(cin, password)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
+    if (!getline(cin, password)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
     trim(password);
 
     cout << "Perfil: ";
-    if (!getline(cin, perfil)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
+    if (!getline(cin, perfil)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
     trim(perfil);
 
     if (nombre.empty() || perfil.empty()) {
@@ -116,27 +124,45 @@ void ingresarUsuario() {
         return;
     }
 
-    ofstream out(filePath, ios::app | ios::binary);
-    if (!out.is_open()) { cerr << "[ingresarUsuario] No se pudo abrir: " << filePath << endl; return; }
-    if (!fileEndsWithNewline(filePath)) out << '\n';
-
-    out << id << "," << nombre << "," << username << "," << password << "," << perfil << '\n';
-    out.flush();
-    cout << "Usuario ingresado con ID " << id << "." << endl;
-}
-
-void eliminarUsuario() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[eliminarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
-        return;
+    // Generar ID automáticamente (tomando el siguiente disponible)
+    int id = 1;
+    if (!usuarios.empty()) {
+        id = usuarios.back().id + 1;
     }
 
+    Usuario nuevo;
+    nuevo.id = id;
+    nuevo.nombre = nombre;
+    nuevo.username = username;
+    nuevo.password = password;
+    nuevo.perfil = perfil;
+
+    // Confirmar antes de guardar
+    int opcion;
+    cout << "\n¿Desea guardar los cambios realizados? (1 = Sí, 0 = No): ";
+    cin >> opcion;
+
+    if (opcion == 1) {
+        usuarios.push_back(nuevo);
+        guardarCambios(usuarios, filePath);
+        cout << "Usuario agregado correctamente con ID " << id << ".\n";
+    } else {
+        cout << "Operación cancelada. No se guardaron cambios.\n";
+    }
+
+
+}
+
+
+void eliminarUsuario(vector<Usuario>& usuarios, const string& filePath) {
     string target;
     cout << "ID a eliminar (vacío o 'c' para cancelar): ";
     if (!getline(cin >> ws, target)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
     trim(target);
-    if (target.empty() || target == "c" || target == "C") { cout << "Operación cancelada." << endl; return; }
+    if (target.empty() || target == "c" || target == "C") {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
 
     int targetId = -1;
     try {
@@ -147,84 +173,48 @@ void eliminarUsuario() {
         return;
     }
 
-    ifstream in(filePath);
-    if (!in.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir: " << filePath << endl; return; }
+    // Buscar usuarios a eliminar en el vector
+    auto it = std::find_if(usuarios.begin(), usuarios.end(), [&](const Usuario& u) {
+        return u.id == targetId;
+    });
 
-    size_t removed = 0;
-    string outContent, line;
-    while (getline(in, line)) {
-        string s = line; trim(s);
-        if (s.empty() || s[0] == '#') { outContent += line; outContent.push_back('\n'); continue; }
-
-        string idField;
-        stringstream ss(line);
-        getline(ss, idField, ',');
-        trim(idField);
-
-        bool match = false;
-        try {
-            int id = stoi(idField);
-            match = (id == targetId);
-        } catch (...) { /* si no es numérico, no coincide */ }
-
-        if (match) { ++removed; continue; }
-        outContent += line; outContent.push_back('\n');
-    }
-    in.close();
-
-    if (removed == 0) { cout << "No se encontró usuario con ID " << targetId << "." << endl; return; }
-
-    cout << "Se eliminarán " << removed << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
-    string resp; if (!getline(cin, resp)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
-    trim(resp); for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
-    if (!(resp == "s" || resp == "si" || resp == "sí")) { cout << "Operación cancelada." << endl; return; }
-
-    ofstream out(filePath, ios::trunc | ios::binary);
-    if (!out.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir para escribir: " << filePath << endl; return; }
-    out << outContent; out.flush();
-    cout << "Eliminado(s) " << removed << " registro(s)." << endl;
-}
-
-
-// Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
-void listarUsuarios() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[listarUsuarios] No se encontró 'USERS_FILE' en '.env'." << endl;
+    if (it == usuarios.end()) {
+        cout << "No se encontró usuario con ID " << targetId << "." << endl;
         return;
     }
 
-    ifstream archivo(filePath);
-    if (!archivo.is_open()) {
-        cerr << "[listarUsuarios] No se pudo abrir: " << filePath << endl;
+    // Preguntar confirmación
+    cout << "¿Desea eliminar al usuario con ID " << targetId << "? (1 = Sí, 0 = No): ";
+    int opcion;
+    cin >> opcion;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    if (opcion == 1) {
+        // Eliminar del vector
+        usuarios.erase(it);
+        // Guardar cambios en el archivo
+        guardarCambios(usuarios, filePath);
+        cout << "Usuario con ID " << targetId << " eliminado y cambios guardados.\n";
+    } else {
+        cout << "Operación cancelada. No se realizaron cambios.\n";
+    }
+}
+
+
+
+// Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
+void listarUsuarios(vector<Usuario>& usuarios) {
+    if (usuarios.empty()) {
+        cerr << "[listarUsuarios] No hay usuarios cargados." << endl;
         return;
     }
 
     cout << "ID\tNombre\tPerfil" << endl;
     cout << "-----------------------" << endl;
 
-    string linea;
-    while (getline(archivo, linea)) {
-        trim(linea);
-        if (linea.empty() || linea[0] == '#') continue;
-
-        string id, nombre, username, password, perfil;
-        stringstream datos(linea);
-
-        getline(datos, id, ',');
-        trim(id);
-        getline(datos, nombre, ',');
-        trim(nombre);
-        getline(datos, username, ',');
-        trim(username);
-        getline(datos, password, ',');
-        trim(password);
-        getline(datos, perfil, ',');
-        trim(perfil);
-
-        if (id.empty() || nombre.empty() || perfil.empty()) continue;
-
-        cout << id << "\t" << nombre << "\t" << perfil << endl;
+    for (const auto& u : usuarios) {
+        if (u.id <= 0 || u.nombre.empty() || u.perfil.empty()) continue;
+        cout << u.id << "\t" << u.nombre << "\t" << u.perfil << endl;
     }
 }
 

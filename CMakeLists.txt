@@ -4,6 +4,7 @@ project(OS)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(OS main.cpp UsersFunc.cpp
-        Menu.h
+        centro.h
         UI_Func.cpp
-        UI_Func.h)
+        UI_Func.h
+        centro.cpp)

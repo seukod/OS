@@ -2,12 +2,16 @@
 #include <limits>
 #include "UI_Func.h"
 #include "UsersFunc.h"
+#include "centro.h" //aqui donde se leen los archivo .txt
 
 
 using namespace std;
 
 int main(){
 	mostrarBienvenida();
+
+	string rutaUsuarios = getUserFilePath(".env");
+	vector<Usuario> usuarios = leerUsuarios(rutaUsuarios);
 
 	int opcion;
 	do {
@@ -19,13 +23,13 @@ int main(){
 				mostrarMensajeDespedida();
 				break;
 			case 1:
-				ingresarUsuario();
+				ingresarUsuario(usuarios,rutaUsuarios);
 				break;
 			case 2:
-				eliminarUsuario();
+				eliminarUsuario(usuarios,rutaUsuarios);
 				break;
 			case 3:
-				listarUsuarios();
+				listarUsuarios(usuarios);
 				break;
 			case 4:
 				ingresarPerfil();
