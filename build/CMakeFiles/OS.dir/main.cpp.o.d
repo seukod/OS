@@ -151,5 +151,4 @@ CMakeFiles/OS.dir/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
  /usr/include/c++/15.2.1/bits/istream.tcc /usr/include/c++/15.2.1/limits \
  /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.h \
- /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.h \
- /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ProfilesFunc.h
+ /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.h
