@@ -2,7 +2,7 @@
 // Created by Francisco Contreras on 27-08-25.
 //
 
-#include "UI_Func.h"
+#include "interfaz.h"
 #include <iostream>
 #include <limits>
 
@@ -11,7 +11,7 @@ using namespace std;
 void mostrarBienvenida() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "         ADMINISTRADOR DE USUARIOS              " << endl;
+    cout << "         	      MENÚ PRINCIPAL                  " << endl;
     cout << "=================================================" << endl;
     cout << endl;
 }
