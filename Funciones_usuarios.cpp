@@ -161,44 +161,17 @@ void eliminarUsuario() {
 
 
 // Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
-void listarUsuarios() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[listarUsuarios] No se encontró 'USERS_FILE' en '.env'." << endl;
+void listarUsuarios(const vector<Usuario>& usuarios) {
+    if (usuarios.empty()) {
+        cerr << "[listarUsuarios] No hay usuarios cargados." << endl;
         return;
     }
 
-    ifstream archivo(filePath);
-    if (!archivo.is_open()) {
-        cerr << "[listarUsuarios] No se pudo abrir: " << filePath << endl;
-        return;
-    }
+    cout << "ID\tNombre\t\tPerfil" << endl;
+    cout << "--------------------------------" << endl;
 
-    cout << "ID\tNombre\tPerfil" << endl;
-    cout << "-----------------------" << endl;
-
-    string linea;
-    while (getline(archivo, linea)) {
-        trim(linea);
-        if (linea.empty() || linea[0] == '#') continue;
-
-        string id, nombre, username, password, perfil;
-        stringstream datos(linea);
-
-        getline(datos, id, ',');
-        trim(id);
-        getline(datos, nombre, ',');
-        trim(nombre);
-        getline(datos, username, ',');
-        trim(username);
-        getline(datos, password, ',');
-        trim(password);
-        getline(datos, perfil, ',');
-        trim(perfil);
-
-        if (id.empty() || nombre.empty() || perfil.empty()) continue;
-
-        cout << id << "\t" << nombre << "\t" << perfil << endl;
+    for (const auto& u : usuarios) {
+        cout << u.id << "\t" << u.nombre << "\t" << u.perfil << endl;
     }
 }
 

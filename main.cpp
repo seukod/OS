@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 #include "UI_Func.h"
-#include "UsersFunc.h"
+#include "Funciones_usuarios.h"
 #include "Texto.h"
 
 
@@ -26,7 +26,7 @@ int main(){
 				eliminarUsuario();
 				break;
 			case 3:
-				listarUsuarios();
+				listarUsuarios(usuarios);
 				break;
 			case 4:
 				ingresarPerfil();
