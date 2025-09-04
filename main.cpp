@@ -1,8 +1,8 @@
 #include <iostream>
 #include <limits>
-#include "UI_Func.h"
-#include "UsersFunc.h"
-#include "Texto.h"
+#include "interfaz.h"
+#include "usuarios.h"
+#include "crud.h"
 
 
 using namespace std;
