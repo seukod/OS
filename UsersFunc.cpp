@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
+#include "Texto.h"
 
 using namespace std;
 
@@ -23,34 +24,7 @@ static inline string stripQuotes(string v) {
 }
 
 // Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
-string leerVariableEnv(const string &nombreVariable, const string &archivoEnv = ".env") {
-    if (const char *envv = std::getenv(nombreVariable.c_str())) {
-        return string(envv);
-    }
 
-    auto intenta = [&](const string &path) -> string {
-        ifstream envFile(path);
-        if (!envFile.is_open()) return "";
-        string linea;
-        while (getline(envFile, linea)) {
-            trim(linea);
-            if (linea.empty() || linea[0] == '#') continue;
-            size_t pos = linea.find('=');
-            if (pos == string::npos) continue;
-            string key = linea.substr(0, pos);
-            string value = linea.substr(pos + 1);
-            trim(key);
-            trim(value);
-            value = stripQuotes(value);
-            if (key == nombreVariable) return value;
-        }
-        return "";
-    };
-
-    string v = intenta(archivoEnv);
-    if (!v.empty()) return v;
-    return intenta("../.env");
-}
 
 static int getNextUserId(const string& filePath) {
     ifstream in(filePath);

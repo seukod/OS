@@ -10,8 +10,9 @@ add_executable(OS
         main.cpp
         UsersFunc.cpp
         UI_Func.cpp
-        Menu.h
+        Texto.h
         UI_Func.h
+        Texto.cpp
 )
 
 # Copia '.env' junto al binario tras compilar

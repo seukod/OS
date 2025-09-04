@@ -19,7 +19,7 @@ void mostrarBienvenida() {
 void mostrarMenuPrincipal() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "              MENU PRINCIPAL                     " << endl;
+    cout << "              ADMINISTRACION                     " << endl;
     cout << "=================================================" << endl;
     cout << "1. Ingresar Usuario" << endl;
     cout << "2. Eliminar Usuario" << endl;
