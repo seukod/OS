@@ -4,6 +4,8 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>  // getenv
+#include <vector>
+#include <sstream>
 using namespace std;
 
 static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }
@@ -49,4 +51,45 @@ string leerVariableEnv(const string &nombreVariable, const string &archivoEnv ) 
     string v = intenta(archivoEnv);
     if (!v.empty()) return v;
     return intenta("../.env");
+}
+vector<Usuario> crear_arreglo() {
+    // Obtener archivo desde .env
+    string userFile = leerVariableEnv("USERS_FILE", ".env");
+    vector<Usuario> usuarios;
+
+    if (userFile.empty()) {
+        cerr << "[ERROR] No se encontró USER_FILE en .env ni en variables de entorno." << endl;
+        return usuarios;
+    }
+
+    ifstream file(userFile);
+    if (!file.is_open()) {
+        cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << userFile << endl;
+        return usuarios;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        if (line.empty()) continue;
+
+        stringstream ss(line);
+        Usuario u;
+        string idStr;
+
+        if (getline(ss, idStr, ',') &&
+            getline(ss, u.nombre, ',') &&
+            getline(ss, u.username, ',') &&
+            getline(ss, u.password, ',') &&
+            getline(ss, u.perfil, ',')) {
+
+            try {
+                u.id = stoi(idStr);
+                usuarios.push_back(u);
+            } catch (...) {
+                cerr << "[ADVERTENCIA] ID inválido en línea: " << line << endl;
+            }
+            }
+    }
+
+    return usuarios;
 }

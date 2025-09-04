@@ -15,5 +15,5 @@ struct Usuario {
 };
 
 string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env");
-
+vector<Usuario> crear_arreglo();
 #endif // TEXTO_H

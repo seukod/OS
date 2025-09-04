@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 	mostrarBienvenida();
-
+	vector<Usuario> usuarios = crear_arreglo();
 	int opcion;
 	do {
 		mostrarMenuPrincipal();
