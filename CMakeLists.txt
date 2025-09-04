@@ -8,7 +8,7 @@ configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
 add_executable(OS
         main.cpp
-        UsersFunc.cpp
+        Funciones_usuarios.cpp
         UI_Func.cpp
         Texto.h
         UI_Func.h
