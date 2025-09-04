@@ -1,6 +1,6 @@
 #ifndef OS_USERSFUNC_H
 #define OS_USERSFUNC_H
-#include "crud.h"
+#include "Texto.h"
 #include <vector>
 #include <string>
 using namespace std;
