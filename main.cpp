@@ -23,7 +23,7 @@ int main(){
 				ingresarUsuario();
 				break;
 			case 2:
-				eliminarUsuario();
+				eliminarUsuario(usuarios);
 				break;
 			case 3:
 				listarUsuarios(usuarios);

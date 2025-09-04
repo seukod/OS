@@ -4,17 +4,17 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
-#include "Texto.h"
+#include "Funciones_Usuarios.h"
+#include <vector>
+#include <algorithm> // remove_if
+#include <stdexcept> // invalid_argument
+
 
 using namespace std;
 
 static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }
 static inline void rtrim(string &s) { while (!s.empty() && isspace((unsigned char) s.back())) s.pop_back(); }
 
-static inline void trim(string &s) {
-    ltrim(s);
-    rtrim(s);
-}
 
 static inline string stripQuotes(string v) {
     if (v.size() >= 2 && ((v.front() == '"' && v.back() == '"') || (v.front() == '\'' && v.back() == '\''))) {
@@ -99,64 +99,67 @@ void ingresarUsuario() {
     cout << "Usuario ingresado con ID " << id << "." << endl;
 }
 
-void eliminarUsuario() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[eliminarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
-        return;
-    }
+void trim(std::string &s) {
+    size_t start = s.find_first_not_of(" \t\n\r");
+    size_t end   = s.find_last_not_of(" \t\n\r");
+    if (start == std::string::npos) s.clear();
+    else s = s.substr(start, end - start + 1);
+}
 
+void eliminarUsuario(vector<Usuario>& usuarios) {
     string target;
     cout << "ID a eliminar (vacío o 'c' para cancelar): ";
-    if (!getline(cin >> ws, target)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
+    if (!getline(cin >> ws, target)) {
+        cerr << "[eliminarUsuario] Error de entrada." << endl;
+        return;
+    }
     trim(target);
-    if (target.empty() || target == "c" || target == "C") { cout << "Operación cancelada." << endl; return; }
+
+    if (target.empty() || target == "c" || target == "C") {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
 
     int targetId = -1;
     try {
         targetId = stoi(target);
-        if (targetId < 0) throw std::invalid_argument("negativo");
+        if (targetId < 0) throw invalid_argument("negativo");
     } catch (...) {
         cerr << "[eliminarUsuario] ID inválido." << endl;
         return;
     }
 
-    ifstream in(filePath);
-    if (!in.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir: " << filePath << endl; return; }
+    // Contamos cuántos usuarios serán eliminados
+    size_t removed = count_if(usuarios.begin(), usuarios.end(),
+                              [targetId](const Usuario& u){ return u.id == targetId; });
 
-    size_t removed = 0;
-    string outContent, line;
-    while (getline(in, line)) {
-        string s = line; trim(s);
-        if (s.empty() || s[0] == '#') { outContent += line; outContent.push_back('\n'); continue; }
-
-        string idField;
-        stringstream ss(line);
-        getline(ss, idField, ',');
-        trim(idField);
-
-        bool match = false;
-        try {
-            int id = stoi(idField);
-            match = (id == targetId);
-        } catch (...) { /* si no es numérico, no coincide */ }
-
-        if (match) { ++removed; continue; }
-        outContent += line; outContent.push_back('\n');
+    if (removed == 0) {
+        cout << "No se encontró usuario con ID " << targetId << "." << endl;
+        return;
     }
-    in.close();
-
-    if (removed == 0) { cout << "No se encontró usuario con ID " << targetId << "." << endl; return; }
 
     cout << "Se eliminarán " << removed << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
-    string resp; if (!getline(cin, resp)) { cerr << "[eliminarUsuario] Error de entrada." << endl; return; }
-    trim(resp); for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
-    if (!(resp == "s" || resp == "si" || resp == "sí")) { cout << "Operación cancelada." << endl; return; }
+    string resp;
+    if (!getline(cin, resp)) {
+        cerr << "[eliminarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(resp);
+    for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
 
-    ofstream out(filePath, ios::trunc | ios::binary);
-    if (!out.is_open()) { cerr << "[eliminarUsuario] No se pudo abrir para escribir: " << filePath << endl; return; }
-    out << outContent; out.flush();
+    if (!(resp == "s" || resp == "si" || resp == "sí")) {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
+    // Eliminar usuarios del arreglo
+    usuarios.erase(
+        remove_if(usuarios.begin(), usuarios.end(),
+                  [targetId](const Usuario& u){ return u.id == targetId; }),
+        usuarios.end());
+    guardar_cambios(usuarios);
     cout << "Eliminado(s) " << removed << " registro(s)." << endl;
+
 }
 
 

@@ -93,3 +93,27 @@ vector<Usuario> crear_arreglo() {
 
     return usuarios;
 }
+void guardar_cambios(const vector<Usuario>& usuarios) {
+    // Obtener la ruta del archivo desde .env
+    string archivo = leerVariableEnv("USERS_FILE", ".env");
+    if (archivo.empty()) {
+        cerr << "[ERROR] No se encontró USERS_FILE en .env ni en variables de entorno." << endl;
+        return;
+    }
+
+    ofstream out(archivo, ios::trunc);  // trunc borra todo el contenido anterior
+    if (!out.is_open()) {
+        cerr << "[ERROR] No se pudo abrir el archivo para guardar: " << archivo << endl;
+        return;
+    }
+
+    for (const auto& u : usuarios) {
+        out << u.id << ","
+            << u.nombre << ","
+            << u.username << ","
+            << u.password << ","
+            << u.perfil << "\n";
+    }
+    out.flush();
+    cout << "Archivo '" << archivo << "' actualizado con " << usuarios.size() << " usuario(s)." << endl;
+}
