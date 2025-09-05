@@ -26,27 +26,14 @@ static inline string stripQuotes(string v) {
 // Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
 
 
-static int getNextUserId(const string& filePath) {
-    ifstream in(filePath);
+static int getNextUserId(const vector<Usuario>& usuarios) {
     int maxId = 0;
-    if (in.is_open()) {
-        string line;
-        while (getline(in, line)) {
-            string s = line; trim(s);
-            if (s.empty() || s[0] == '#') continue;
-            string idField;
-            stringstream ss(line);
-            getline(ss, idField, ',');
-            trim(idField);
-            if (idField.empty()) continue;
-            try {
-                int id = stoi(idField);
-                if (id > maxId) maxId = id;
-            } catch (...) { /* ignora IDs no numéricos */ }
-        }
+    for (const auto& u : usuarios) {
+        if (u.id > maxId) maxId = u.id;
     }
-    return maxId + 1;
+    return maxId + 1; // siguiente disponible
 }
+
 static bool fileEndsWithNewline(const string& path) {
     ifstream in(path, ios::binary);
     if (!in.is_open()) return false;
@@ -59,45 +46,96 @@ static bool fileEndsWithNewline(const string& path) {
     return last == '\n';
 }
 
-void ingresarUsuario() {
-    string filePath = leerVariableEnv("USERS_FILE");
-    if (filePath.empty()) {
-        cerr << "[ingresarUsuario] No se encontró 'USERS_FILE' en '.env'." << endl;
-        return;
-    }
+void ingresarUsuario(vector<Usuario>& usuarios) {
+    Usuario nuevo;
 
-    int id = getNextUserId(filePath);
+    cout << "=== Ingresar nuevo usuario ===" << endl;
 
-    string nombre, username, password, perfil;
+    // ID generado automáticamente
+    nuevo.id = getNextUserId(usuarios);
+    cout << "ID asignado automáticamente: " << nuevo.id << endl;
+
+    // Nombre
     cout << "Nombre: ";
-    if (!getline(cin >> ws, nombre)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
-    trim(nombre);
-
-    cout << "Username: ";
-    if (!getline(cin, username)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
-    trim(username);
-
-    cout << "Contraseña: ";
-    if (!getline(cin, password)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
-    trim(password);
-
-    cout << "Perfil: ";
-    if (!getline(cin, perfil)) { cerr << "[ingresarUsuario] Error de entrada." << endl; return; }
-    trim(perfil);
-
-    if (nombre.empty() || perfil.empty()) {
-        cerr << "[ingresarUsuario] Campos obligatorios vacíos (nombre, perfil)." << endl;
+    if (!getline(cin >> ws, nuevo.nombre)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(nuevo.nombre);
+    if (nuevo.nombre.empty()) {
+        cerr << "[ingresarUsuario] Nombre no puede estar vacío." << endl;
         return;
     }
 
-    ofstream out(filePath, ios::app | ios::binary);
-    if (!out.is_open()) { cerr << "[ingresarUsuario] No se pudo abrir: " << filePath << endl; return; }
-    if (!fileEndsWithNewline(filePath)) out << '\n';
+    // Username
+    cout << "Username: ";
+    if (!getline(cin >> ws, nuevo.username)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(nuevo.username);
+    if (nuevo.username.empty()) {
+        cerr << "[ingresarUsuario] Username no puede estar vacío." << endl;
+        return;
+    }
 
-    out << id << "," << nombre << "," << username << "," << password << "," << perfil << '\n';
-    out.flush();
-    cout << "Usuario ingresado con ID " << id << "." << endl;
+    // Password
+    cout << "Password: ";
+    if (!getline(cin >> ws, nuevo.password)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(nuevo.password);
+    if (nuevo.password.empty()) {
+        cerr << "[ingresarUsuario] Password no puede estar vacío." << endl;
+        return;
+    }
+
+    // Perfil
+    string perfilStr;
+    cout << "Perfil (1=ADMIN, 2=GENERAL): ";
+    if (!getline(cin >> ws, perfilStr)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(perfilStr);
+
+    if (perfilStr == "1") {
+        nuevo.perfil = "ADMIN";
+    } else if (perfilStr == "2") {
+        nuevo.perfil = "GENERAL";
+    } else {
+        cerr << "[ingresarUsuario] Perfil inválido. Debe ser 1 o 2." << endl;
+        return;
+    }
+
+    // Confirmación
+    cout << "Confirmar registro del usuario '" << nuevo.nombre
+         << "' (username: " << nuevo.username
+         << ", perfil: " << nuevo.perfil
+         << ") con ID " << nuevo.id << " (s/N): ";
+    string resp;
+    if (!getline(cin, resp)) {
+        cerr << "[ingresarUsuario] Error de entrada." << endl;
+        return;
+    }
+    trim(resp);
+    for (auto& ch : resp) ch = (char)tolower((unsigned char)ch);
+
+    if (!(resp == "s" || resp == "si" || resp == "sí")) {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
+    usuarios.push_back(nuevo);
+    guardar_cambios(usuarios);
+
+    cout << "Usuario agregado correctamente con ID " << nuevo.id << "." << endl;
 }
+
+
+
+
 
 void trim(std::string &s) {
     size_t start = s.find_first_not_of(" \t\n\r");

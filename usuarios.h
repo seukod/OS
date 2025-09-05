@@ -3,9 +3,10 @@
 #include "crud.h"
 #include <vector>
 #include <string>
+
 // funciones por implementar
 void trim(std::string &s);
-void ingresarUsuario();
+void ingresarUsuario(vector<Usuario>& usuarios);
 void eliminarUsuario(std::vector<Usuario>& usuarios);
 void listarUsuarios(const vector<Usuario>& usuarios);
 void ingresarPerfil();

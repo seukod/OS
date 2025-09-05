@@ -21,7 +21,7 @@ int main(){
             mostrarMensajeDespedida();
             break;
         case 1:
-            ingresarUsuario();
+            ingresarUsuario(usuarios);
             break;
         case 2:
             eliminarUsuario(usuarios);
