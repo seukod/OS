@@ -2,7 +2,7 @@
 // Created by Francisco Contreras on 27-08-25.
 //
 
-#include "interfaz.h"
+#include "include/interfaz.h"
 #include <iostream>
 #include <limits>
 

@@ -1,4 +1,4 @@
-#include "ArgParser.h"
+#include "include/ArgParser.h"
 #include <iostream>
 #include <cstring>
 #include <stdexcept>
@@ -55,8 +55,6 @@ void showHelp(const string& programName) {
     cout << "  -f <archivo>    Archivo de texto (.txt) con datos de usuarios\n\n";
     cout << "Opciones adicionales:\n";
     cout << "  -h, --help      Mostrar esta ayuda\n\n";
-    cout << "Ejemplo:\n";
-    cout << "  " << programName << " -u admin -p 123456 -f usuarios.txt\n";
 }
 
 void validateOptions(const Options& opts) {
