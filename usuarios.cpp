@@ -128,7 +128,7 @@ void ingresarUsuario(vector<Usuario>& usuarios) {
     }
 
     usuarios.push_back(nuevo);
-    guardar_cambios(usuarios);
+
 
     cout << "Usuario agregado correctamente con ID " << nuevo.id << "." << endl;
 }
@@ -204,7 +204,7 @@ void eliminarUsuario(vector<Usuario>& usuarios) {
                   [targetId](const Usuario& u){ return u.id == targetId && u.perfil != "ADMIN"; }),
         usuarios.end());
 
-    guardar_cambios(usuarios);
+
     cout << "Eliminado(s) " << generales << " registro(s)." << endl;
 
     if (admins > 0) {

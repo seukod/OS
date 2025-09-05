@@ -47,6 +47,6 @@ int main(){
             pausarPantalla();
         }
     }while(opcion != 0);
-
+    guardar_cambios(usuarios);
     return 0;
 }
