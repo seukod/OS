@@ -167,16 +167,24 @@ void eliminarUsuario(vector<Usuario>& usuarios) {
         return;
     }
 
-    // Contamos cuántos usuarios serán eliminados
-    size_t removed = count_if(usuarios.begin(), usuarios.end(),
-                              [targetId](const Usuario& u){ return u.id == targetId; });
+    // Buscamos usuarios con ese ID
+    auto admins = count_if(usuarios.begin(), usuarios.end(),
+                           [targetId](const Usuario& u){ return u.id == targetId && u.perfil == "ADMIN"; });
 
-    if (removed == 0) {
+    auto generales = count_if(usuarios.begin(), usuarios.end(),
+                              [targetId](const Usuario& u){ return u.id == targetId && u.perfil != "ADMIN"; });
+
+    if (admins + generales == 0) {
         cout << "No se encontró usuario con ID " << targetId << "." << endl;
         return;
     }
 
-    cout << "Se eliminarán " << removed << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
+    if (generales == 0) {
+        cout << "El usuario con ID " << targetId << " es ADMIN y no puede ser eliminado." << endl;
+        return;
+    }
+
+    cout << "Se eliminarán " << generales << " registro(s) con ID " << targetId << ". Confirmar? (s/N): ";
     string resp;
     if (!getline(cin, resp)) {
         cerr << "[eliminarUsuario] Error de entrada." << endl;
@@ -190,15 +198,20 @@ void eliminarUsuario(vector<Usuario>& usuarios) {
         return;
     }
 
-    // Eliminar usuarios del arreglo
+    // Eliminar solo los usuarios que NO sean ADMIN
     usuarios.erase(
         remove_if(usuarios.begin(), usuarios.end(),
-                  [targetId](const Usuario& u){ return u.id == targetId; }),
+                  [targetId](const Usuario& u){ return u.id == targetId && u.perfil != "ADMIN"; }),
         usuarios.end());
-    guardar_cambios(usuarios);
-    cout << "Eliminado(s) " << removed << " registro(s)." << endl;
 
+    guardar_cambios(usuarios);
+    cout << "Eliminado(s) " << generales << " registro(s)." << endl;
+
+    if (admins > 0) {
+        cout << "[Aviso] No se eliminaron " << admins << " usuario(s) ADMIN con ese ID." << endl;
+    }
 }
+
 
 
 // Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil

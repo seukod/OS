@@ -2,4 +2,4 @@
 12,roberto,muss,123,GENERAL
 1,alexi,copa,america,ADMIN
 13,facundo,facu,1234,ADMIN
-14,Giorgio,Nazi,giogio,ADMIN
+14,Giorgio,NAZI,123,ADMIN
