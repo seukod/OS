@@ -130,7 +130,7 @@ bool cargarDatosEnMemoria() {
     limpiarMemoria();
     
     // Cargar usuarios desde data/USUARIOS.txt
-    string rutaUsuarios = "data/USUARIOS.txt";
+    string rutaUsuarios = "../data/USUARIOS.txt";
     ifstream fileUsuarios(rutaUsuarios);
     if (!fileUsuarios.is_open()) {
         cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << rutaUsuarios << endl;
@@ -162,7 +162,7 @@ bool cargarDatosEnMemoria() {
     fileUsuarios.close();
     
     // Cargar perfiles desde data/PERFILES.txt
-    string rutaPerfiles = "data/PERFILES.txt";
+    string rutaPerfiles = "../data/PERFILES.txt";
     ifstream filePerfiles(rutaPerfiles);
     if (!filePerfiles.is_open()) {
         cerr << "[ERROR] No se pudo abrir archivo de perfiles: " << rutaPerfiles << endl;

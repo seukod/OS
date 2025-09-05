@@ -75,7 +75,7 @@ void validateOptions(const Options& opts) {
     }
     
     // Verificar que el archivo del libro existe en data/libros/
-    string bookPath = "data/libros/" + opts.book;
+    string bookPath = "../data/libros/" + opts.book;
     ifstream file(bookPath);
     if (!file.good()) {
         throw runtime_error("Error: No se puede acceder al libro: " + opts.book);

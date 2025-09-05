@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/OS.dir/link.d CMakeFiles/OS.dir/src/AppConfig.cpp.o CMakeFiles/OS.dir/src/ArgParser.cpp.o CMakeFiles/OS.dir/src/crud.cpp.o CMakeFiles/OS.dir/src/interfaz.cpp.o CMakeFiles/OS.dir/src/main.cpp.o CMakeFiles/OS.dir/src/usuarios.cpp.o -o OS
