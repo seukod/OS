@@ -1,7 +1,4 @@
-3,Parra,naky,sansmanmon,ADMIN
 4,Seuko,Seukokos,kokos,ADMIN
 12,roberto,muss,123,GENERAL
 1,alexi,copa,america,ADMIN
 13,facundo,facu,1234,ADMIN
-14,gato,flaite,123,ADMIN
-16,Javier,Notos,saturno,ADMIN

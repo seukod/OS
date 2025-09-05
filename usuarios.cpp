@@ -4,17 +4,17 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
-#include "crud.h"
+#include "usuarios.h"
+#include "crud.h" // leerVariableEnv
+#include <vector>
+#include <algorithm> // remove_if
+#include <stdexcept> // invalid_argument
 
-using namespace std;
 
 static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }
 static inline void rtrim(string &s) { while (!s.empty() && isspace((unsigned char) s.back())) s.pop_back(); }
 
-static inline void trim(string &s) {
-    ltrim(s);
-    rtrim(s);
-}
+
 
 static inline string stripQuotes(string v) {
     if (v.size() >= 2 && ((v.front() == '"' && v.back() == '"') || (v.front() == '\'' && v.back() == '\''))) {

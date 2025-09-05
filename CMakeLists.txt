@@ -8,11 +8,16 @@ configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
 add_executable(OS
         main.cpp
-        UsersFunc.cpp
-        UI_Func.cpp
-        Texto.h
-        UI_Func.h
-        Texto.cpp
+        AppConfig.cpp
+        AppConfig.h
+        ArgParser.cpp
+        ArgParser.h
+        crud.cpp
+        crud.h
+        interfaz.cpp
+        interfaz.h
+        usuarios.cpp
+        usuarios.h
 )
 
 # Copia '.env' junto al binario tras compilar
