@@ -1,15 +1,19 @@
-#pragma once
+#ifndef ARGPARSER_H
+#define ARGPARSER_H
+
 #include <string>
 
 struct Options {
     std::string user;
     std::string password;
     std::string file;
+    bool help = false;
 };
 
-class ArgParser {
-public:
-    // Parsea y valida argumentos. Sale con código != 0 en caso de error.
-    static Options parse(int argc, char* argv[]);
-    static void printUsage(const char* programName);
-};
+// Funciones para parsear argumentos
+Options parseArguments(int argc, char* argv[]);
+void showHelp(const std::string& programName);
+void validateOptions(const Options& opts);
+bool isValidTxtFile(const std::string& filename);
+
+#endif // ARGPARSER_H

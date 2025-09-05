@@ -1,5 +1,5 @@
-#ifndef TEXTO_H
-#define TEXTO_H
+#ifndef CRUD_H
+#define CRUD_H
 
 #include <string>
 #include <vector>
@@ -16,4 +16,6 @@ struct Usuario {
 
 string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env");
 vector<Usuario> crear_arreglo();
-#endif // TEXTO_H
+bool validarUsuario(const string& username, const string& password, Usuario& user);
+
+#endif // CRUD_H

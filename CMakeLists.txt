@@ -6,13 +6,16 @@ set(CMAKE_CXX_STANDARD 20)
 # Copia '.env' al directorio de build al configurar
 configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
-add_executable(OS
-        main.cpp
-        Funciones_usuarios.cpp
-        UI_Func.cpp
-        Texto.h
-        UI_Func.h
-        Texto.cpp
+add_executable(OS 
+    main.cpp 
+    ArgParser.cpp 
+    AppConfig.cpp
+    interfaz.cpp
+    usuarios.cpp
+    crud.cpp
+    crud.h
+    interfaz.h
+    usuarios.h
 )
 
 # Copia '.env' junto al binario tras compilar

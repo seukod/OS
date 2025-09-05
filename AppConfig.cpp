@@ -1,10 +1,14 @@
 #include "AppConfig.h"
 
-namespace {
-    std::string g_usuariosFile = "USUARIOS.txt"; // valor por defecto
+using namespace std;
+
+// Variable global
+string g_usuariosFile = "";
+
+void setUsuariosFile(const string& file) {
+    g_usuariosFile = file;
 }
 
-namespace AppConfig {
-    void setUsuariosFile(const std::string& path) { g_usuariosFile = path; }
-    const std::string& getUsuariosFile() { return g_usuariosFile; }
+const string& getUsuariosFile() {
+    return g_usuariosFile;
 }

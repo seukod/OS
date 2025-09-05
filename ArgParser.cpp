@@ -1,74 +1,92 @@
 #include "ArgParser.h"
 #include <iostream>
-#include <filesystem>
-#include <algorithm>
+#include <cstring>
+#include <stdexcept>
+#include <fstream>
 
-namespace fs = std::filesystem;
+using namespace std;
 
-static bool hasTxtExtension(const std::string& path) {
-    if (path.size() < 4) return false;
-    std::string ext = path.substr(path.size() - 4);
-    std::transform(ext.begin(), ext.end(), ext.begin(), [](unsigned char c){ return std::tolower(c); });
-    return ext == ".txt";
-}
-
-void ArgParser::printUsage(const char* programName) {
-    std::cerr
-        << "Uso: " << programName << " -u <usuario> -p <password> -f <archivo.txt>\n"
-        << "Opciones:\n"
-        << "  -u, --user     Usuario de inicio de sesion\n"
-        << "  -p, --pass     Password de inicio de sesion\n"
-        << "  -f, --file     Ruta al archivo .txt de usuarios\n"
-        << "  -h, --help     Mostrar esta ayuda\n";
-}
-
-Options ArgParser::parse(int argc, char* argv[]) {
+Options parseArguments(int argc, char* argv[]) {
     Options opts;
-
-    for (int i = 1; i < argc; ++i) {
-        std::string arg = argv[i];
-        auto requireValue = [&](const char* flag) {
+    
+    if (argc == 1) {
+        showHelp(argv[0]);
+        exit(1);
+    }
+    
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "-u") == 0) {
             if (i + 1 >= argc) {
-                std::cerr << "Falta valor para " << flag << "\n";
-                printUsage(argv[0]);
-                std::exit(1);
+                throw runtime_error("Error: -u requiere un valor");
             }
-        };
-
-        if (arg == "-h" || arg == "--help") {
-            printUsage(argv[0]);
-            std::exit(0);
-        } else if (arg == "-u" || arg == "--user") {
-            requireValue(arg.c_str());
             opts.user = argv[++i];
-        } else if (arg == "-p" || arg == "--pass") {
-            requireValue(arg.c_str());
+        }
+        else if (strcmp(argv[i], "-p") == 0) {
+            if (i + 1 >= argc) {
+                throw runtime_error("Error: -p requiere un valor");
+            }
             opts.password = argv[++i];
-        } else if (arg == "-f" || arg == "--file") {
-            requireValue(arg.c_str());
+        }
+        else if (strcmp(argv[i], "-f") == 0) {
+            if (i + 1 >= argc) {
+                throw runtime_error("Error: -f requiere un valor");
+            }
             opts.file = argv[++i];
-        } else {
-            std::cerr << "Argumento desconocido: " << arg << "\n";
-            printUsage(argv[0]);
-            std::exit(1);
+        }
+        else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+            opts.help = true;
+            showHelp(argv[0]);
+            exit(0);
+        }
+        else {
+            throw runtime_error("Error: Opción desconocida: " + string(argv[i]));
         }
     }
-
-    if (opts.user.empty() || opts.password.empty() || opts.file.empty()) {
-        std::cerr << "Error: Debes proporcionar -u, -p y -f.\n";
-        printUsage(argv[0]);
-        std::exit(1);
-    }
-
-    std::error_code ec;
-    if (!fs::exists(opts.file, ec) || fs::is_directory(opts.file, ec)) {
-        std::cerr << "Error: el archivo no existe o es un directorio: " << opts.file << "\n";
-        std::exit(1);
-    }
-    if (!hasTxtExtension(opts.file)) {
-        std::cerr << "Error: el archivo debe tener extension .txt: " << opts.file << "\n";
-        std::exit(1);
-    }
-
+    
+    validateOptions(opts);
     return opts;
+}
+
+void showHelp(const string& programName) {
+    cout << "Uso: " << programName << " -u <usuario> -p <password> -f <archivo>\n\n";
+    cout << "Opciones obligatorias:\n";
+    cout << "  -u <usuario>    Nombre de usuario\n";
+    cout << "  -p <password>   Contraseña del usuario\n";
+    cout << "  -f <archivo>    Archivo de texto (.txt) con datos de usuarios\n\n";
+    cout << "Opciones adicionales:\n";
+    cout << "  -h, --help      Mostrar esta ayuda\n\n";
+    cout << "Ejemplo:\n";
+    cout << "  " << programName << " -u admin -p 123456 -f usuarios.txt\n";
+}
+
+void validateOptions(const Options& opts) {
+    if (opts.user.empty()) {
+        throw runtime_error("Error: Usuario (-u) es obligatorio");
+    }
+    
+    if (opts.password.empty()) {
+        throw runtime_error("Error: Password (-p) es obligatorio");
+    }
+    
+    if (opts.file.empty()) {
+        throw runtime_error("Error: Archivo (-f) es obligatorio");
+    }
+    
+    if (!isValidTxtFile(opts.file)) {
+        throw runtime_error("Error: El archivo debe tener extensión .txt");
+    }
+    
+    // Verificar que el archivo existe
+    ifstream file(opts.file);
+    if (!file.good()) {
+        throw runtime_error("Error: No se puede acceder al archivo: " + opts.file);
+    }
+    file.close();
+}
+
+bool isValidTxtFile(const string& filename) {
+    if (filename.length() < 4) {
+        return false;
+    }
+    return filename.substr(filename.length() - 4) == ".txt";
 }

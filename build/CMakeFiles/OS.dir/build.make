@@ -86,51 +86,100 @@ CMakeFiles/OS.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/main.cpp -o CMakeFiles/OS.dir/main.cpp.s
 
-CMakeFiles/OS.dir/UsersFunc.cpp.o: CMakeFiles/OS.dir/flags.make
-CMakeFiles/OS.dir/UsersFunc.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.cpp
-CMakeFiles/OS.dir/UsersFunc.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OS.dir/UsersFunc.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/UsersFunc.cpp.o -MF CMakeFiles/OS.dir/UsersFunc.cpp.o.d -o CMakeFiles/OS.dir/UsersFunc.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.cpp
+CMakeFiles/OS.dir/ArgParser.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/ArgParser.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ArgParser.cpp
+CMakeFiles/OS.dir/ArgParser.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OS.dir/ArgParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/ArgParser.cpp.o -MF CMakeFiles/OS.dir/ArgParser.cpp.o.d -o CMakeFiles/OS.dir/ArgParser.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ArgParser.cpp
 
-CMakeFiles/OS.dir/UsersFunc.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/UsersFunc.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.cpp > CMakeFiles/OS.dir/UsersFunc.cpp.i
+CMakeFiles/OS.dir/ArgParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/ArgParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ArgParser.cpp > CMakeFiles/OS.dir/ArgParser.cpp.i
 
-CMakeFiles/OS.dir/UsersFunc.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/UsersFunc.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UsersFunc.cpp -o CMakeFiles/OS.dir/UsersFunc.cpp.s
+CMakeFiles/OS.dir/ArgParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/ArgParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ArgParser.cpp -o CMakeFiles/OS.dir/ArgParser.cpp.s
 
-CMakeFiles/OS.dir/UI_Func.cpp.o: CMakeFiles/OS.dir/flags.make
-CMakeFiles/OS.dir/UI_Func.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.cpp
-CMakeFiles/OS.dir/UI_Func.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OS.dir/UI_Func.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/UI_Func.cpp.o -MF CMakeFiles/OS.dir/UI_Func.cpp.o.d -o CMakeFiles/OS.dir/UI_Func.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.cpp
+CMakeFiles/OS.dir/AppConfig.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/AppConfig.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/AppConfig.cpp
+CMakeFiles/OS.dir/AppConfig.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OS.dir/AppConfig.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/AppConfig.cpp.o -MF CMakeFiles/OS.dir/AppConfig.cpp.o.d -o CMakeFiles/OS.dir/AppConfig.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/AppConfig.cpp
 
-CMakeFiles/OS.dir/UI_Func.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/UI_Func.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.cpp > CMakeFiles/OS.dir/UI_Func.cpp.i
+CMakeFiles/OS.dir/AppConfig.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/AppConfig.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/AppConfig.cpp > CMakeFiles/OS.dir/AppConfig.cpp.i
 
-CMakeFiles/OS.dir/UI_Func.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/UI_Func.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/UI_Func.cpp -o CMakeFiles/OS.dir/UI_Func.cpp.s
+CMakeFiles/OS.dir/AppConfig.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/AppConfig.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/AppConfig.cpp -o CMakeFiles/OS.dir/AppConfig.cpp.s
+
+CMakeFiles/OS.dir/interfaz.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/interfaz.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/interfaz.cpp
+CMakeFiles/OS.dir/interfaz.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OS.dir/interfaz.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/interfaz.cpp.o -MF CMakeFiles/OS.dir/interfaz.cpp.o.d -o CMakeFiles/OS.dir/interfaz.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/interfaz.cpp
+
+CMakeFiles/OS.dir/interfaz.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/interfaz.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/interfaz.cpp > CMakeFiles/OS.dir/interfaz.cpp.i
+
+CMakeFiles/OS.dir/interfaz.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/interfaz.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/interfaz.cpp -o CMakeFiles/OS.dir/interfaz.cpp.s
+
+CMakeFiles/OS.dir/usuarios.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/usuarios.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/usuarios.cpp
+CMakeFiles/OS.dir/usuarios.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OS.dir/usuarios.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/usuarios.cpp.o -MF CMakeFiles/OS.dir/usuarios.cpp.o.d -o CMakeFiles/OS.dir/usuarios.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/usuarios.cpp
+
+CMakeFiles/OS.dir/usuarios.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/usuarios.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/usuarios.cpp > CMakeFiles/OS.dir/usuarios.cpp.i
+
+CMakeFiles/OS.dir/usuarios.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/usuarios.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/usuarios.cpp -o CMakeFiles/OS.dir/usuarios.cpp.s
+
+CMakeFiles/OS.dir/crud.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/crud.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/crud.cpp
+CMakeFiles/OS.dir/crud.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OS.dir/crud.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/crud.cpp.o -MF CMakeFiles/OS.dir/crud.cpp.o.d -o CMakeFiles/OS.dir/crud.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/crud.cpp
+
+CMakeFiles/OS.dir/crud.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/crud.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/crud.cpp > CMakeFiles/OS.dir/crud.cpp.i
+
+CMakeFiles/OS.dir/crud.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/crud.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/crud.cpp -o CMakeFiles/OS.dir/crud.cpp.s
 
 # Object files for target OS
 OS_OBJECTS = \
 "CMakeFiles/OS.dir/main.cpp.o" \
-"CMakeFiles/OS.dir/UsersFunc.cpp.o" \
-"CMakeFiles/OS.dir/UI_Func.cpp.o"
+"CMakeFiles/OS.dir/ArgParser.cpp.o" \
+"CMakeFiles/OS.dir/AppConfig.cpp.o" \
+"CMakeFiles/OS.dir/interfaz.cpp.o" \
+"CMakeFiles/OS.dir/usuarios.cpp.o" \
+"CMakeFiles/OS.dir/crud.cpp.o"
 
 # External object files for target OS
 OS_EXTERNAL_OBJECTS =
 
 OS: CMakeFiles/OS.dir/main.cpp.o
-OS: CMakeFiles/OS.dir/UsersFunc.cpp.o
-OS: CMakeFiles/OS.dir/UI_Func.cpp.o
+OS: CMakeFiles/OS.dir/ArgParser.cpp.o
+OS: CMakeFiles/OS.dir/AppConfig.cpp.o
+OS: CMakeFiles/OS.dir/interfaz.cpp.o
+OS: CMakeFiles/OS.dir/usuarios.cpp.o
+OS: CMakeFiles/OS.dir/crud.cpp.o
 OS: CMakeFiles/OS.dir/build.make
 OS: CMakeFiles/OS.dir/compiler_depend.ts
 OS: CMakeFiles/OS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable OS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OS.dir/link.txt --verbose=$(VERBOSE)
+	/usr/bin/cmake -E copy_if_different /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/.env /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/.env
 
 # Rule to build all files generated by this target.
 CMakeFiles/OS.dir/build: OS

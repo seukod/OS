@@ -1,9 +1,10 @@
-#include "Texto.h"
+#include "crud.h"
+#include "AppConfig.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include <cctype>  // getenv
+#include <cctype>
 #include <vector>
 #include <sstream>
 using namespace std;
@@ -53,12 +54,18 @@ string leerVariableEnv(const string &nombreVariable, const string &archivoEnv ) 
     return intenta("../.env");
 }
 vector<Usuario> crear_arreglo() {
-    // Obtener archivo desde .env
-    string userFile = leerVariableEnv("USERS_FILE", ".env");
+    // Primero intentar usar el archivo configurado desde AppConfig
+    string userFile = getUsuariosFile();
+    
+    // Si no hay archivo configurado, intentar leer desde .env como fallback
+    if (userFile.empty()) {
+        userFile = leerVariableEnv("USERS_FILE", ".env");
+    }
+    
     vector<Usuario> usuarios;
 
     if (userFile.empty()) {
-        cerr << "[ERROR] No se encontró USER_FILE en .env ni en variables de entorno." << endl;
+        cerr << "[ERROR] No se encontró archivo de usuarios configurado." << endl;
         return usuarios;
     }
 
@@ -88,8 +95,61 @@ vector<Usuario> crear_arreglo() {
             } catch (...) {
                 cerr << "[ADVERTENCIA] ID inválido en línea: " << line << endl;
             }
-            }
+        }
     }
 
     return usuarios;
+}
+
+bool validarUsuario(const string& username, const string& password, Usuario& user) {
+    // Usar el archivo configurado desde AppConfig
+    string userFile = getUsuariosFile();
+    
+    // Si no hay archivo configurado, intentar leer desde .env como fallback
+    if (userFile.empty()) {
+        userFile = leerVariableEnv("USERS_FILE", ".env");
+    }
+    
+    if (userFile.empty()) {
+        cerr << "[ERROR] No se encontró archivo de usuarios configurado." << endl;
+        return false;
+    }
+
+    ifstream file(userFile);
+    if (!file.is_open()) {
+        cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << userFile << endl;
+        return false;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        if (line.empty()) continue;
+
+        stringstream ss(line);
+        Usuario u;
+        string idStr;
+
+        if (getline(ss, idStr, ',') &&
+            getline(ss, u.nombre, ',') &&
+            getline(ss, u.username, ',') &&
+            getline(ss, u.password, ',') &&
+            getline(ss, u.perfil, ',')) {
+
+            try {
+                u.id = stoi(idStr);
+                
+                // Verificar credenciales
+                if (u.username == username && u.password == password) {
+                    user = u;  // Copiar datos del usuario encontrado
+                    file.close();
+                    return true;
+                }
+            } catch (...) {
+                cerr << "[ADVERTENCIA] ID inválido en línea: " << line << endl;
+            }
+        }
+    }
+
+    file.close();
+    return false;  // Usuario no encontrado o credenciales incorrectas
 }
