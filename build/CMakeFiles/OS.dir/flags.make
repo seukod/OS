@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DDEFAULT_ENV_PATH=\"/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/.env\"
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/include
 
 CXX_FLAGS = -std=gnu++20
 

@@ -14,7 +14,22 @@ struct Usuario {
     string perfil;
 };
 
+// Definición del struct Perfil
+struct Perfil {
+    string nombre;
+    vector<int> permisos;
+};
+
+// Variables globales para almacenar datos en memoria
+extern vector<Usuario> g_usuarios;
+extern vector<Perfil> g_perfiles;
+
+// Funciones para manejo de memoria y carga de datos
+void limpiarMemoria();
+bool cargarDatosEnMemoria();
 string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env");
+
+// Funciones existentes
 vector<Usuario> crear_arreglo();
 bool validarUsuario(const string& username, const string& password, Usuario& user);
 

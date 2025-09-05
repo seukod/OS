@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/AppConfig.cpp" "CMakeFiles/OS.dir/AppConfig.cpp.o" "gcc" "CMakeFiles/OS.dir/AppConfig.cpp.o.d"
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/ArgParser.cpp" "CMakeFiles/OS.dir/ArgParser.cpp.o" "gcc" "CMakeFiles/OS.dir/ArgParser.cpp.o.d"
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/crud.cpp" "CMakeFiles/OS.dir/crud.cpp.o" "gcc" "CMakeFiles/OS.dir/crud.cpp.o.d"
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/interfaz.cpp" "CMakeFiles/OS.dir/interfaz.cpp.o" "gcc" "CMakeFiles/OS.dir/interfaz.cpp.o.d"
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/main.cpp" "CMakeFiles/OS.dir/main.cpp.o" "gcc" "CMakeFiles/OS.dir/main.cpp.o.d"
-  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/usuarios.cpp" "CMakeFiles/OS.dir/usuarios.cpp.o" "gcc" "CMakeFiles/OS.dir/usuarios.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/AppConfig.cpp" "CMakeFiles/OS.dir/src/AppConfig.cpp.o" "gcc" "CMakeFiles/OS.dir/src/AppConfig.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/ArgParser.cpp" "CMakeFiles/OS.dir/src/ArgParser.cpp.o" "gcc" "CMakeFiles/OS.dir/src/ArgParser.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/crud.cpp" "CMakeFiles/OS.dir/src/crud.cpp.o" "gcc" "CMakeFiles/OS.dir/src/crud.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/interfaz.cpp" "CMakeFiles/OS.dir/src/interfaz.cpp.o" "gcc" "CMakeFiles/OS.dir/src/interfaz.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/main.cpp" "CMakeFiles/OS.dir/src/main.cpp.o" "gcc" "CMakeFiles/OS.dir/src/main.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/usuarios.cpp" "CMakeFiles/OS.dir/src/usuarios.cpp.o" "gcc" "CMakeFiles/OS.dir/src/usuarios.cpp.o.d"
   "" "OS" "gcc" "CMakeFiles/OS.dir/link.d"
   )
 

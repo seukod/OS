@@ -1,4 +1,4 @@
-#include "include/ArgParser.h"
+#include "../include/ArgParser.h"
 #include <iostream>
 #include <cstring>
 #include <stdexcept>
@@ -31,7 +31,7 @@ Options parseArguments(int argc, char* argv[]) {
             if (i + 1 >= argc) {
                 throw runtime_error("Error: -f requiere un valor");
             }
-            opts.file = argv[++i];
+            opts.book = argv[++i];
         }
         else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
             opts.help = true;
@@ -48,11 +48,11 @@ Options parseArguments(int argc, char* argv[]) {
 }
 
 void showHelp(const string& programName) {
-    cout << "Uso: " << programName << " -u <usuario> -p <password> -f <archivo>\n\n";
+    cout << "Uso: " << programName << " -u <usuario> -p <password> -f <libro.txt>\n\n";
     cout << "Opciones obligatorias:\n";
     cout << "  -u <usuario>    Nombre de usuario\n";
     cout << "  -p <password>   Contraseña del usuario\n";
-    cout << "  -f <archivo>    Archivo de texto (.txt) con datos de usuarios\n\n";
+    cout << "  -f <libro.txt>  Nombre del libro a leer (con extensión .txt)\n\n";
     cout << "Opciones adicionales:\n";
     cout << "  -h, --help      Mostrar esta ayuda\n\n";
 }
@@ -66,25 +66,42 @@ void validateOptions(const Options& opts) {
         throw runtime_error("Error: Password (-p) es obligatorio");
     }
     
-    if (opts.file.empty()) {
-        throw runtime_error("Error: Archivo (-f) es obligatorio");
+    if (opts.book.empty()) {
+        throw runtime_error("Error: Nombre del libro (-f) es obligatorio");
     }
     
-    if (!isValidTxtFile(opts.file)) {
+    if (!isValidBookName(opts.book)) {
         throw runtime_error("Error: El archivo debe tener extensión .txt");
     }
     
-    // Verificar que el archivo existe
-    ifstream file(opts.file);
+    // Verificar que el archivo del libro existe en data/libros/
+    string bookPath = "data/libros/" + opts.book;
+    ifstream file(bookPath);
     if (!file.good()) {
-        throw runtime_error("Error: No se puede acceder al archivo: " + opts.file);
+        throw runtime_error("Error: No se puede acceder al libro: " + opts.book);
     }
     file.close();
 }
 
-bool isValidTxtFile(const string& filename) {
-    if (filename.length() < 4) {
+bool isValidBookName(const string& bookname) {
+    if (bookname.empty()) {
         return false;
     }
-    return filename.substr(filename.length() - 4) == ".txt";
+    
+    // Verificar que tenga extensión .txt
+    if (bookname.length() < 4) {
+        return false;
+    }
+    if (bookname.substr(bookname.length() - 4) != ".txt") {
+        return false;
+    }
+    
+    // Verificar que no contenga caracteres inválidos para nombres de archivo
+    string invalidChars = "<>:\"|?*";
+    for (char c : invalidChars) {
+        if (bookname.find(c) != string::npos) {
+            return false;
+        }
+    }
+    return true;
 }

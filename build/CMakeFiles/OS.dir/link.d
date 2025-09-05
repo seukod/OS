@@ -2,12 +2,12 @@ OS: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
-  CMakeFiles/OS.dir/main.cpp.o \
-  CMakeFiles/OS.dir/ArgParser.cpp.o \
-  CMakeFiles/OS.dir/AppConfig.cpp.o \
-  CMakeFiles/OS.dir/interfaz.cpp.o \
-  CMakeFiles/OS.dir/usuarios.cpp.o \
-  CMakeFiles/OS.dir/crud.cpp.o \
+  CMakeFiles/OS.dir/src/AppConfig.cpp.o \
+  CMakeFiles/OS.dir/src/ArgParser.cpp.o \
+  CMakeFiles/OS.dir/src/crud.cpp.o \
+  CMakeFiles/OS.dir/src/interfaz.cpp.o \
+  CMakeFiles/OS.dir/src/main.cpp.o \
+  CMakeFiles/OS.dir/src/usuarios.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -42,17 +42,17 @@ OS: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o:
 
-CMakeFiles/OS.dir/main.cpp.o:
+CMakeFiles/OS.dir/src/AppConfig.cpp.o:
 
-CMakeFiles/OS.dir/ArgParser.cpp.o:
+CMakeFiles/OS.dir/src/ArgParser.cpp.o:
 
-CMakeFiles/OS.dir/AppConfig.cpp.o:
+CMakeFiles/OS.dir/src/crud.cpp.o:
 
-CMakeFiles/OS.dir/interfaz.cpp.o:
+CMakeFiles/OS.dir/src/interfaz.cpp.o:
 
-CMakeFiles/OS.dir/usuarios.cpp.o:
+CMakeFiles/OS.dir/src/main.cpp.o:
 
-CMakeFiles/OS.dir/crud.cpp.o:
+CMakeFiles/OS.dir/src/usuarios.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

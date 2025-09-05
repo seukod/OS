@@ -129,149 +129,149 @@ OS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/build
 .PHONY : OS/fast
 
-AppConfig.o: AppConfig.cpp.o
-.PHONY : AppConfig.o
+src/AppConfig.o: src/AppConfig.cpp.o
+.PHONY : src/AppConfig.o
 
 # target to build an object file
-AppConfig.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/AppConfig.cpp.o
-.PHONY : AppConfig.cpp.o
+src/AppConfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/AppConfig.cpp.o
+.PHONY : src/AppConfig.cpp.o
 
-AppConfig.i: AppConfig.cpp.i
-.PHONY : AppConfig.i
+src/AppConfig.i: src/AppConfig.cpp.i
+.PHONY : src/AppConfig.i
 
 # target to preprocess a source file
-AppConfig.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/AppConfig.cpp.i
-.PHONY : AppConfig.cpp.i
+src/AppConfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/AppConfig.cpp.i
+.PHONY : src/AppConfig.cpp.i
 
-AppConfig.s: AppConfig.cpp.s
-.PHONY : AppConfig.s
+src/AppConfig.s: src/AppConfig.cpp.s
+.PHONY : src/AppConfig.s
 
 # target to generate assembly for a file
-AppConfig.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/AppConfig.cpp.s
-.PHONY : AppConfig.cpp.s
+src/AppConfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/AppConfig.cpp.s
+.PHONY : src/AppConfig.cpp.s
 
-ArgParser.o: ArgParser.cpp.o
-.PHONY : ArgParser.o
+src/ArgParser.o: src/ArgParser.cpp.o
+.PHONY : src/ArgParser.o
 
 # target to build an object file
-ArgParser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/ArgParser.cpp.o
-.PHONY : ArgParser.cpp.o
+src/ArgParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/ArgParser.cpp.o
+.PHONY : src/ArgParser.cpp.o
 
-ArgParser.i: ArgParser.cpp.i
-.PHONY : ArgParser.i
+src/ArgParser.i: src/ArgParser.cpp.i
+.PHONY : src/ArgParser.i
 
 # target to preprocess a source file
-ArgParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/ArgParser.cpp.i
-.PHONY : ArgParser.cpp.i
+src/ArgParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/ArgParser.cpp.i
+.PHONY : src/ArgParser.cpp.i
 
-ArgParser.s: ArgParser.cpp.s
-.PHONY : ArgParser.s
+src/ArgParser.s: src/ArgParser.cpp.s
+.PHONY : src/ArgParser.s
 
 # target to generate assembly for a file
-ArgParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/ArgParser.cpp.s
-.PHONY : ArgParser.cpp.s
+src/ArgParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/ArgParser.cpp.s
+.PHONY : src/ArgParser.cpp.s
 
-crud.o: crud.cpp.o
-.PHONY : crud.o
+src/crud.o: src/crud.cpp.o
+.PHONY : src/crud.o
 
 # target to build an object file
-crud.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/crud.cpp.o
-.PHONY : crud.cpp.o
+src/crud.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/crud.cpp.o
+.PHONY : src/crud.cpp.o
 
-crud.i: crud.cpp.i
-.PHONY : crud.i
+src/crud.i: src/crud.cpp.i
+.PHONY : src/crud.i
 
 # target to preprocess a source file
-crud.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/crud.cpp.i
-.PHONY : crud.cpp.i
+src/crud.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/crud.cpp.i
+.PHONY : src/crud.cpp.i
 
-crud.s: crud.cpp.s
-.PHONY : crud.s
+src/crud.s: src/crud.cpp.s
+.PHONY : src/crud.s
 
 # target to generate assembly for a file
-crud.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/crud.cpp.s
-.PHONY : crud.cpp.s
+src/crud.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/crud.cpp.s
+.PHONY : src/crud.cpp.s
 
-interfaz.o: interfaz.cpp.o
-.PHONY : interfaz.o
+src/interfaz.o: src/interfaz.cpp.o
+.PHONY : src/interfaz.o
 
 # target to build an object file
-interfaz.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/interfaz.cpp.o
-.PHONY : interfaz.cpp.o
+src/interfaz.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/interfaz.cpp.o
+.PHONY : src/interfaz.cpp.o
 
-interfaz.i: interfaz.cpp.i
-.PHONY : interfaz.i
+src/interfaz.i: src/interfaz.cpp.i
+.PHONY : src/interfaz.i
 
 # target to preprocess a source file
-interfaz.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/interfaz.cpp.i
-.PHONY : interfaz.cpp.i
+src/interfaz.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/interfaz.cpp.i
+.PHONY : src/interfaz.cpp.i
 
-interfaz.s: interfaz.cpp.s
-.PHONY : interfaz.s
+src/interfaz.s: src/interfaz.cpp.s
+.PHONY : src/interfaz.s
 
 # target to generate assembly for a file
-interfaz.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/interfaz.cpp.s
-.PHONY : interfaz.cpp.s
+src/interfaz.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/interfaz.cpp.s
+.PHONY : src/interfaz.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
-usuarios.o: usuarios.cpp.o
-.PHONY : usuarios.o
+src/usuarios.o: src/usuarios.cpp.o
+.PHONY : src/usuarios.o
 
 # target to build an object file
-usuarios.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/usuarios.cpp.o
-.PHONY : usuarios.cpp.o
+src/usuarios.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/usuarios.cpp.o
+.PHONY : src/usuarios.cpp.o
 
-usuarios.i: usuarios.cpp.i
-.PHONY : usuarios.i
+src/usuarios.i: src/usuarios.cpp.i
+.PHONY : src/usuarios.i
 
 # target to preprocess a source file
-usuarios.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/usuarios.cpp.i
-.PHONY : usuarios.cpp.i
+src/usuarios.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/usuarios.cpp.i
+.PHONY : src/usuarios.cpp.i
 
-usuarios.s: usuarios.cpp.s
-.PHONY : usuarios.s
+src/usuarios.s: src/usuarios.cpp.s
+.PHONY : src/usuarios.s
 
 # target to generate assembly for a file
-usuarios.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/usuarios.cpp.s
-.PHONY : usuarios.cpp.s
+src/usuarios.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/usuarios.cpp.s
+.PHONY : src/usuarios.cpp.s
 
 # Help Target
 help:
@@ -282,24 +282,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... OS"
-	@echo "... AppConfig.o"
-	@echo "... AppConfig.i"
-	@echo "... AppConfig.s"
-	@echo "... ArgParser.o"
-	@echo "... ArgParser.i"
-	@echo "... ArgParser.s"
-	@echo "... crud.o"
-	@echo "... crud.i"
-	@echo "... crud.s"
-	@echo "... interfaz.o"
-	@echo "... interfaz.i"
-	@echo "... interfaz.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... usuarios.o"
-	@echo "... usuarios.i"
-	@echo "... usuarios.s"
+	@echo "... src/AppConfig.o"
+	@echo "... src/AppConfig.i"
+	@echo "... src/AppConfig.s"
+	@echo "... src/ArgParser.o"
+	@echo "... src/ArgParser.i"
+	@echo "... src/ArgParser.s"
+	@echo "... src/crud.o"
+	@echo "... src/crud.i"
+	@echo "... src/crud.s"
+	@echo "... src/interfaz.o"
+	@echo "... src/interfaz.i"
+	@echo "... src/interfaz.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/usuarios.o"
+	@echo "... src/usuarios.i"
+	@echo "... src/usuarios.s"
 .PHONY : help
 
 

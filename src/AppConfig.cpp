@@ -1,4 +1,4 @@
-#include "include/AppConfig.h"
+#include "../include/AppConfig.h"
 
 using namespace std;
 

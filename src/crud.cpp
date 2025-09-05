@@ -1,5 +1,5 @@
-#include "include/crud.h"
-#include "include/AppConfig.h"
+#include "../include/crud.h"
+#include "../include/AppConfig.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -8,6 +8,10 @@
 #include <vector>
 #include <sstream>
 using namespace std;
+
+// Variables globales para almacenar datos en memoria
+vector<Usuario> g_usuarios;
+vector<Perfil> g_perfiles;
 
 static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }
 static inline void rtrim(string &s) { while (!s.empty() && isspace((unsigned char) s.back())) s.pop_back(); }
@@ -102,54 +106,96 @@ vector<Usuario> crear_arreglo() {
 }
 
 bool validarUsuario(const string& username, const string& password, Usuario& user) {
-    // Usar el archivo configurado desde AppConfig
-    string userFile = getUsuariosFile();
-    
-    // Si no hay archivo configurado, intentar leer desde .env como fallback
-    if (userFile.empty()) {
-        userFile = leerVariableEnv("USERS_FILE", ".env");
+    // Buscar usuario en los datos cargados en memoria
+    for (const auto& u : g_usuarios) {
+        if (u.username == username && u.password == password) {
+            user = u;  // Copiar datos del usuario encontrado
+            return true;
+        }
     }
     
-    if (userFile.empty()) {
-        cerr << "[ERROR] No se encontró archivo de usuarios configurado." << endl;
+    return false;  // Usuario no encontrado o credenciales incorrectas
+}
+
+// Función para limpiar la memoria
+void limpiarMemoria() {
+    g_usuarios.clear();
+    g_perfiles.clear();
+    cout << "[INFO] Memoria limpiada correctamente." << endl;
+}
+
+// Función para cargar datos de USUARIOS.txt y PERFILES.txt en memoria
+bool cargarDatosEnMemoria() {
+    // Limpiar memoria primero
+    limpiarMemoria();
+    
+    // Cargar usuarios desde data/USUARIOS.txt
+    string rutaUsuarios = "data/USUARIOS.txt";
+    ifstream fileUsuarios(rutaUsuarios);
+    if (!fileUsuarios.is_open()) {
+        cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << rutaUsuarios << endl;
         return false;
     }
-
-    ifstream file(userFile);
-    if (!file.is_open()) {
-        cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << userFile << endl;
-        return false;
-    }
-
+    
     string line;
-    while (getline(file, line)) {
+    while (getline(fileUsuarios, line)) {
         if (line.empty()) continue;
-
+        
         stringstream ss(line);
         Usuario u;
         string idStr;
-
+        
         if (getline(ss, idStr, ',') &&
             getline(ss, u.nombre, ',') &&
             getline(ss, u.username, ',') &&
             getline(ss, u.password, ',') &&
             getline(ss, u.perfil, ',')) {
-
+            
             try {
                 u.id = stoi(idStr);
-                
-                // Verificar credenciales
-                if (u.username == username && u.password == password) {
-                    user = u;  // Copiar datos del usuario encontrado
-                    file.close();
-                    return true;
-                }
+                g_usuarios.push_back(u);
             } catch (...) {
                 cerr << "[ADVERTENCIA] ID inválido en línea: " << line << endl;
             }
         }
     }
-
-    file.close();
-    return false;  // Usuario no encontrado o credenciales incorrectas
+    fileUsuarios.close();
+    
+    // Cargar perfiles desde data/PERFILES.txt
+    string rutaPerfiles = "data/PERFILES.txt";
+    ifstream filePerfiles(rutaPerfiles);
+    if (!filePerfiles.is_open()) {
+        cerr << "[ERROR] No se pudo abrir archivo de perfiles: " << rutaPerfiles << endl;
+        return false;
+    }
+    
+    while (getline(filePerfiles, line)) {
+        if (line.empty()) continue;
+        
+        size_t pos = line.find(';');
+        if (pos == string::npos) continue;
+        
+        Perfil p;
+        p.nombre = line.substr(0, pos);
+        string permisosStr = line.substr(pos + 1);
+        
+        // Parsear permisos separados por coma
+        stringstream ss(permisosStr);
+        string permiso;
+        while (getline(ss, permiso, ',')) {
+            try {
+                p.permisos.push_back(stoi(permiso));
+            } catch (...) {
+                cerr << "[ADVERTENCIA] Permiso inválido: " << permiso << endl;
+            }
+        }
+        
+        g_perfiles.push_back(p);
+    }
+    filePerfiles.close();
+    
+    cout << "[INFO] Datos cargados en memoria: " << g_usuarios.size() 
+         << " usuarios, " << g_perfiles.size() << " perfiles." << endl;
+    
+    return true;
 }

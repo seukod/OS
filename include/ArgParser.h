@@ -6,7 +6,7 @@
 struct Options {
     std::string user;
     std::string password;
-    std::string file;
+    std::string book;  // Cambiado de 'file' a 'book' para el nombre del libro
     bool help = false;
 };
 
@@ -14,6 +14,6 @@ struct Options {
 Options parseArguments(int argc, char* argv[]);
 void showHelp(const std::string& programName);
 void validateOptions(const Options& opts);
-bool isValidTxtFile(const std::string& filename);
+bool isValidBookName(const std::string& bookname);
 
 #endif // ARGPARSER_H
