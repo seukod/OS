@@ -4,8 +4,6 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>  // getenv
-#include <vector>
-#include <sstream>
 using namespace std;
 
 static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }

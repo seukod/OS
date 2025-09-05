@@ -1,9 +1,10 @@
 #include <iostream>
 #include <limits>
-#include "UI_Func.h"
-#include "Funciones_usuarios.h"
-#include "Texto.h"
-
+#include "interfaz.h"
+#include "usuarios.h"
+#include "crud.h"
+#include "ArgParser.h"
+#include "AppConfig.h"
 
 using namespace std;
 
