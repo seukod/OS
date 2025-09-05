@@ -5,13 +5,13 @@
 #include <vector>
 
 // Funciones de usuarios
-void ingresarUsuario();
-void eliminarUsuario();
+void ingresarUsuarioEnMemoria();
+void eliminarUsuarioEnMemoria();
 void listarUsuarios(const vector<Usuario>& usuarios);
 
 // Funciones de perfiles
-void ingresarPerfil();
-void eliminarPerfil();
-void listarPerfiles();
+void ingresarPerfilEnMemoria();
+void eliminarPerfilEnMemoria();
+void listarPerfilesEnMemoria();
 
 #endif // USUARIOS_H

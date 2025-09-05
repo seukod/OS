@@ -27,6 +27,7 @@ extern vector<Perfil> g_perfiles;
 // Funciones para manejo de memoria y carga de datos
 void limpiarMemoria();
 bool cargarDatosEnMemoria();
+bool guardarCambios();
 string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env");
 
 // Funciones existentes

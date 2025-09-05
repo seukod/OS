@@ -387,3 +387,227 @@ void listarPerfiles() {
         cout << "- " << linea << endl;
     }
 }
+
+// =============================================================================
+// NUEVAS FUNCIONES QUE TRABAJAN SOLO EN MEMORIA
+// =============================================================================
+
+static int getNextUserIdFromMemory() {
+    int maxId = 0;
+    for (const auto& usuario : g_usuarios) {
+        if (usuario.id > maxId) {
+            maxId = usuario.id;
+        }
+    }
+    return maxId + 1;
+}
+
+void ingresarUsuarioEnMemoria() {
+    int id = getNextUserIdFromMemory();
+
+    string nombre, username, password, perfil;
+    cout << "Nombre: ";
+    if (!getline(cin >> ws, nombre)) { 
+        cerr << "[ingresarUsuarioEnMemoria] Error de entrada." << endl; 
+        return; 
+    }
+    trim(nombre);
+
+    cout << "Username: ";
+    if (!getline(cin, username)) { 
+        cerr << "[ingresarUsuarioEnMemoria] Error de entrada." << endl; 
+        return; 
+    }
+    trim(username);
+
+    cout << "Contraseña: ";
+    if (!getline(cin, password)) { 
+        cerr << "[ingresarUsuarioEnMemoria] Error de entrada." << endl; 
+        return; 
+    }
+    trim(password);
+
+    cout << "Perfil: ";
+    if (!getline(cin, perfil)) { 
+        cerr << "[ingresarUsuarioEnMemoria] Error de entrada." << endl; 
+        return; 
+    }
+    trim(perfil);
+
+    if (nombre.empty() || perfil.empty()) {
+        cerr << "[ingresarUsuarioEnMemoria] Campos obligatorios vacíos (nombre, perfil)." << endl;
+        return;
+    }
+
+    // Verificar si el username ya existe
+    for (const auto& u : g_usuarios) {
+        if (u.username == username) {
+            cerr << "[ingresarUsuarioEnMemoria] Ya existe un usuario con ese username." << endl;
+            return;
+        }
+    }
+
+    // Crear nuevo usuario y agregarlo al vector en memoria
+    Usuario nuevoUsuario;
+    nuevoUsuario.id = id;
+    nuevoUsuario.nombre = nombre;
+    nuevoUsuario.username = username;
+    nuevoUsuario.password = password;
+    nuevoUsuario.perfil = perfil;
+
+    g_usuarios.push_back(nuevoUsuario);
+    cout << "Usuario ingresado en memoria con ID " << id << ". Use 'Guardar Cambios' para persistir." << endl;
+}
+
+void eliminarUsuarioEnMemoria() {
+    string target;
+    cout << "ID a eliminar (vacío o 'c' para cancelar): ";
+    if (!getline(cin >> ws, target)) { 
+        cerr << "[eliminarUsuarioEnMemoria] Error de entrada." << endl; 
+        return; 
+    }
+    trim(target);
+    if (target.empty() || target == "c" || target == "C") { 
+        cout << "Operación cancelada." << endl; 
+        return; 
+    }
+
+    int targetId = -1;
+    try {
+        targetId = stoi(target);
+        if (targetId < 0) throw std::invalid_argument("negativo");
+    } catch (...) {
+        cerr << "[eliminarUsuarioEnMemoria] ID inválido." << endl;
+        return;
+    }
+
+    // Buscar usuario en memoria
+    auto it = g_usuarios.begin();
+    int encontrados = 0;
+    while (it != g_usuarios.end()) {
+        if (it->id == targetId) {
+            encontrados++;
+            it = g_usuarios.erase(it);
+        } else {
+            ++it;
+        }
+    }
+
+    if (encontrados == 0) {
+        cout << "No se encontró usuario con ID " << targetId << "." << endl;
+        return;
+    }
+
+    cout << "Eliminado(s) " << encontrados << " usuario(s) de memoria. Use 'Guardar Cambios' para persistir." << endl;
+}
+
+void ingresarPerfilEnMemoria() {
+    string nombre, funcsRaw;
+    cout << "Nombre del perfil (deje vacío o escriba 'c' para cancelar): ";
+    if (!getline(cin >> ws, nombre)) {
+        cerr << "[ingresarPerfilEnMemoria] Error de entrada." << endl;
+        return;
+    }
+    trim(nombre);
+    if (nombre.empty() || nombre == "c" || nombre == "C") {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
+    cout << "Funcionalidades separadas por coma (p. ej., 0,1,3). Vacío para cancelar: ";
+    if (!getline(cin, funcsRaw)) {
+        cerr << "[ingresarPerfilEnMemoria] Error de entrada." << endl;
+        return;
+    }
+    trim(funcsRaw);
+    if (funcsRaw.empty()) {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
+    string funcs = normalizaFuncs(funcsRaw);
+    if (funcs.empty()) {
+        cerr << "[ingresarPerfilEnMemoria] Lista de funcionalidades inválida. Use sólo números separados por coma." << endl;
+        return;
+    }
+
+    // Verificar si ya existe un perfil con ese nombre en memoria
+    for (const auto& p : g_perfiles) {
+        if (p.nombre == nombre) {
+            cerr << "[ingresarPerfilEnMemoria] Ya existe un perfil con ese nombre en memoria." << endl;
+            return;
+        }
+    }
+
+    // Crear nuevo perfil y agregarlo al vector en memoria
+    Perfil nuevoPerfil;
+    nuevoPerfil.nombre = nombre;
+    
+    // Parsear permisos
+    stringstream ss(funcs);
+    string permiso;
+    while (getline(ss, permiso, ',')) {
+        try {
+            nuevoPerfil.permisos.push_back(stoi(permiso));
+        } catch (...) {
+            cerr << "[ingresarPerfilEnMemoria] Permiso inválido: " << permiso << endl;
+        }
+    }
+
+    g_perfiles.push_back(nuevoPerfil);
+    cout << "Perfil ingresado en memoria. Use 'Guardar Cambios' para persistir." << endl;
+}
+
+void eliminarPerfilEnMemoria() {
+    string targetName;
+    cout << "Nombre del perfil a eliminar (deje vacío o escriba 'c' para cancelar): ";
+    if (!getline(cin >> ws, targetName)) {
+        cerr << "[eliminarPerfilEnMemoria] Error de entrada." << endl;
+        return;
+    }
+    trim(targetName);
+    if (targetName.empty() || targetName == "c" || targetName == "C") {
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
+    // Buscar y eliminar perfil de memoria
+    auto it = g_perfiles.begin();
+    int removedCount = 0;
+    while (it != g_perfiles.end()) {
+        if (it->nombre == targetName) {
+            it = g_perfiles.erase(it);
+            removedCount++;
+        } else {
+            ++it;
+        }
+    }
+
+    if (removedCount == 0) {
+        cout << "No se encontró perfil con nombre " << targetName << " en memoria." << endl;
+        return;
+    }
+
+    cout << "Eliminado(s) " << removedCount << " perfil(es) de memoria. Use 'Guardar Cambios' para persistir." << endl;
+}
+
+void listarPerfilesEnMemoria() {
+    if (g_perfiles.empty()) {
+        cout << "No hay perfiles cargados en memoria." << endl;
+        return;
+    }
+
+    cout << "Perfiles en memoria:" << endl;
+    cout << "--------------------" << endl;
+
+    for (const auto& perfil : g_perfiles) {
+        cout << "- " << perfil.nombre << ";";
+        for (size_t i = 0; i < perfil.permisos.size(); i++) {
+            cout << perfil.permisos[i];
+            if (i < perfil.permisos.size() - 1) {
+                cout << ",";
+            }
+        }
+        cout << endl;
+    }
+}

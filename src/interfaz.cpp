@@ -27,6 +27,7 @@ void mostrarMenuPrincipal() {
     cout << "4. Ingresar Perfil" << endl;
     cout << "5. Eliminar Perfil" << endl;
     cout << "6. Listar Perfiles" << endl;
+    cout << "7. Guardar Cambios" << endl;
     cout << "0. Salir" << endl;
     cout << "=================================================" << endl;
     cout << "Seleccione una opción: ";
