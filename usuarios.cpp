@@ -212,6 +212,8 @@ void eliminarUsuario(vector<Usuario>& usuarios) {
     }
 }
 
+//QUITAR EL GUARDAR EN USUARIOS
+
 
 
 // Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
