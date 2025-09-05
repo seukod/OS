@@ -6,17 +6,15 @@ set(CMAKE_CXX_STANDARD 20)
 # Copia '.env' al directorio de build al configurar
 configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
-add_executable(OS 
-    main.cpp 
-    ArgParser.cpp 
-    AppConfig.cpp
-    interfaz.cpp
-    usuarios.cpp
-    crud.cpp
-    crud.h
-    interfaz.h
-    usuarios.h
-)
+
+# Archivos fuente y cabecera en las carpetas src/ e include/
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE HEADERS "include/*.h")
+
+add_executable(OS ${SOURCES} ${HEADERS})
+
+# Incluir la carpeta de headers
+target_include_directories(OS PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # Copia '.env' junto al binario tras compilar
 add_custom_command(TARGET OS POST_BUILD
