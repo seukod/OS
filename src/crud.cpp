@@ -113,7 +113,7 @@ bool validarUsuario(const string& username, const string& password, Usuario& use
             return true;
         }
     }
-    
+
     return false;  // Usuario no encontrado o credenciales incorrectas
 }
 

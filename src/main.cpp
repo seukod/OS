@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
             ejecutarMenuPrincipal(user, bookName);
             return 0;
         } else {
-            cerr << "\n❌ Usuario o contraseña incorrectos.\n";
+            cerr << "\n Usuario o contraseña incorrectos.\n";
             return 1;
         }
     }
