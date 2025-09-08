@@ -11,7 +11,9 @@ configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h")
 
-add_executable(OS ${SOURCES} ${HEADERS})
+add_executable(OS ${SOURCES} ${HEADERS}
+        src/menus/menu_funcion.cpp
+)
 
 # Incluir la carpeta de headers
 target_include_directories(OS PRIVATE ${CMAKE_SOURCE_DIR}/include)
