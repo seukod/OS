@@ -1,7 +1,7 @@
-CMakeFiles/OS.dir/src/interfaz.cpp.o: \
- /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/interfaz.cpp \
+CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: \
+ /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/menus/menu_funcion.cpp \
  /usr/include/stdc-predef.h \
- /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/../include/interfaz.h \
+ /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/include/../include/interfaz.h \
  /usr/include/c++/15.2.1/string \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -110,7 +110,7 @@ CMakeFiles/OS.dir/src/interfaz.cpp.o: \
  /usr/include/c++/15.2.1/bits/uses_allocator.h \
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h \
  /usr/include/c++/15.2.1/tuple /usr/include/c++/15.2.1/bits/ranges_util.h \
- /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/../include/utils/input_utils.h \
+ /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/menus/../../include/menus/menu_funcion.h \
  /usr/include/c++/15.2.1/iostream /usr/include/c++/15.2.1/ostream \
  /usr/include/c++/15.2.1/bits/ostream.h /usr/include/c++/15.2.1/ios \
  /usr/include/c++/15.2.1/exception \
@@ -153,4 +153,4 @@ CMakeFiles/OS.dir/src/interfaz.cpp.o: \
  /usr/include/c++/15.2.1/bits/locale_facets.tcc \
  /usr/include/c++/15.2.1/bits/basic_ios.tcc \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
- /usr/include/c++/15.2.1/bits/istream.tcc /usr/include/c++/15.2.1/limits
+ /usr/include/c++/15.2.1/bits/istream.tcc

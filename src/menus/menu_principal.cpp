@@ -75,7 +75,6 @@ void mostrarEnConstruccion(const string& funcionalidad) {
     cout << "              EN CONSTRUCCIÓN                    " << endl;
     cout << "=================================================" << endl;
     cout << "La funcionalidad '" << funcionalidad << "' está en construcción." << endl;
-    cout << "Será implementada en futuras entregas." << endl;
     cout << "=================================================" << endl;
     pausarPantalla();
 }

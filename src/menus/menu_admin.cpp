@@ -1,7 +1,7 @@
 #include "../../include/menus/menu_admin.h"
 #include "../../include/interfaz.h"
 #include "../../include/usuarios.h"
-#include "../../include/crud.h"
+#include "../../include/users_auth.h"
 #include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <limits>

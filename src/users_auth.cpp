@@ -1,4 +1,4 @@
-#include "../include/crud.h"
+#include "../include/users_auth.h"
 #include "../include/AppConfig.h"
 #include "../include/utils/string_utils.h"
 #include <iostream>
@@ -76,7 +76,7 @@ bool cargarDatosEnMemoria() {
     
     ifstream fileUsuarios(rutaUsuarios);
     if (!fileUsuarios.is_open()) {
-        cerr << "[ERROR] No se pudo abrir archivo de usuarios: " << rutaUsuarios << endl;
+        cerr << "[ERROR] No se pudo abrir archivo de usuarios." << endl;
         return false;
     }
     
@@ -112,7 +112,7 @@ bool cargarDatosEnMemoria() {
     
     ifstream filePerfiles(rutaPerfiles);
     if (!filePerfiles.is_open()) {
-        cerr << "[ERROR] No se pudo abrir archivo de perfiles: " << rutaPerfiles << endl;
+        cerr << "[ERROR] No se pudo abrir archivo de perfiles." << endl;
         return false;
     }
     
@@ -141,8 +141,7 @@ bool cargarDatosEnMemoria() {
     }
     filePerfiles.close();
     
-    cout << "[INFO] Datos cargados en memoria: " << g_usuarios.size() 
-         << " usuarios, " << g_perfiles.size() << " perfiles." << endl;
+    cout << "[INFO] Datos cargados en memoria correctamente." << endl;
     
     return true;
 }
@@ -159,7 +158,7 @@ bool guardarCambios() {
     
     ofstream fileUsuarios(rutaUsuarios, ios::trunc);
     if (!fileUsuarios.is_open()) {
-        cerr << "[ERROR] No se pudo abrir archivo de usuarios para escritura: " << rutaUsuarios << endl;
+        cerr << "[ERROR] No se pudo abrir archivo de usuarios para escritura." << endl;
         return false;
     }
     
@@ -178,7 +177,7 @@ bool guardarCambios() {
     
     ofstream filePerfiles(rutaPerfiles, ios::trunc);
     if (!filePerfiles.is_open()) {
-        cerr << "[ERROR] No se pudo abrir archivo de perfiles para escritura: " << rutaPerfiles << endl;
+        cerr << "[ERROR] No se pudo abrir archivo de perfiles para escritura." << endl;
         return false;
     }
     
@@ -194,8 +193,7 @@ bool guardarCambios() {
     }
     filePerfiles.close();
     
-    cout << "[INFO] Cambios guardados exitosamente. " << g_usuarios.size() 
-         << " usuarios y " << g_perfiles.size() << " perfiles guardados." << endl;
+    cout << "[INFO] Cambios guardados exitosamente." << endl;
     
     return true;
 }

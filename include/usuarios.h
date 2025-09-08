@@ -1,7 +1,7 @@
 #ifndef USUARIOS_H
 #define USUARIOS_H
 
-#include "crud.h"
+#include "users_auth.h"
 #include <vector>
 
 // Funciones de usuarios
