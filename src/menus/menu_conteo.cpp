@@ -5,8 +5,7 @@
 #include <fstream>
 #include <cctype>
 #include <limits>
-#include <cstdlib>
-
+#include <cstdlib>  // para getenv
 using namespace std;
 
 string leerVariableEnv(const string& nombre) {
@@ -18,16 +17,12 @@ string leerVariableEnv(const string& nombre) {
 void contarArchivo(const string& filePath, int& vocales, int& consonantes, int& especiales, int& palabras) {
     vocales = consonantes = especiales = palabras = 0;
     bool enPalabra = false;
-    ifstream file(leer + filePath);
+    string ingreso = leerVariableEnv("BOOKS_DIR") + filePath;
+    ifstream file(ingreso);
     if (!file.is_open()) {
-        cerr << "[ERROR] No se pudo abrir el archivo: " << filePath << endl;
+        cerr << "[ERROR] No se pudo abrir el archivo: " << ingreso << endl;
         return;
     };
-    if (!file.is_open()) {
-        cerr << "[ERROR] No se pudo abrir el archivo: " << filePath << endl;
-        return;
-    }
-
     char c;
     while (file.get(c)) {
         if (isalpha(static_cast<unsigned char>(c))) {
