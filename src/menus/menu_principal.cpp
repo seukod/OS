@@ -1,5 +1,6 @@
 #include "../../include/menus/menu_principal.h"
 #include "../../include/menus/menu_admin.h"
+#include "../../include/menus/menu_palindromo.h"
 #include "../../include/interfaz.h"
 #include <iostream>
 #include <algorithm>
@@ -131,7 +132,7 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 mostrarEnConstruccion("Juego");
                 break;
             case 4:
-                mostrarEnConstruccion("Es palindromo?");
+                ejecutarMenuPalindromo();
                 break;
             case 5:
                 mostrarEnConstruccion("Calcula f(x)");
