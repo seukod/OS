@@ -3,6 +3,7 @@
 //
 
 #include "../include/interfaz.h"
+#include "../include/utils/input_utils.h"
 #include <iostream>
 #include <limits>
 
@@ -14,34 +15,6 @@ void mostrarBienvenida() {
     cout << "         	      MENÚ PRINCIPAL                  " << endl;
     cout << "=================================================" << endl;
     cout << endl;
-}
-
-void mostrarMenuPrincipal() {
-    limpiarPantalla();
-    cout << "=================================================" << endl;
-    cout << "              ADMINISTRACION                     " << endl;
-    cout << "=================================================" << endl;
-    cout << "1. Ingresar Usuario" << endl;
-    cout << "2. Eliminar Usuario" << endl;
-    cout << "3. Listar Usuarios" << endl;
-    cout << "4. Ingresar Perfil" << endl;
-    cout << "5. Eliminar Perfil" << endl;
-    cout << "6. Listar Perfiles" << endl;
-    cout << "7. Guardar Cambios" << endl;
-    cout << "0. Salir" << endl;
-    cout << "=================================================" << endl;
-    cout << "Seleccione una opción: ";
-}
-
-int leerOpcion() {
-    int opcion;
-    while(!(cin >> opcion)) {
-        mostrarMensajeError("Entrada inválida. Por favor ingrese un número.");
-        limpiarBuffer();
-        cout << "Seleccione una opción: ";
-    }
-    limpiarBuffer();
-    return opcion;
 }
 
 void mostrarMensajeError(const string& mensaje) {
@@ -65,7 +38,7 @@ void mostrarMensajeAdvertencia(const string& mensaje) {
 void mostrarMensajeDespedida() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "			HASTA LUEGO	              " << endl;
+    cout << "			HASTA LUEGO	                         " << endl;
     cout << "=================================================" << endl;
 }
 

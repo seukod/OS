@@ -5,25 +5,15 @@
 #include <cstdlib>
 #include <cctype>
 #include "../include/crud.h"
+#include "../include/utils/string_utils.h"
 
 using namespace std;
 
-static inline void ltrim(string &s) { while (!s.empty() && isspace((unsigned char) s.front())) s.erase(s.begin()); }
-static inline void rtrim(string &s) { while (!s.empty() && isspace((unsigned char) s.back())) s.pop_back(); }
-
-static inline void trim(string &s) {
-    ltrim(s);
-    rtrim(s);
-}
-
-static inline string stripQuotes(string v) {
-    if (v.size() >= 2 && ((v.front() == '"' && v.back() == '"') || (v.front() == '\'' && v.back() == '\''))) {
-        return v.substr(1, v.size() - 2);
-    }
-    return v;
-}
-
 // Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
+
+// =============================================================================
+// NUEVAS FUNCIONES QUE TRABAJAN SOLO EN MEMORIA
+// =============================================================================
 
 
 static int getNextUserId(const string& filePath) {

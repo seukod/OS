@@ -11,8 +11,6 @@ using namespace std;
 
 // Funciones de interfaz principal
 void mostrarBienvenida();
-void mostrarMenuPrincipal();
-int leerOpcion();
 void mostrarMensajeDespedida();
 
 // Funciones de mensajes

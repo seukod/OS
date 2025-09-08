@@ -345,6 +345,54 @@ src/usuarios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/usuarios.cpp.s
 .PHONY : src/usuarios.cpp.s
 
+src/utils/input_utils.o: src/utils/input_utils.cpp.o
+.PHONY : src/utils/input_utils.o
+
+# target to build an object file
+src/utils/input_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/input_utils.cpp.o
+.PHONY : src/utils/input_utils.cpp.o
+
+src/utils/input_utils.i: src/utils/input_utils.cpp.i
+.PHONY : src/utils/input_utils.i
+
+# target to preprocess a source file
+src/utils/input_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/input_utils.cpp.i
+.PHONY : src/utils/input_utils.cpp.i
+
+src/utils/input_utils.s: src/utils/input_utils.cpp.s
+.PHONY : src/utils/input_utils.s
+
+# target to generate assembly for a file
+src/utils/input_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/input_utils.cpp.s
+.PHONY : src/utils/input_utils.cpp.s
+
+src/utils/string_utils.o: src/utils/string_utils.cpp.o
+.PHONY : src/utils/string_utils.o
+
+# target to build an object file
+src/utils/string_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/string_utils.cpp.o
+.PHONY : src/utils/string_utils.cpp.o
+
+src/utils/string_utils.i: src/utils/string_utils.cpp.i
+.PHONY : src/utils/string_utils.i
+
+# target to preprocess a source file
+src/utils/string_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/string_utils.cpp.i
+.PHONY : src/utils/string_utils.cpp.i
+
+src/utils/string_utils.s: src/utils/string_utils.cpp.s
+.PHONY : src/utils/string_utils.s
+
+# target to generate assembly for a file
+src/utils/string_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/utils/string_utils.cpp.s
+.PHONY : src/utils/string_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -381,6 +429,12 @@ help:
 	@echo "... src/usuarios.o"
 	@echo "... src/usuarios.i"
 	@echo "... src/usuarios.s"
+	@echo "... src/utils/input_utils.o"
+	@echo "... src/utils/input_utils.i"
+	@echo "... src/utils/input_utils.s"
+	@echo "... src/utils/string_utils.o"
+	@echo "... src/utils/string_utils.i"
+	@echo "... src/utils/string_utils.s"
 .PHONY : help
 
 

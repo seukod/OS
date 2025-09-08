@@ -30,8 +30,7 @@ bool cargarDatosEnMemoria();
 bool guardarCambios();
 string leerVariableEnv(const string& nombreVariable, const string& archivoEnv = ".env");
 
-// Funciones existentes
-vector<Usuario> crear_arreglo();
+// Funciones de validación
 bool validarUsuario(const string& username, const string& password, Usuario& user);
 
 #endif // CRUD_H

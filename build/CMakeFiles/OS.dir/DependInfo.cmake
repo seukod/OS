@@ -17,6 +17,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/menus/menu_palindromo.cpp" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
   "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/menus/menu_principal.cpp" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
   "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/usuarios.cpp" "CMakeFiles/OS.dir/src/usuarios.cpp.o" "gcc" "CMakeFiles/OS.dir/src/usuarios.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/utils/input_utils.cpp" "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o" "gcc" "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o.d"
+  "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/src/utils/string_utils.cpp" "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o" "gcc" "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o.d"
   "" "OS" "gcc" "CMakeFiles/OS.dir/link.d"
   )
 
