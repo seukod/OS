@@ -22,10 +22,36 @@ cmake ..
 
 # Compilar
 make
-
-# Ejecutar
-./OS
 ```
+
+### Ejecución del programa principal
+
+El programa principal acepta argumentos de ejecución obligatorios:
+
+```bash
+./OS -u <usuario> -p <contraseña> -f <archivo>
+```
+
+**Argumentos:**
+- `-u`: Nombre de usuario para autenticación
+- `-p`: Contraseña del usuario
+- `-f`: Archivo de texto a evaluar
+
+Además, se implementó un argumento de ayuda: 
+- `-h`: Muestra un menú de ayuda donde aparece cómo ejecutar el programa
+
+### Ejecución del multiplicador de matrices
+
+El programa auxiliar para multiplicación de matrices se ejecuta de la siguiente manera:
+
+```bash
+./multi "<ruta_completa_archivo_A>" "<ruta_completa_archivo_B>" "<separador>"
+```
+Y contiene los siguientes parámetros:
+- Primer argumento: Ruta completa del archivo A.TXT que contiene la primera matriz
+- Segundo argumento: Ruta completa del archivo B.TXT que contiene la segunda matriz
+- Tercer argumento: Carácter separador utilizado en las matrices
+
 
 ## Configuración de Variables de Entorno
 
