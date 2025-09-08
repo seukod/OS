@@ -83,17 +83,17 @@ bool cargarDatosEnMemoria() {
     string line;
     while (getline(fileUsuarios, line)) {
         if (line.empty()) continue;
-        
+
         stringstream ss(line);
         Usuario u;
         string idStr;
-        
+
         if (getline(ss, idStr, ',') &&
             getline(ss, u.nombre, ',') &&
             getline(ss, u.username, ',') &&
             getline(ss, u.password, ',') &&
             getline(ss, u.perfil, ',')) {
-            
+
             try {
                 u.id = stoi(idStr);
                 g_usuarios.push_back(u);
@@ -118,14 +118,14 @@ bool cargarDatosEnMemoria() {
     
     while (getline(filePerfiles, line)) {
         if (line.empty()) continue;
-        
+
         size_t pos = line.find(';');
         if (pos == string::npos) continue;
-        
+
         Perfil p;
         p.nombre = line.substr(0, pos);
         string permisosStr = line.substr(pos + 1);
-        
+
         // Parsear permisos separados por coma
         stringstream ss(permisosStr);
         string permiso;
@@ -136,20 +136,20 @@ bool cargarDatosEnMemoria() {
                 cerr << "[ADVERTENCIA] Permiso inválido: " << permiso << endl;
             }
         }
-        
+
         g_perfiles.push_back(p);
     }
     filePerfiles.close();
     
     cout << "[INFO] Datos cargados en memoria correctamente." << endl;
-    
+
     return true;
 }
 
 // Función para guardar todos los cambios de memoria a los archivos
 bool guardarCambios() {
     cout << "[INFO] Guardando cambios en archivos..." << endl;
-    
+
     // Guardar usuarios
     string rutaUsuarios = leerVariableEnv("USERS_FILE");
     if (rutaUsuarios.empty()) {
@@ -163,8 +163,8 @@ bool guardarCambios() {
     }
     
     for (const auto& usuario : g_usuarios) {
-        fileUsuarios << usuario.id << "," << usuario.nombre << "," 
-                    << usuario.username << "," << usuario.password << "," 
+        fileUsuarios << usuario.id << "," << usuario.nombre << ","
+                    << usuario.username << "," << usuario.password << ","
                     << usuario.perfil << endl;
     }
     fileUsuarios.close();
@@ -194,6 +194,6 @@ bool guardarCambios() {
     filePerfiles.close();
     
     cout << "[INFO] Cambios guardados exitosamente." << endl;
-    
+
     return true;
 }

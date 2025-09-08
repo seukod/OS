@@ -45,6 +45,10 @@ Además, se implementó un argumento de ayuda:
 El programa auxiliar para multiplicación de matrices se ejecuta de la siguiente manera:
 
 ```bash
+# Limpiar y compilar 
+make clean && make
+
+# Ejecutar el multiplicador de matrices
 ./multi "<ruta_completa_archivo_A>" "<ruta_completa_archivo_B>" "<separador>"
 ```
 Y contiene los siguientes parámetros:
@@ -52,56 +56,56 @@ Y contiene los siguientes parámetros:
 - Segundo argumento: Ruta completa del archivo B.TXT que contiene la segunda matriz
 - Tercer argumento: Carácter separador utilizado en las matrices
 
-### 🧩 Funcionalidades Nuevas
+
 
 ---
 
-## ✅ Administración de Usuarios y Perfiles
+##  Administración de Usuarios y Perfiles
 
 - Permite **crear**, **eliminar** y **listar** usuarios.
 - Permite **crear**, **eliminar** y **listar** perfiles.
 - Los usuarios se asocian a perfiles con roles específicos.
 - No se permite eliminar el perfil `"ADMIN"` ni usuarios con ese perfil.
-- ✔️ Funcionalidad completa e implementada.
+- Funcionalidad completa e implementada.
 
 ---
 
-## ✅ Multiplicación de Matrices NxN
+##  Multiplicación de Matrices NxN
 
 - Permite cargar y multiplicar matrices cuadradas de tamaño `N x N`.
 - Actualmente **no está conectada al sistema principal** (menú).
-- ✔️ Funcionalidad lista, pendiente de integración.
+- Funcionalidad lista, pendiente de integración.
 
 ---
 
-## 🚧 Juego
+##  Juego
 
-- Mini-juego planificado dentro del sistema.
+
 - En desarrollo.
-- ❌ Funcionalidad en construcción.
+-  Funcionalidad en construcción.
 
 ---
 
-## ✅ ¿Es palíndromo?
+##  ¿Es palíndromo?
 
 - Abre una interfaz para ingresar un texto.
 - Opciones:
   1. **Validar** si el texto ingresado es o no un palíndromo.
   2. **Cancelar** para volver al menú principal.
-- ✔️ Funcionalidad lista e implementada.
+-  Funcionalidad lista e implementada.
 
 ---
 
-## ✅ Calcular f(x) = x² + 2x + 8
+##  Calcular f(x) = x² + 2x + 8
 
 - Interfaz para ingresar un número real `x` y calcular `f(x) = x² + 2x + 8`.
 - Muestra el resultado con detalle.
 - Permite **calcular múltiples veces** hasta que el usuario decida volver.
-- ✔️ Funcionalidad lista e implementada.
+- Funcionalidad lista e implementada.
 
 ---
 
-## ✅ Conteo sobre texto
+##  Conteo sobre texto
 
 - Interfaz para cargar un texto desde archivo.
 - Entrega resumen de conteo con:
@@ -110,7 +114,7 @@ Y contiene los siguientes parámetros:
   - Cantidad de **caracteres especiales**
   - Cantidad de **palabras**
 - Incluye opción para **volver al menú principal**.
-- ✔️ Funcionalidad lista e implementada.
+-  Funcionalidad lista e implementada.
 
 
 
