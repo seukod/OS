@@ -52,6 +52,67 @@ Y contiene los siguientes parámetros:
 - Segundo argumento: Ruta completa del archivo B.TXT que contiene la segunda matriz
 - Tercer argumento: Carácter separador utilizado en las matrices
 
+### 🧩 Funcionalidades Nuevas
+
+---
+
+## ✅ Administración de Usuarios y Perfiles
+
+- Permite **crear**, **eliminar** y **listar** usuarios.
+- Permite **crear**, **eliminar** y **listar** perfiles.
+- Los usuarios se asocian a perfiles con roles específicos.
+- No se permite eliminar el perfil `"ADMIN"` ni usuarios con ese perfil.
+- ✔️ Funcionalidad completa e implementada.
+
+---
+
+## ✅ Multiplicación de Matrices NxN
+
+- Permite cargar y multiplicar matrices cuadradas de tamaño `N x N`.
+- Actualmente **no está conectada al sistema principal** (menú).
+- ✔️ Funcionalidad lista, pendiente de integración.
+
+---
+
+## 🚧 Juego
+
+- Mini-juego planificado dentro del sistema.
+- En desarrollo.
+- ❌ Funcionalidad en construcción.
+
+---
+
+## ✅ ¿Es palíndromo?
+
+- Abre una interfaz para ingresar un texto.
+- Opciones:
+  1. **Validar** si el texto ingresado es o no un palíndromo.
+  2. **Cancelar** para volver al menú principal.
+- ✔️ Funcionalidad lista e implementada.
+
+---
+
+## ✅ Calcular f(x) = x² + 2x + 8
+
+- Interfaz para ingresar un número real `x` y calcular `f(x) = x² + 2x + 8`.
+- Muestra el resultado con detalle.
+- Permite **calcular múltiples veces** hasta que el usuario decida volver.
+- ✔️ Funcionalidad lista e implementada.
+
+---
+
+## ✅ Conteo sobre texto
+
+- Interfaz para cargar un texto desde archivo.
+- Entrega resumen de conteo con:
+  - Cantidad de **vocales**
+  - Cantidad de **consonantes**
+  - Cantidad de **caracteres especiales**
+  - Cantidad de **palabras**
+- Incluye opción para **volver al menú principal**.
+- ✔️ Funcionalidad lista e implementada.
+
+
 
 ## Configuración de Variables de Entorno
 
@@ -72,6 +133,12 @@ La aplicación requiere un archivo `.env` ubicado en el directorio de ejecución
 - **Formato**: Ruta absoluta al archivo de texto
 - **Valor actual**: `/Users/francisco/CLionProjects/OS/PERFILES.txt`
 - **Estructura del archivo**: `NombrePerfil;funcionalidad1,funcionalidad2,funcionalidadN`
+
+### BOOKS_PATH
+- **Propósito**: Ruta relativa hacia la carpeta de libros en formato .txt
+- **Formato**: Prefijo de ruta para ser concatenado con el nombre del libro.txt a revisar
+- **Valor actual**: `../data/libros/`
+
 
 ### Configuración Actual
 
