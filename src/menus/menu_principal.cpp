@@ -2,6 +2,7 @@
 #include "../../include/menus/menu_admin.h"
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/menus/menu_funcion.h"
+#include "../../include/menus/menu_conteo.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include <iostream>
@@ -129,7 +130,8 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 calcular_f();
                 break;
             case 6:
-                mostrarEnConstruccion("Conteo sobre texto");
+                //mostrarEnConstruccion("Conteo sobre texto");
+                mostrarInterfazConteo(libro);
                 break;
             default:
                 mostrarMensajeError("Opción inválida.");
