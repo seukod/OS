@@ -249,6 +249,30 @@ src/menus/menu_admin.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_admin.cpp.s
 .PHONY : src/menus/menu_admin.cpp.s
 
+src/menus/menu_conteo.o: src/menus/menu_conteo.cpp.o
+.PHONY : src/menus/menu_conteo.o
+
+# target to build an object file
+src/menus/menu_conteo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o
+.PHONY : src/menus/menu_conteo.cpp.o
+
+src/menus/menu_conteo.i: src/menus/menu_conteo.cpp.i
+.PHONY : src/menus/menu_conteo.i
+
+# target to preprocess a source file
+src/menus/menu_conteo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.i
+.PHONY : src/menus/menu_conteo.cpp.i
+
+src/menus/menu_conteo.s: src/menus/menu_conteo.cpp.s
+.PHONY : src/menus/menu_conteo.s
+
+# target to generate assembly for a file
+src/menus/menu_conteo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.s
+.PHONY : src/menus/menu_conteo.cpp.s
+
 src/menus/menu_funcion.o: src/menus/menu_funcion.cpp.o
 .PHONY : src/menus/menu_funcion.o
 
@@ -441,6 +465,9 @@ help:
 	@echo "... src/menus/menu_admin.o"
 	@echo "... src/menus/menu_admin.i"
 	@echo "... src/menus/menu_admin.s"
+	@echo "... src/menus/menu_conteo.o"
+	@echo "... src/menus/menu_conteo.i"
+	@echo "... src/menus/menu_conteo.s"
 	@echo "... src/menus/menu_funcion.o"
 	@echo "... src/menus/menu_funcion.i"
 	@echo "... src/menus/menu_funcion.s"
