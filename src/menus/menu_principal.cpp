@@ -113,7 +113,8 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 mostrarMensajeDespedida();
                 break;
             case 1:
-                ejecutarMenuAdmin(usuario);
+                //ejecutarMenuAdmin(usuario); para más adelante
+                mostrarEnConstruccion("Admin Users");
                 break;
             case 2:
                 mostrarEnConstruccion("Multi Matrices NxN");
