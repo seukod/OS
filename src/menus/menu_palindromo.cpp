@@ -1,5 +1,6 @@
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/interfaz.h"
+#include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <algorithm>
 #include <cctype>
@@ -49,7 +50,7 @@ void ejecutarMenuPalindromo() {
         cout << "=================================================" << endl;
         cout << "Seleccione una opción: ";
         
-        opcion = leerOpcionPalindromo();
+        opcion = leerOpcion();
         
         switch(opcion) {
             case 1: {
@@ -88,17 +89,6 @@ void ejecutarMenuPalindromo() {
                 break;
         }
     } while(opcion != 1 && opcion != 2);
-}
-
-int leerOpcionPalindromo() {
-    int opcion;
-    while(!(cin >> opcion)) {
-        mostrarMensajeError("Entrada inválida. Por favor ingrese un número.");
-        limpiarBuffer();
-        cout << "Seleccione una opción: ";
-    }
-    limpiarBuffer();
-    return opcion;
 }
 
 string limpiarTexto(const string& texto) {

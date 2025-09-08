@@ -11,10 +11,6 @@ using namespace std;
 
 // Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
 
-// =============================================================================
-// NUEVAS FUNCIONES QUE TRABAJAN SOLO EN MEMORIA
-// =============================================================================
-
 
 static int getNextUserId(const string& filePath) {
     ifstream in(filePath);

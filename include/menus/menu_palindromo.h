@@ -8,7 +8,6 @@ using namespace std;
 // Funciones del menú de palíndromo
 void mostrarMenuPalindromo();
 void ejecutarMenuPalindromo();
-int leerOpcionPalindromo();
 bool esPalindromo(const string& texto);
 string limpiarTexto(const string& texto);
 

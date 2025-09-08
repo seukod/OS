@@ -2,6 +2,7 @@
 #include "../../include/interfaz.h"
 #include "../../include/usuarios.h"
 #include "../../include/crud.h"
+#include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <limits>
 
@@ -24,17 +25,6 @@ void mostrarMenuAdmin() {
     cout << "Seleccione una opción: ";
 }
 
-int leerOpcionAdmin() {
-    int opcion;
-    while(!(cin >> opcion)) {
-        mostrarMensajeError("Entrada inválida. Por favor ingrese un número.");
-        limpiarBuffer();
-        cout << "Seleccione una opción: ";
-    }
-    limpiarBuffer();
-    return opcion;
-}
-
 void ejecutarMenuAdmin(const Usuario& usuario) {
     mostrarTitulo("MODO ADMINISTRACIÓN");
     cout << "Usuario administrador: " << usuario.nombre << endl;
@@ -43,7 +33,7 @@ void ejecutarMenuAdmin(const Usuario& usuario) {
     int opcion;
     do {
         mostrarMenuAdmin();
-        opcion = leerOpcionAdmin();
+        opcion = leerOpcion();
 
         switch(opcion) {
             case 0:

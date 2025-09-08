@@ -8,6 +8,5 @@ using namespace std;
 // Funciones del menú de administración (el actual)
 void mostrarMenuAdmin();
 void ejecutarMenuAdmin(const Usuario& usuario);
-int leerOpcionAdmin();
 
 #endif // MENU_ADMIN_H

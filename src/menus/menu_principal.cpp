@@ -2,6 +2,7 @@
 #include "../../include/menus/menu_admin.h"
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/interfaz.h"
+#include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <algorithm>
 
@@ -67,17 +68,6 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
     cout << "Seleccione una opción: ";
 }
 
-int leerOpcionPrincipal() {
-    int opcion;
-    while(!(cin >> opcion)) {
-        mostrarMensajeError("Entrada inválida. Por favor ingrese un número.");
-        limpiarBuffer();
-        cout << "Seleccione una opción: ";
-    }
-    limpiarBuffer();
-    return opcion;
-}
-
 void mostrarEnConstruccion(const string& funcionalidad) {
     limpiarPantalla();
     cout << "=================================================" << endl;
@@ -98,7 +88,7 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
     int opcion;
     do {
         mostrarMenuPrincipal(usuario);
-        opcion = leerOpcionPrincipal();
+        opcion = leerOpcion();
 
         // Validar si la opción está dentro de los permisos del perfil
         bool permitido = false;

@@ -9,7 +9,6 @@ using namespace std;
 // Funciones del menú principal
 void mostrarMenuPrincipal(const Usuario& usuario);
 void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro);
-int leerOpcionPrincipal();
 
 // Funciones para las opciones del menú
 void mostrarEnConstruccion(const string& funcionalidad);

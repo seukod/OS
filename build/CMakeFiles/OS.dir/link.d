@@ -11,6 +11,8 @@ OS: \
   CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o \
   CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o \
   CMakeFiles/OS.dir/src/usuarios.cpp.o \
+  CMakeFiles/OS.dir/src/utils/input_utils.cpp.o \
+  CMakeFiles/OS.dir/src/utils/string_utils.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -62,6 +64,10 @@ CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o:
 CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o:
 
 CMakeFiles/OS.dir/src/usuarios.cpp.o:
+
+CMakeFiles/OS.dir/src/utils/input_utils.cpp.o:
+
+CMakeFiles/OS.dir/src/utils/string_utils.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

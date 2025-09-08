@@ -18,6 +18,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
   "CMakeFiles/OS.dir/src/usuarios.cpp.o"
   "CMakeFiles/OS.dir/src/usuarios.cpp.o.d"
+  "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o"
+  "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o.d"
+  "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o"
+  "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o.d"
   "OS"
   "OS.pdb"
 )
