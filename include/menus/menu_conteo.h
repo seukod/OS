@@ -6,6 +6,7 @@
 using namespace std;
 
 // Estructura para almacenar los resultados del conteo
+// sugerencia struct de chatgpt
 struct ConteoResultado {
     int vocales;
     int consonantes;

@@ -81,7 +81,7 @@ void mostrarEnConstruccion(const string& funcionalidad) {
 }
 
 void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
-    cout << "\n✅ Inicio de sesión exitoso." << endl;
+    cout << "\nInicio de sesión exitoso." << endl;
     cout << "Bienvenido, " << usuario.nombre << endl;
     cout << "Libro seleccionado: " << libro << endl;
     pausarPantalla();

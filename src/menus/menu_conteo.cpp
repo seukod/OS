@@ -1,6 +1,7 @@
 #include "../../include/menus/menu_conteo.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
+#include "../../include/users_auth.h"
 #include <iostream>
 #include <fstream>
 #include <cctype>
@@ -108,12 +109,19 @@ ConteoResultado contarElementosTexto(const string& texto) {
 }
 
 string leerLibro(const string& nombreLibro) {
-    // Usar ruta relativa directa a los libros
-    string rutaCompleta = "../data/libros/" + nombreLibro;
+    // Leer la ruta de los libros desde el archivo .env
+    string rutaLibros = leerVariableEnv("BOOKS_PATH", ".env");
+    if (rutaLibros.empty()) {
+        cerr << "[ERROR] No se pudo leer la variable BOOKS_PATH del archivo .env" << endl;
+        return "";
+    }
+    
+    // Construir la ruta completa del libro
+    string rutaCompleta = rutaLibros + nombreLibro;
     
     ifstream archivo(rutaCompleta);
     if (!archivo.is_open()) {
-        cerr << "[ERROR] No se pudo abrir el archivo: " << rutaCompleta << endl;
+        cerr << "[ERROR] No se pudo abrir el archivo." << endl;
         return "";
     }
     
