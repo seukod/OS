@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Funciones del menú de administración (el actual)
+// Funciones del menú de administración
 void mostrarMenuAdmin();
 void ejecutarMenuAdmin(const Usuario& usuario);
 

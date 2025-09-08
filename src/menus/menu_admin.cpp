@@ -47,7 +47,7 @@ void ejecutarMenuAdmin(const Usuario& usuario) {
                 eliminarUsuarioEnMemoria();
                 break;
             case 3:
-                listarUsuarios(g_usuarios);
+                listarUsuarios();
                 break;
             case 4:
                 ingresarPerfilEnMemoria();

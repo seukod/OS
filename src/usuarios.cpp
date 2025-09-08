@@ -9,6 +9,10 @@
 
 using namespace std;
 
+// Declaraciones adelantadas de funciones auxiliares
+int contarUsuariosConPerfil(const string& perfil);
+bool esPerfilProtegido(const string& nombrePerfil);
+
 // Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
 
 static int getNextUserId(const string& filePath) {
@@ -45,17 +49,17 @@ static bool fileEndsWithNewline(const string& path) {
 }
 
 
-// Lista usuarios leyendo 'USERS_FILE' y esperando líneas: id,nombre,username,password,perfil
-void listarUsuarios(const vector<Usuario>& usuarios) {
-    if (usuarios.empty()) {
-        cerr << "[listarUsuarios] No hay usuarios cargados." << endl;
+// Lista usuarios desde la memoria (g_usuarios)
+void listarUsuarios() {
+    if (g_usuarios.empty()) {
+        cerr << "[listarUsuarios] No hay usuarios cargados en memoria." << endl;
         return;
     }
 
     cout << "ID\tNombre\t\tPerfil" << endl;
     cout << "--------------------------------" << endl;
 
-    for (const auto& u : usuarios) {
+    for (const auto& u : g_usuarios) {
         cout << u.id << "\t" << u.nombre << "\t" << u.perfil << endl;
     }
 }
@@ -179,7 +183,42 @@ void eliminarUsuarioEnMemoria() {
         return;
     }
 
-    // Buscar usuario en memoria
+    // Buscar usuario en memoria para validaciones
+    Usuario* usuarioAEliminar = nullptr;
+    for (auto& usuario : g_usuarios) {
+        if (usuario.id == targetId) {
+            usuarioAEliminar = &usuario;
+            break;
+        }
+    }
+
+    if (usuarioAEliminar == nullptr) {
+        cout << "No se encontró usuario con ID " << targetId << "." << endl;
+        return;
+    }
+
+    // Validación: No permitir eliminar usuarios admin si quedaría menos de 1
+    if (usuarioAEliminar->perfil == "admin") {
+        int adminCount = contarUsuariosConPerfil("admin");
+        if (adminCount <= 1) {
+            cout << "ERROR: No se puede eliminar el último usuario administrador." << endl;
+            cout << "Debe existir al menos un administrador en el sistema." << endl;
+            return;
+        }
+        
+        cout << "ADVERTENCIA: Está eliminando un usuario administrador." << endl;
+        cout << "Quedarán " << (adminCount - 1) << " administrador(es) en el sistema." << endl;
+        cout << "¿Está seguro? (s/N): ";
+        string confirmacion;
+        getline(cin, confirmacion);
+        trim(confirmacion);
+        if (confirmacion != "s" && confirmacion != "S") {
+            cout << "Operación cancelada." << endl;
+            return;
+        }
+    }
+
+    // Buscar y eliminar usuario en memoria
     auto it = g_usuarios.begin();
     int encontrados = 0;
     while (it != g_usuarios.end()) {
@@ -269,6 +308,28 @@ void eliminarPerfilEnMemoria() {
         return;
     }
 
+    // Validación: No permitir eliminar perfiles protegidos
+    if (esPerfilProtegido(targetName)) {
+        cout << "ERROR: No se puede eliminar el perfil '" << targetName << "'." << endl;
+        cout << "Este perfil está protegido y es esencial para el funcionamiento del sistema." << endl;
+        return;
+    }
+
+    // Validación: Verificar si hay usuarios que usan este perfil
+    int usuariosConPerfil = contarUsuariosConPerfil(targetName);
+    if (usuariosConPerfil > 0) {
+        cout << "ADVERTENCIA: Hay " << usuariosConPerfil << " usuario(s) que usan el perfil '" << targetName << "'." << endl;
+        cout << "Si elimina este perfil, esos usuarios podrían quedar sin acceso." << endl;
+        cout << "¿Está seguro de que desea continuar? (s/N): ";
+        string confirmacion;
+        getline(cin, confirmacion);
+        trim(confirmacion);
+        if (confirmacion != "s" && confirmacion != "S") {
+            cout << "Operación cancelada." << endl;
+            return;
+        }
+    }
+
     // Buscar y eliminar perfil de memoria
     auto it = g_perfiles.begin();
     int removedCount = 0;
@@ -308,4 +369,28 @@ void listarPerfilesEnMemoria() {
         }
         cout << endl;
     }
+}
+
+// Función auxiliar para contar usuarios con un perfil específico
+int contarUsuariosConPerfil(const string& perfil) {
+    int count = 0;
+    for (const auto& usuario : g_usuarios) {
+        if (usuario.perfil == perfil) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Función auxiliar para verificar si un perfil está protegido
+bool esPerfilProtegido(const string& nombrePerfil) {
+    // Lista de perfiles protegidos que no se pueden eliminar
+    vector<string> perfilesProtegidos = {"admin", "administrador", "root", "system"};
+    
+    for (const string& protegido : perfilesProtegidos) {
+        if (nombrePerfil == protegido) {
+            return true;
+        }
+    }
+    return false;
 }
