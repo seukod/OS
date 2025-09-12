@@ -95,7 +95,7 @@ bool cargarDatosEnMemoria() {
     string line;
     while (getline(fileUsuarios, line)) {
         if (line.empty()) continue;
-        
+
         stringstream ss(line);
         Usuario u;
         string idStr;
@@ -134,11 +134,11 @@ bool cargarDatosEnMemoria() {
         // Espera el formato: nombre;permiso1,permiso2,...
         size_t pos = line.find(';');
         if (pos == string::npos) continue;
-        
+
         Perfil p;
         p.nombre = line.substr(0, pos);
         string permisosStr = line.substr(pos + 1);
-        
+
         // Parsear permisos separados por coma
         stringstream ss(permisosStr);
         string permiso;
@@ -154,7 +154,7 @@ bool cargarDatosEnMemoria() {
     filePerfiles.close();
     
     cout << "[INFO] Datos cargados en memoria correctamente." << endl;
-    
+
     return true;
 }
 
@@ -164,7 +164,7 @@ bool cargarDatosEnMemoria() {
 // Devuelve true si la operación fue exitosa, false si hubo algún error.
 bool guardarCambios() {
     cout << "[INFO] Guardando cambios en archivos..." << endl;
-    
+
     // Guardar usuarios
     string rutaUsuarios = leerVariableEnv("USERS_FILE");
     if (rutaUsuarios.empty()) {
@@ -179,8 +179,8 @@ bool guardarCambios() {
     
     // Escribir cada usuario en una línea
     for (const auto& usuario : g_usuarios) {
-        fileUsuarios << usuario.id << "," << usuario.nombre << "," 
-                    << usuario.username << "," << usuario.password << "," 
+        fileUsuarios << usuario.id << "," << usuario.nombre << ","
+                    << usuario.username << "," << usuario.password << ","
                     << usuario.perfil << endl;
     }
     fileUsuarios.close();
@@ -211,6 +211,6 @@ bool guardarCambios() {
     filePerfiles.close();
     
     cout << "[INFO] Cambios guardados exitosamente." << endl;
-    
+
     return true;
 }
