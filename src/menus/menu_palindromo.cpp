@@ -67,11 +67,11 @@ void ejecutarMenuPalindromo() {
                 cout << "=================================================" << endl;
                 
                 if (resultado) {
-                    cout << "✅ ¡ES UN PALÍNDROMO!" << endl;
+                    cout << "¡ES UN PALÍNDROMO!" << endl;
                     cout << "El texto se lee igual de izquierda a derecha" << endl;
                     cout << "y de derecha a izquierda." << endl;
                 } else {
-                    cout << "❌ NO ES UN PALÍNDROMO" << endl;
+                    cout << "NO ES UN PALÍNDROMO" << endl;
                     cout << "El texto no se lee igual en ambas direcciones." << endl;
                 }
                 
@@ -91,6 +91,7 @@ void ejecutarMenuPalindromo() {
     } while(opcion != 1 && opcion != 2);
 }
 
+// Recorre char a char del texto y verifica si es alfanumerico y si es, lo agrega al string nuevo
 string limpiarTexto(const string& texto) {
     string limpio;
     for (char c : texto) {
@@ -101,7 +102,9 @@ string limpiarTexto(const string& texto) {
     return limpio;
 }
 
+// Verifica si es palindromo; 
 bool esPalindromo(const string& texto) {
+    // Se limpia el texto
     string textoLimpio = limpiarTexto(texto);
     
     if (textoLimpio.empty()) {
@@ -110,7 +113,8 @@ bool esPalindromo(const string& texto) {
     
     int inicio = 0;
     int fin = textoLimpio.length() - 1;
-    
+
+    // Mientras sean iguales se suma el int inicio y se quita al final
     while (inicio < fin) {
         if (textoLimpio[inicio] != textoLimpio[fin]) {
             return false;

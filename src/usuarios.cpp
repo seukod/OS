@@ -1,3 +1,4 @@
+// Implementación de funciones para gestión de usuarios y perfiles en memoria
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -13,8 +14,7 @@ using namespace std;
 int contarUsuariosConPerfil(const string& perfil);
 bool esPerfilProtegido(const string& nombrePerfil);
 
-// Lee una variable del entorno o desde .env (intenta ./.env y ../.env)
-
+// Obtiene el siguiente ID disponible para un usuario leyendo el archivo y encontrando el ID máximo
 static int getNextUserId(const string& filePath) {
     ifstream in(filePath);
     int maxId = 0;
@@ -36,6 +36,8 @@ static int getNextUserId(const string& filePath) {
     }
     return maxId + 1;
 }
+
+// Verifica si un archivo termina con salto de línea
 static bool fileEndsWithNewline(const string& path) {
     ifstream in(path, ios::binary);
     if (!in.is_open()) return false;
@@ -49,7 +51,7 @@ static bool fileEndsWithNewline(const string& path) {
 }
 
 
-// Lista usuarios desde la memoria (g_usuarios)
+// Lista todos los usuarios cargados en memoria mostrando ID, nombre y perfil
 void listarUsuarios() {
     if (g_usuarios.empty()) {
         cerr << "[listarUsuarios] No hay usuarios cargados en memoria." << endl;
@@ -64,16 +66,14 @@ void listarUsuarios() {
     }
 }
 
-// aqui van los perfiles
-// brigido
-
-// Normaliza "funcionalidades": quita espacios, valida que cada token sea numérico y las une con comas.
+// Verifica si una cadena contiene solo dígitos
 static inline bool allDigits(const string& s) {
     if (s.empty()) return false;
     for (unsigned char c : s) if (!isdigit(c)) return false;
     return true;
 }
 
+// Normaliza funcionalidades: quita espacios, valida que cada token sea numérico y las une con comas
 static inline string normalizaFuncs(const string& raw) {
     string out;
     string token;
@@ -90,10 +90,7 @@ static inline string normalizaFuncs(const string& raw) {
     return out; // puede quedar vacío si no hubo tokens válidos
 }
 
-// =============================================================================
-// NUEVAS FUNCIONES QUE TRABAJAN SOLO EN MEMORIA
-// =============================================================================
-
+// Obtiene el siguiente ID de usuario disponible basándose en los usuarios en memoria
 static int getNextUserIdFromMemory() {
     int maxId = 0;
     for (const auto& usuario : g_usuarios) {
@@ -104,6 +101,7 @@ static int getNextUserIdFromMemory() {
     return maxId + 1;
 }
 
+// Permite ingresar un nuevo usuario solicitando datos por consola y lo agrega a la memoria
 void ingresarUsuarioEnMemoria() {
     int id = getNextUserIdFromMemory();
 
@@ -161,6 +159,7 @@ void ingresarUsuarioEnMemoria() {
     cout << "Usuario ingresado en memoria con ID " << id << ". Use 'Guardar Cambios' para persistir." << endl;
 }
 
+// Elimina un usuario de la memoria basándose en su ID, con validaciones de seguridad
 void eliminarUsuarioEnMemoria() {
     string target;
     cout << "ID a eliminar (vacío o 'c' para cancelar): ";
@@ -238,6 +237,7 @@ void eliminarUsuarioEnMemoria() {
     cout << "Eliminado(s) " << encontrados << " usuario(s) de memoria. Use 'Guardar Cambios' para persistir." << endl;
 }
 
+// Permite ingresar un nuevo perfil solicitando datos por consola y lo agrega a la memoria
 void ingresarPerfilEnMemoria() {
     string nombre, funcsRaw;
     cout << "Nombre del perfil (deje vacío o escriba 'c' para cancelar): ";
@@ -295,6 +295,7 @@ void ingresarPerfilEnMemoria() {
     cout << "Perfil ingresado en memoria. Use 'Guardar Cambios' para persistir." << endl;
 }
 
+// Elimina un perfil de la memoria basándose en su nombre, con validaciones de seguridad
 void eliminarPerfilEnMemoria() {
     string targetName;
     cout << "Nombre del perfil a eliminar (deje vacío o escriba 'c' para cancelar): ";
@@ -350,6 +351,7 @@ void eliminarPerfilEnMemoria() {
     cout << "Eliminado(s) " << removedCount << " perfil(es) de memoria. Use 'Guardar Cambios' para persistir." << endl;
 }
 
+// Lista todos los perfiles cargados en memoria con sus respectivos permisos
 void listarPerfilesEnMemoria() {
     if (g_perfiles.empty()) {
         cout << "No hay perfiles cargados en memoria." << endl;
@@ -371,7 +373,7 @@ void listarPerfilesEnMemoria() {
     }
 }
 
-// Función auxiliar para contar usuarios con un perfil específico
+// Cuenta cuántos usuarios en memoria tienen un perfil específico
 int contarUsuariosConPerfil(const string& perfil) {
     int count = 0;
     for (const auto& usuario : g_usuarios) {
@@ -382,7 +384,7 @@ int contarUsuariosConPerfil(const string& perfil) {
     return count;
 }
 
-// Función auxiliar para verificar si un perfil está protegido
+// Verifica si un perfil está en la lista de perfiles protegidos (no se pueden eliminar)
 bool esPerfilProtegido(const string& nombrePerfil) {
     // Lista de perfiles protegidos que no se pueden eliminar
     vector<string> perfilesProtegidos = {"admin", "administrador", "root", "system"};

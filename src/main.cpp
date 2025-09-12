@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         
-        // 2) Parseo y validaciones de CLI
+        // 2) Parseo y validaciones de CLI (Command Line Interface)
         Options opts = parseArguments(argc, argv);
 
         // 3) Usar las credenciales de CLI para validar usuario
