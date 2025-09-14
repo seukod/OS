@@ -2,11 +2,10 @@
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/users_auth.h"
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <sys/wait.h>
-#include <cstdlib>
 
 using namespace std;
 
@@ -26,56 +25,17 @@ bool validarDirectorio(const string& pathDirectorio) {
 }
 
 bool crearIndiceInvertido(const string& nombreArchivo, const string& pathCarpeta) {
-    // Obtener la variable de entorno CREATE_INDEX usando la función del sistema
-    string createIndexPath = leerVariableEnv("CREATE_INDEX", ".env");
-    if (createIndexPath.empty()) {
-        cout << "[ERROR] Variable de entorno CREATE_INDEX no está definida." << endl;
-        return false;
-    }
-
     cout << "\n=================================================" << endl;
     cout << "           CREANDO ÍNDICE INVERTIDO              " << endl;
     cout << "=================================================" << endl;
-    cout << "Programa: " << createIndexPath << endl;
     cout << "Archivo: " << nombreArchivo << endl;
     cout << "Directorio libros: " << pathCarpeta << endl;
     cout << "=================================================" << endl;
-    cout << "\nIniciando proceso..." << endl;
 
-    // Crear proceso hijo usando fork
-    pid_t pid = fork();
-    
-    if (pid == -1) {
-        cout << "[ERROR] No se pudo crear el proceso hijo." << endl;
-        return false;
-    }
-    
-    if (pid == 0) {
-        // Proceso hijo - ejecutar el programa externo
-        execl(createIndexPath.c_str(), "crear_indice", nombreArchivo.c_str(), pathCarpeta.c_str(), nullptr);
-        
-        // Si llegamos aquí, execl falló
-        cout << "[ERROR] No se pudo ejecutar el programa " << createIndexPath << endl;
-        exit(1);
-    } else {
-        // Proceso padre - esperar a que termine el hijo
-        int status;
-        waitpid(pid, &status, 0);
-        
-        if (WIFEXITED(status)) {
-            int exitCode = WEXITSTATUS(status);
-            if (exitCode == 0) {
-                cout << "\n¡Índice invertido creado exitosamente!" << endl;
-                return true;
-            } else {
-                cout << "\n[ERROR] El programa terminó con código de error: " << exitCode << endl;
-                return false;
-            }
-        } else {
-            cout << "\n[ERROR] El programa no terminó normalmente." << endl;
-            return false;
-        }
-    }
+    // La función ejecutarProcesoExterno ya imprime sus propios mensajes
+    bool exito = ejecutarProcesoExterno("CREATE_INDEX", nombreArchivo, pathCarpeta);
+
+    return exito;
 }
 
 void ejecutarMenuIndice() {
@@ -87,7 +47,7 @@ void ejecutarMenuIndice() {
     string nombreArchivo;
     string pathCarpeta;
     
-    // Paso 1: Ingresar y validar nombre del archivo
+    // Paso 1: Ingresar y validar nombre del archivo con bucle
     do {
         cout << "\nIngrese el nombre del archivo a crear (debe terminar en .idx): ";
         getline(cin, nombreArchivo);
@@ -101,7 +61,7 @@ void ejecutarMenuIndice() {
         }
     } while (true);
     
-    // Paso 2: Ingresar y validar path de la carpeta
+    // Paso 2: Ingresar y validar path de la carpeta con bucle
     do {
         cout << "\nIngrese el path de la carpeta donde están los libros: ";
         getline(cin, pathCarpeta);
@@ -110,12 +70,13 @@ void ejecutarMenuIndice() {
             cout << "[ERROR] El path no puede estar vacío." << endl;
         } else if (!validarDirectorio(pathCarpeta)) {
             cout << "[ERROR] El directorio no existe o no es válido." << endl;
+            cout << "Verifique que el path sea correcto." << endl;
         } else {
             break;
         }
     } while (true);
     
-    // Paso 3: Confirmar antes de ejecutar
+    // Paso 3: Confirmar antes de ejecutar con validación
     cout << "\n=================================================" << endl;
     cout << "RESUMEN:" << endl;
     cout << "Archivo a crear: " << nombreArchivo << endl;
@@ -123,21 +84,23 @@ void ejecutarMenuIndice() {
     cout << "=================================================" << endl;
     
     char confirmacion;
-    cout << "¿Desea proceder? (s/n): ";
-    cin >> confirmacion;
-    cin.ignore(); // Limpiar buffer
-    
+    do {
+        cout << "¿Desea proceder? (s/n): ";
+        cin >> confirmacion;
+        cin.ignore(); // Limpiar buffer
+
+        if (confirmacion == 's' || confirmacion == 'S' || confirmacion == 'n' || confirmacion == 'N') {
+            break;
+        } else {
+            cout << "[ERROR] Por favor ingrese 's' para sí o 'n' para no." << endl;
+        }
+    } while (true);
+
     if (confirmacion == 's' || confirmacion == 'S') {
         // Paso 4: Ejecutar programa externo
-        if (crearIndiceInvertido(nombreArchivo, pathCarpeta)) {
-            cout << "\nOperación completada exitosamente." << endl;
-        } else {
-            cout << "\nLa operación falló. Revise los mensajes de error." << endl;
-        }
+        crearIndiceInvertido(nombreArchivo, pathCarpeta);
+        // El proceso hijo ya muestra los mensajes de resultado
     } else {
         cout << "\nOperación cancelada por el usuario." << endl;
     }
-    
-    cout << "\nPresione Enter para continuar...";
-    cin.ignore();
 }

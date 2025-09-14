@@ -4,6 +4,7 @@
 #include "../../include/menus/menu_funcion.h"
 #include "../../include/menus/menu_conteo.h"
 #include "../../include/menus/menu_indice.h"
+#include "../../include/menus/menu_matriz.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/process_tools/process_manager.h"
@@ -125,8 +126,7 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 pausarPantalla();
                 break;
             case 2:
-                ejecutarMultiplicadorDirecto();
-                pausarPantalla();
+                ejecutarMenuMatriz();
                 break;
             case 3:
                 mostrarEnConstruccion("Juego");

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido
+CMAKE_SOURCE_DIR = /Users/francisco/CLionProjects/OS/indice_invertido
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build
+CMAKE_BINARY_DIR = /Users/francisco/CLionProjects/OS/indice_invertido/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/crear_indice.dir/depend.make
@@ -73,32 +73,32 @@ CMakeFiles/crear_indice.dir/codegen:
 .PHONY : CMakeFiles/crear_indice.dir/codegen
 
 CMakeFiles/crear_indice.dir/src/main.cpp.o: CMakeFiles/crear_indice.dir/flags.make
-CMakeFiles/crear_indice.dir/src/main.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/main.cpp
+CMakeFiles/crear_indice.dir/src/main.cpp.o: /Users/francisco/CLionProjects/OS/indice_invertido/src/main.cpp
 CMakeFiles/crear_indice.dir/src/main.cpp.o: CMakeFiles/crear_indice.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/crear_indice.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/crear_indice.dir/src/main.cpp.o -MF CMakeFiles/crear_indice.dir/src/main.cpp.o.d -o CMakeFiles/crear_indice.dir/src/main.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/crear_indice.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/crear_indice.dir/src/main.cpp.o -MF CMakeFiles/crear_indice.dir/src/main.cpp.o.d -o CMakeFiles/crear_indice.dir/src/main.cpp.o -c /Users/francisco/CLionProjects/OS/indice_invertido/src/main.cpp
 
 CMakeFiles/crear_indice.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/crear_indice.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/main.cpp > CMakeFiles/crear_indice.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/francisco/CLionProjects/OS/indice_invertido/src/main.cpp > CMakeFiles/crear_indice.dir/src/main.cpp.i
 
 CMakeFiles/crear_indice.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/crear_indice.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/main.cpp -o CMakeFiles/crear_indice.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/francisco/CLionProjects/OS/indice_invertido/src/main.cpp -o CMakeFiles/crear_indice.dir/src/main.cpp.s
 
 CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o: CMakeFiles/crear_indice.dir/flags.make
-CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/crear_indice.cpp
+CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o: /Users/francisco/CLionProjects/OS/indice_invertido/src/crear_indice.cpp
 CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o: CMakeFiles/crear_indice.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o -MF CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o.d -o CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o -c /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/crear_indice.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o -MF CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o.d -o CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o -c /Users/francisco/CLionProjects/OS/indice_invertido/src/crear_indice.cpp
 
 CMakeFiles/crear_indice.dir/src/crear_indice.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/crear_indice.dir/src/crear_indice.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/crear_indice.cpp > CMakeFiles/crear_indice.dir/src/crear_indice.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/francisco/CLionProjects/OS/indice_invertido/src/crear_indice.cpp > CMakeFiles/crear_indice.dir/src/crear_indice.cpp.i
 
 CMakeFiles/crear_indice.dir/src/crear_indice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/crear_indice.dir/src/crear_indice.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/src/crear_indice.cpp -o CMakeFiles/crear_indice.dir/src/crear_indice.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/francisco/CLionProjects/OS/indice_invertido/src/crear_indice.cpp -o CMakeFiles/crear_indice.dir/src/crear_indice.cpp.s
 
 # Object files for target crear_indice
 crear_indice_OBJECTS = \
@@ -111,9 +111,8 @@ crear_indice_EXTERNAL_OBJECTS =
 crear_indice: CMakeFiles/crear_indice.dir/src/main.cpp.o
 crear_indice: CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o
 crear_indice: CMakeFiles/crear_indice.dir/build.make
-crear_indice: CMakeFiles/crear_indice.dir/compiler_depend.ts
 crear_indice: CMakeFiles/crear_indice.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable crear_indice"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/francisco/CLionProjects/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable crear_indice"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/crear_indice.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -125,6 +124,6 @@ CMakeFiles/crear_indice.dir/clean:
 .PHONY : CMakeFiles/crear_indice.dir/clean
 
 CMakeFiles/crear_indice.dir/depend:
-	cd /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles/crear_indice.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/francisco/CLionProjects/OS/indice_invertido/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/francisco/CLionProjects/OS/indice_invertido /Users/francisco/CLionProjects/OS/indice_invertido /Users/francisco/CLionProjects/OS/indice_invertido/build /Users/francisco/CLionProjects/OS/indice_invertido/build /Users/francisco/CLionProjects/OS/indice_invertido/build/CMakeFiles/crear_indice.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/crear_indice.dir/depend
 

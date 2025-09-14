@@ -72,9 +72,9 @@ bool CreadorIndice::procesarDirectorio() {
         struct stat fileStat;
         if (stat(rutaCompleta.c_str(), &fileStat) == 0 && S_ISREG(fileStat.st_mode)) {
             // Solo procesar archivos .txt
-            if (nombreArchivo.length() > 4 && 
+            if (nombreArchivo.length() > 4 &&
                 nombreArchivo.substr(nombreArchivo.length() - 4) == ".txt") {
-                
+
                 cout << "Procesando: " << nombreArchivo << endl;
                 procesarArchivo(nombreArchivo, rutaCompleta);
                 archivosProcesados++;

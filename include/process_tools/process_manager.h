@@ -16,7 +16,5 @@ extern const char* adminPath;
 pid_t obtenerPID();
 bool ejecutarProcesoExterno(const string& varEntorno, const string& arg1 = "", const string& arg2 = "");
 bool ejecutarAdminUsuarios();
-bool ejecutarMultiplicadorMatrices(const string& archivo1, const string& archivo2);
-bool ejecutarMultiplicadorDirecto();
 
 #endif //OS_PROCESS_MANAGER_H

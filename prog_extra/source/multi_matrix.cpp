@@ -1,7 +1,5 @@
 #include "../include/multi_matrix.h"
 
-#include "interfaz.h"
-
 // Función para leer matriz desde archivo
 std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
     std::ifstream file(path);
