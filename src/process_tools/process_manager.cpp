@@ -39,7 +39,8 @@ bool ejecutarProcesoExterno(const string& varEntorno, const string& arg1, const 
     if (fpid == 0) {
         // Dentro del Proceso hijo
         cout << "proceso hijo, PID: " << obtenerPID() << endl;
-
+        pausarPantalla();
+        limpiarPantalla();
         // Ejecutar según los argumentos proporcionados
         if (arg1.empty() && arg2.empty()) {
             // Solo ejecutable (caso admin_usuarios)
@@ -86,15 +87,11 @@ bool ejecutarAdminUsuarios() {
 bool ejecutarMultiplicadorMatrices(const string& archivo1, const string& archivo2) {
     cout << "Ejecutando Multiplicador de Matrices..." << endl;
     bool exito = ejecutarProcesoExterno("MULTI_M", archivo1, archivo2);
-    if (exito) {
-        mostrarMensajeExito("Multiplicación completada exitosamente.");
-    } else {
-        mostrarMensajeError("Error en la ejecución del multiplicador.");
-    }
     return exito;
 }
 
 bool ejecutarMultiplicadorDirecto() {
+    limpiarPantalla();
     cout << "Ejecutando Multiplicador de Matrices..." << endl;
 
     // Crear interfaz previa como requiere el punto 4a)
@@ -132,6 +129,7 @@ bool ejecutarMultiplicadorDirecto() {
     cin.ignore(); // Limpiar buffer
 
     if (opcion == 1) {
+        limpiarPantalla();
         // Convertir rutas relativas a absolutas antes de validar
         string archivoAbsoluto1 = archivo1;
         string archivoAbsoluto2 = archivo2;
@@ -167,7 +165,8 @@ bool ejecutarMultiplicadorDirecto() {
         cout << "Archivo 1: " << archivoAbsoluto1 << endl;
         cout << "Archivo 2: " << archivoAbsoluto2 << endl;
         cout << "Ejecutando multiplicador..." << endl;
-
+        pausarPantalla();
+        limpiarPantalla();
         // Ejecutar el proceso externo PASANDO las rutas absolutas como argumentos
         bool exito = ejecutarMultiplicadorMatrices(archivoAbsoluto1, archivoAbsoluto2);
         if (exito) {

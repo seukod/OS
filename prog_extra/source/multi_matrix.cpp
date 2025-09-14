@@ -1,5 +1,7 @@
 #include "../include/multi_matrix.h"
 
+#include "interfaz.h"
+
 // Función para leer matriz desde archivo
 std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
     std::ifstream file(path);
@@ -100,7 +102,7 @@ int main(int argc, char* argv[]) {
         std::cout << "\nResultado de la multiplicación:" << std::endl;
         printMatrix(result);
         std::cout << "========================================" << std::endl;
-        std::cout << "Multiplicación completada exitosamente." << std::endl;
+
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";
         return 1;
