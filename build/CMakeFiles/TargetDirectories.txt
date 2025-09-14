@@ -1,3 +1,3 @@
-/Users/francisco/CLionProjects/OS/build/CMakeFiles/OS.dir
-/Users/francisco/CLionProjects/OS/build/CMakeFiles/edit_cache.dir
-/Users/francisco/CLionProjects/OS/build/CMakeFiles/rebuild_cache.dir
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/OS.dir
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/edit_cache.dir
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/rebuild_cache.dir

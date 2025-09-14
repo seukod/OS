@@ -3,36 +3,61 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <cstring>
+
+using namespace std;
 
 // Función para leer matriz desde archivo
-std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
-    std::ifstream file(path);
-    std::vector<std::vector<int>> matrix;
+vector<vector<int>> readMatrixFromFile(const string& path, char separator) {
+    ifstream file(path);
+    vector<vector<int>> matrix;
 
     if (!file.is_open()) {
-        throw std::runtime_error("No se pudo abrir el archivo: " + path);
+        throw runtime_error("No se pudo abrir el archivo: " + path);
     }
 
-    std::string line;
-    while (std::getline(file, line)) {
-        std::vector<int> row;
-        std::stringstream ss(line);
-        std::string cell;
-        while (std::getline(ss, cell, separator)) {
+    string line;
+    while (getline(file, line)) {
+        // Validar líneas vacías
+        if (line.empty()) continue;
+        
+        // Validar espacios en blanco
+        if (line.find_first_not_of(" \t\r\n") == string::npos) continue;
+        
+        vector<int> row;
+        stringstream ss(line);
+        string cell;
+        while (getline(ss, cell, separator)) {
+            // Validar celdas vacías
+            if (cell.empty()) {
+                throw runtime_error("Celda vacía encontrada en línea: " + line);
+            }
+            
             try {
-                row.push_back(std::stoi(cell));
+                row.push_back(stoi(cell));
             } catch (...) {
-                throw std::runtime_error("Elemento inválido en el archivo: " + cell);
+                throw runtime_error("Elemento inválido en el archivo: " + cell);
             }
         }
+        
+        // Validar filas vacías
+        if (row.empty()) {
+            throw runtime_error("Fila vacía encontrada");
+        }
+        
         matrix.push_back(row);
+    }
+
+    // Validar matriz vacía
+    if (matrix.empty()) {
+        throw runtime_error("El archivo está vacío o no contiene datos válidos");
     }
 
     // Validar que la matriz sea cuadrada
     size_t n = matrix.size();
     for (const auto& row : matrix) {
         if (row.size() != n) {
-            throw std::runtime_error("La matriz no es cuadrada o está mal formada.");
+            throw runtime_error("La matriz no es cuadrada o está mal formada.");
         }
     }
 
@@ -40,10 +65,10 @@ std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char s
 }
 
 // Función para multiplicar dos matrices NxN
-std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& A,
-                                               const std::vector<std::vector<int>>& B) {
+vector<vector<int>> multiplyMatrices(const vector<vector<int>>& A,
+                                     const vector<vector<int>>& B) {
     size_t n = A.size();
-    std::vector<std::vector<int>> result(n, std::vector<int>(n, 0));
+    vector<vector<int>> result(n, vector<int>(n, 0));
 
     for (size_t i = 0; i < n; ++i)
         for (size_t j = 0; j < n; ++j)
@@ -54,41 +79,59 @@ std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int
 }
 
 // Función para imprimir matriz
-void printMatrix(const std::vector<std::vector<int>>& matrix) {
+void printMatrix(const vector<vector<int>>& matrix) {
     for (const auto& row : matrix) {
         for (size_t j = 0; j < row.size(); ++j) {
-            std::cout << row[j];
-            if (j != row.size() - 1) std::cout << " ";
+            cout << row[j];
+            if (j != row.size() - 1) cout << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 }
 
 // Función main independiente
 int main(int argc, char* argv[]) {
     if (argc != 4) {
-        std::cerr << "Uso: " << argv[0] << " <ruta_a_A.txt> <ruta_a_B.txt> <separador>\n";
+        cerr << "Uso: " << argv[0] << " <ruta_a_A.txt> <ruta_a_B.txt> <separador>\n";
         return 1;
     }
 
-    std::string pathA = argv[1];
-    std::string pathB = argv[2];
+    // Validar argumentos no nulos
+    if (!argv[1] || !argv[2] || !argv[3]) {
+        cerr << "Error: Argumentos nulos\n";
+        return 1;
+    }
+
+    // Validar longitud del separador
+    if (strlen(argv[3]) != 1) {
+        cerr << "Error: El separador debe ser un solo carácter\n";
+        return 1;
+    }
+
+    // Validar rutas no vacías
+    string pathA = argv[1];
+    string pathB = argv[2];
     char separator = argv[3][0];
+    
+    if (pathA.empty() || pathB.empty()) {
+        cerr << "Error: Las rutas de archivo no pueden estar vacías\n";
+        return 1;
+    }
 
     try {
         auto matrixA = readMatrixFromFile(pathA, separator);
         auto matrixB = readMatrixFromFile(pathB, separator);
 
         if (matrixA.size() != matrixB.size()) {
-            throw std::runtime_error("Las matrices no tienen el mismo tamaño.");
+            throw runtime_error("Las matrices no tienen el mismo tamaño.");
         }
 
         auto result = multiplyMatrices(matrixA, matrixB);
 
-        std::cout << "Resultado de la multiplicación:\n";
+        cout << "Resultado de la multiplicación:\n";
         printMatrix(result);
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << "\n";
+    } catch (const exception& e) {
+        cerr << "Error: " << e.what() << "\n";
         return 1;
     }
 
