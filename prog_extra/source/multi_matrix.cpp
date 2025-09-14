@@ -1,9 +1,10 @@
 #include "../include/multi_matrix.h"
+#include <iomanip>
 
 // Función para leer matriz desde archivo
-std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
+std::vector<std::vector<double>> readMatrixFromFile(const std::string& path, char separator) {
     std::ifstream file(path);
-    std::vector<std::vector<int>> matrix;
+    std::vector<std::vector<double>> matrix;
 
     if (!file.is_open()) {
         throw std::runtime_error("No se pudo abrir el archivo: " + path);
@@ -11,17 +12,22 @@ std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char s
 
     std::string line;
     while (std::getline(file, line)) {
-        std::vector<int> row;
+        // Ignorar líneas vacías
+        if (line.empty()) continue;
+
+        std::vector<double> row;
         std::stringstream ss(line);
         std::string cell;
         while (std::getline(ss, cell, separator)) {
             try {
-                row.push_back(std::stoi(cell));
+                row.push_back(std::stod(cell));
             } catch (...) {
                 throw std::runtime_error("Elemento inválido en el archivo: " + cell);
             }
         }
-        matrix.push_back(row);
+        if (!row.empty()) {
+            matrix.push_back(row);
+        }
     }
 
     // Validar que la matriz sea cuadrada
@@ -36,10 +42,10 @@ std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char s
 }
 
 // Función para multiplicar dos matrices NxN
-std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& A,
-                                               const std::vector<std::vector<int>>& B) {
+std::vector<std::vector<double>> multiplyMatrices(const std::vector<std::vector<double>>& A,
+                                                  const std::vector<std::vector<double>>& B) {
     size_t n = A.size();
-    std::vector<std::vector<int>> result(n, std::vector<int>(n, 0));
+    std::vector<std::vector<double>> result(n, std::vector<double>(n, 0.0));
 
     for (size_t i = 0; i < n; ++i)
         for (size_t j = 0; j < n; ++j)
@@ -50,10 +56,16 @@ std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int
 }
 
 // Función para imprimir matriz
-void printMatrix(const std::vector<std::vector<int>>& matrix) {
+void printMatrix(const std::vector<std::vector<double>>& matrix) {
+    std::cout << std::fixed << std::setprecision(2);
     for (const auto& row : matrix) {
         for (size_t j = 0; j < row.size(); ++j) {
-            std::cout << row[j];
+            // Si el número es entero, mostrarlo sin decimales
+            if (row[j] == static_cast<int>(row[j])) {
+                std::cout << static_cast<int>(row[j]);
+            } else {
+                std::cout << row[j];
+            }
             if (j != row.size() - 1) std::cout << " ";
         }
         std::cout << "\n";

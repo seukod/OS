@@ -7,10 +7,11 @@
 #include <vector>
 #include <string>
 #include <unistd.h>  // Para getpid() y getcwd()
+#include <iomanip>   // Para formateo de decimales
 
-std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator);
-bool validateMatrix(const std::vector<std::vector<int>>& matrix);
-std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& A, const std::vector<std::vector<int>>& B);
-void printMatrix(const std::vector<std::vector<int>>& matrix);
+std::vector<std::vector<double>> readMatrixFromFile(const std::string& path, char separator);
+bool validateMatrix(const std::vector<std::vector<double>>& matrix);
+std::vector<std::vector<double>> multiplyMatrices(const std::vector<std::vector<double>>& A, const std::vector<std::vector<double>>& B);
+void printMatrix(const std::vector<std::vector<double>>& matrix);
 
 #endif // MULTI_MATRIX_H
