@@ -1,6 +1,7 @@
 #include <iostream>
 #include <exception>
 #include <limits>
+#include <unistd.h>  // Para getpid()
 #include "../include/interfaz.h"
 #include "../include/usuarios.h"
 #include "../include/users_auth.h"
@@ -12,6 +13,9 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     try {
+        // Mostrar PID del proceso principal
+        cout << "Proceso principal OS iniciado, PID: " << getpid() << endl;
+
         // 1) Limpiar memoria y cargar datos de usuarios y perfiles al inicio
         cout << "[INFO] Iniciando sistema..." << endl;
         if (!cargarDatosEnMemoria()) {

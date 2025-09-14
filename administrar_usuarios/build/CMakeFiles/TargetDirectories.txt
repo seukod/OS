@@ -1,0 +1,3 @@
+/Users/francisco/CLionProjects/OS/administrar_usuarios/build/CMakeFiles/admin_usuarios.dir
+/Users/francisco/CLionProjects/OS/administrar_usuarios/build/CMakeFiles/edit_cache.dir
+/Users/francisco/CLionProjects/OS/administrar_usuarios/build/CMakeFiles/rebuild_cache.dir

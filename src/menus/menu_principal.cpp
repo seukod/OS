@@ -5,6 +5,7 @@
 #include "../../include/menus/menu_conteo.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
 #include <algorithm>
 
@@ -15,6 +16,7 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
     cout << "=================================================" << endl;
     cout << "                MENÚ PRINCIPAL                   " << endl;
     cout << "=================================================" << endl;
+    cout << "OS PID: " << getpid() << endl;
     cout << "Usuario: " << usuario.nombre << " (" << usuario.username << ")" << endl;
     cout << "Perfil: " << usuario.perfil << endl;
     cout << "=================================================" << endl;
@@ -114,11 +116,13 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 mostrarMensajeDespedida();
                 break;
             case 1:
-                //ejecutarMenuAdmin(usuario); para más adelante
-                mostrarEnConstruccion("Admin Users");
+                ejecutarAdminUsuarios();
+                //mostrarEnConstruccion("Admin Users");
+                pausarPantalla();
                 break;
             case 2:
-                mostrarEnConstruccion("Multi Matrices NxN");
+                ejecutarMultiplicadorDirecto();
+                pausarPantalla();
                 break;
             case 3:
                 mostrarEnConstruccion("Juego");
@@ -139,4 +143,3 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
         }
     } while(opcion != 0);
 }
-

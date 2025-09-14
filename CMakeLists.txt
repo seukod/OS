@@ -12,7 +12,8 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h")
 
 add_executable(OS ${SOURCES} ${HEADERS}
-        src/menus/menu_funcion.cpp
+        src/process_tools/process_manager.cpp
+        include/process_tools/process_manager.h
 )
 
 # Incluir la carpeta de headers

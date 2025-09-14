@@ -345,6 +345,30 @@ src/menus/menu_principal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_principal.cpp.s
 .PHONY : src/menus/menu_principal.cpp.s
 
+src/process_tools/process_manager.o: src/process_tools/process_manager.cpp.o
+.PHONY : src/process_tools/process_manager.o
+
+# target to build an object file
+src/process_tools/process_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o
+.PHONY : src/process_tools/process_manager.cpp.o
+
+src/process_tools/process_manager.i: src/process_tools/process_manager.cpp.i
+.PHONY : src/process_tools/process_manager.i
+
+# target to preprocess a source file
+src/process_tools/process_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.i
+.PHONY : src/process_tools/process_manager.cpp.i
+
+src/process_tools/process_manager.s: src/process_tools/process_manager.cpp.s
+.PHONY : src/process_tools/process_manager.s
+
+# target to generate assembly for a file
+src/process_tools/process_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.s
+.PHONY : src/process_tools/process_manager.cpp.s
+
 src/users_auth.o: src/users_auth.cpp.o
 .PHONY : src/users_auth.o
 
@@ -477,6 +501,9 @@ help:
 	@echo "... src/menus/menu_principal.o"
 	@echo "... src/menus/menu_principal.i"
 	@echo "... src/menus/menu_principal.s"
+	@echo "... src/process_tools/process_manager.o"
+	@echo "... src/process_tools/process_manager.i"
+	@echo "... src/process_tools/process_manager.s"
 	@echo "... src/users_auth.o"
 	@echo "... src/users_auth.i"
 	@echo "... src/users_auth.s"

@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
+#include "../include/multi_matrix.h"
 
 // Función para leer matriz desde archivo
 std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
@@ -66,14 +62,29 @@ void printMatrix(const std::vector<std::vector<int>>& matrix) {
 
 // Función main independiente
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
-        std::cerr << "Uso: " << argv[0] << " <ruta_a_A.txt> <ruta_a_B.txt> <separador>\n";
+    // Mostrar PID del proceso multiplicador
+    std::cout << "Proceso multiplicador iniciado, PID: " << getpid() << std::endl;
+
+    // TITULO DE LA APLICACION
+    std::cout << "========================================" << std::endl;
+    std::cout << "    MULTIPLICADOR DE MATRICES NxN" << std::endl;
+    std::cout << "========================================" << std::endl;
+
+    // Verificar que se recibieron los argumentos correctos
+    if (argc != 3) {
+        std::cerr << "Error: Se esperan exactamente 2 argumentos (paths de matrices)" << std::endl;
+        std::cerr << "Uso: " << argv[0] << " <ruta_matriz_A> <ruta_matriz_B>" << std::endl;
         return 1;
     }
 
+    // Usar los argumentos recibidos del proceso padre
     std::string pathA = argv[1];
     std::string pathB = argv[2];
-    char separator = argv[3][0];
+    char separator = ',';  // Usar coma como separador (las matrices están en formato CSV)
+
+    std::cout << "Archivo matriz A: " << pathA << std::endl;
+    std::cout << "Archivo matriz B: " << pathB << std::endl;
+    std::cout << "========================================" << std::endl;
 
     try {
         auto matrixA = readMatrixFromFile(pathA, separator);
@@ -83,10 +94,13 @@ int main(int argc, char* argv[]) {
             throw std::runtime_error("Las matrices no tienen el mismo tamaño.");
         }
 
+        std::cout << "Multiplicando matrices " << matrixA.size() << "x" << matrixA.size() << "..." << std::endl;
         auto result = multiplyMatrices(matrixA, matrixB);
 
-        std::cout << "Resultado de la multiplicación:\n";
+        std::cout << "\nResultado de la multiplicación:" << std::endl;
         printMatrix(result);
+        std::cout << "========================================" << std::endl;
+        std::cout << "Multiplicación completada exitosamente." << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";
         return 1;

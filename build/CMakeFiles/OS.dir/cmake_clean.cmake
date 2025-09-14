@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o"
   "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
+  "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o"
+  "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o.d"
   "CMakeFiles/OS.dir/src/users_auth.cpp.o"
   "CMakeFiles/OS.dir/src/users_auth.cpp.o.d"
   "CMakeFiles/OS.dir/src/usuarios.cpp.o"

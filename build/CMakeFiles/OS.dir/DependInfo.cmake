@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/francisco/CLionProjects/OS/src/menus/menu_funcion.cpp" "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_palindromo.cpp" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_principal.cpp" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
+  "/Users/francisco/CLionProjects/OS/src/process_tools/process_manager.cpp" "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o" "gcc" "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/users_auth.cpp" "CMakeFiles/OS.dir/src/users_auth.cpp.o" "gcc" "CMakeFiles/OS.dir/src/users_auth.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/usuarios.cpp" "CMakeFiles/OS.dir/src/usuarios.cpp.o" "gcc" "CMakeFiles/OS.dir/src/usuarios.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/utils/input_utils.cpp" "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o" "gcc" "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o.d"
