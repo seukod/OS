@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/OS.dir/link.d"
   "CMakeFiles/OS.dir/src/AppConfig.cpp.o"
   "CMakeFiles/OS.dir/src/AppConfig.cpp.o.d"
   "CMakeFiles/OS.dir/src/ArgParser.cpp.o"
@@ -13,6 +14,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o"
   "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o"
   "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o"

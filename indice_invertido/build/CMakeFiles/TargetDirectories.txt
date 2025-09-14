@@ -1,0 +1,3 @@
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles/crear_indice.dir
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles/edit_cache.dir
+/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/indice_invertido/build/CMakeFiles/rebuild_cache.dir

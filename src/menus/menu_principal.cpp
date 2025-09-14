@@ -3,6 +3,7 @@
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/menus/menu_funcion.h"
 #include "../../include/menus/menu_conteo.h"
+#include "../../include/menus/menu_indice.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/process_tools/process_manager.h"
@@ -61,6 +62,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
                 break;
             case 6:
                 cout << "6. Conteo sobre texto" << endl;
+                break;
+            case 7:
+                cout << "7. Crea índice invertido" << endl;
                 break;
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
@@ -135,6 +139,10 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 break;
             case 6:
                 ejecutarMenuConteo(libro);
+                break;
+            case 7:
+                ejecutarMenuIndice();
+                pausarPantalla();
                 break;
             default:
                 mostrarMensajeError("Opción inválida.");
