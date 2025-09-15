@@ -74,6 +74,26 @@ string pedirPathValido() {
     }
 }
 
+void ejecutarProgramaExterno(const string& archivo, const string& carpeta) {
+    string rutaPrograma = leerVariableEnv("CREATE_INDEX", ".env");
+    if (rutaPrograma.empty()) {
+        cout << "[ERROR] No se encontró CREATE_INDEX en el .env" << endl;
+        return;
+    }
+
+    // Construimos el comando para ejecutar el programa externo
+    // Asumimos que main.cpp ya está compilado o lo compilamos temporalmente
+    string comando;
+    if (fs::exists(rutaPrograma)) {
+        // Compilar y ejecutar
+        comando = "g++ \"" + rutaPrograma + "\" -o temp_program.exe && temp_program.exe \"" + archivo + "\" \"" + carpeta + "\"";
+        system(comando.c_str());
+        // Opcional: eliminar ejecutable temporal
+        system("del temp_program.exe");
+    } else {
+        cout << "[ERROR] No se encontró el archivo " << rutaPrograma << endl;
+    }
+}
 
 // Función principal
 void ejecutarMenuIndiceInvertido() {
@@ -103,6 +123,7 @@ void ejecutarMenuIndiceInvertido() {
     if (confirmar == 1) {
         cout << "Ejecutando programa externo con archivo '" << nombreArchivoRuta
              << "' y carpeta '" << pathCarpeta << "'..." << endl;
+        ejecutarProgramaExterno(nombreArchivoRuta, pathCarpeta);
     } else {
         cout << "Ejecución cancelada. Volviendo al menú..." << endl;
     }
