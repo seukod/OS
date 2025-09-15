@@ -1,38 +1,40 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
+#include "../include/multi_matrix.h"
+#include <iomanip>
 
 // Función para leer matriz desde archivo
-std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator) {
-    std::ifstream file(path);
-    std::vector<std::vector<int>> matrix;
+vector<vector<double>> readMatrixFromFile(const string& path, char separator) {
+    ifstream file(path);
+    vector<vector<double>> matrix;
 
     if (!file.is_open()) {
-        throw std::runtime_error("No se pudo abrir el archivo: " + path);
+        throw runtime_error("No se pudo abrir el archivo: " + path);
     }
 
-    std::string line;
-    while (std::getline(file, line)) {
-        std::vector<int> row;
-        std::stringstream ss(line);
-        std::string cell;
-        while (std::getline(ss, cell, separator)) {
+    string line;
+    while (getline(file, line)) {
+        // Ignorar líneas vacías
+        if (line.empty()) continue;
+
+        vector<double> row;
+        stringstream ss(line);
+        string cell;
+        while (getline(ss, cell, separator)) {
             try {
-                row.push_back(std::stoi(cell));
+                row.push_back(stod(cell));
             } catch (...) {
-                throw std::runtime_error("Elemento inválido en el archivo: " + cell);
+                throw runtime_error("Elemento inválido en el archivo: " + cell);
             }
         }
-        matrix.push_back(row);
+        if (!row.empty()) {
+            matrix.push_back(row);
+        }
     }
 
     // Validar que la matriz sea cuadrada
     size_t n = matrix.size();
     for (const auto& row : matrix) {
         if (row.size() != n) {
-            throw std::runtime_error("La matriz no es cuadrada o está mal formada.");
+            throw runtime_error("La matriz no es cuadrada o está mal formada.");
         }
     }
 
@@ -40,10 +42,10 @@ std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char s
 }
 
 // Función para multiplicar dos matrices NxN
-std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& A,
-                                               const std::vector<std::vector<int>>& B) {
+vector<vector<double>> multiplyMatrices(const vector<vector<double>>& A,
+                                        const vector<vector<double>>& B) {
     size_t n = A.size();
-    std::vector<std::vector<int>> result(n, std::vector<int>(n, 0));
+    vector<vector<double>> result(n, vector<double>(n, 0.0));
 
     for (size_t i = 0; i < n; ++i)
         for (size_t j = 0; j < n; ++j)
@@ -54,41 +56,65 @@ std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int
 }
 
 // Función para imprimir matriz
-void printMatrix(const std::vector<std::vector<int>>& matrix) {
+void printMatrix(const vector<vector<double>>& matrix) {
+    cout << fixed << setprecision(2);
     for (const auto& row : matrix) {
         for (size_t j = 0; j < row.size(); ++j) {
-            std::cout << row[j];
-            if (j != row.size() - 1) std::cout << " ";
+            // Si el número es entero, mostrarlo sin decimales
+            if (row[j] == static_cast<int>(row[j])) {
+                cout << static_cast<int>(row[j]);
+            } else {
+                cout << row[j];
+            }
+            if (j != row.size() - 1) cout << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 }
 
 // Función main independiente
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
-        std::cerr << "Uso: " << argv[0] << " <ruta_a_A.txt> <ruta_a_B.txt> <separador>\n";
+    // Mostrar PID del proceso multiplicador
+    cout << "Proceso multiplicador iniciado, PID: " << getpid() << endl;
+
+    // TITULO DE LA APLICACION
+    cout << "========================================" << endl;
+    cout << "    MULTIPLICADOR DE MATRICES NxN" << endl;
+    cout << "========================================" << endl;
+
+    // Verificar que se recibieron los argumentos correctos
+    if (argc != 3) {
+        cerr << "Error: Se esperan exactamente 2 argumentos (paths de matrices)" << endl;
+        cerr << "Uso: " << argv[0] << " <ruta_matriz_A> <ruta_matriz_B>" << endl;
         return 1;
     }
 
-    std::string pathA = argv[1];
-    std::string pathB = argv[2];
-    char separator = argv[3][0];
+    // Usar los argumentos recibidos del proceso padre
+    string pathA = argv[1];
+    string pathB = argv[2];
+    char separator = ',';  // Usar coma como separador (las matrices están en formato CSV)
+
+    cout << "Archivo matriz A: " << pathA << endl;
+    cout << "Archivo matriz B: " << pathB << endl;
+    cout << "========================================" << endl;
 
     try {
         auto matrixA = readMatrixFromFile(pathA, separator);
         auto matrixB = readMatrixFromFile(pathB, separator);
 
         if (matrixA.size() != matrixB.size()) {
-            throw std::runtime_error("Las matrices no tienen el mismo tamaño.");
+            throw runtime_error("Las matrices no tienen el mismo tamaño.");
         }
 
+        cout << "Multiplicando matrices " << matrixA.size() << "x" << matrixA.size() << "..." << endl;
         auto result = multiplyMatrices(matrixA, matrixB);
 
-        std::cout << "Resultado de la multiplicación:\n";
+        cout << "\nResultado de la multiplicación:" << endl;
         printMatrix(result);
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << "\n";
+        cout << "========================================" << endl;
+
+    } catch (const exception& e) {
+        cerr << "Error: " << e.what() << "\n";
         return 1;
     }
 

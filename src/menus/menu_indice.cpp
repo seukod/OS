@@ -1,132 +1,106 @@
 #include "../../include/menus/menu_indice.h"
 #include "../../include/interfaz.h"
+#include "../../include/utils/input_utils.h"
 #include "../../include/users_auth.h"
-
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
-#include <algorithm>
-#include <cctype>
-#include <filesystem>
-#include <fstream>
+#include <sys/stat.h>
+#include <unistd.h>
+
 using namespace std;
-namespace fs = std::filesystem;
 
-
-// Función para manejar la lógica del archivo
-string nombreArchivo() {
-    string archivo;
-    int opcion;
-
-    // Obtener carpeta desde variable de entorno o .env
-    string carpeta = leerVariableEnv("Revisar", ".env");
-    if (carpeta.empty()) {
-        cout << "[ERROR] No se encontró la variable 'Revisar' en el entorno ni en .env." << endl;
-        return "";
+bool validarNombreArchivo(const string& nombreArchivo) {
+    if (nombreArchivo.length() < 5) {
+        return false;
     }
-    if (carpeta.back() != '/' && carpeta.back() != '\\') carpeta += '/'; // asegura que termine con /
-
-    while (true) {
-        cout << "Ingrese el nombre del archivo a crear (sin extensión, se agregará .idx automáticamente): ";
-        cin >> archivo;
-
-        // Forzar extensión .idx
-        if (archivo.size() < 4 || archivo.substr(archivo.size() - 4) != ".idx") {
-            archivo += ".idx";
-        }
-
-        string rutaCompleta = carpeta + archivo;
-
-        if (fs::exists(rutaCompleta)) {
-            cout << "El archivo '" << archivo << "' ya existe." << endl;
-            cout << "¿Quieres editar el archivo? (1 = Sí, 0 = No): ";
-            cin >> opcion;
-
-            if (opcion == 1) {
-                cout << "Se editará el archivo existente '" << archivo << "'." << endl;
-                return rutaCompleta;
-            } else {
-                limpiarPantalla();  // limpiar pantalla si no quiere editar
-                cout << "Ingrese otro nombre de archivo." << endl;
-            }
-        } else {
-            cout << "El archivo '" << archivo << "' no existe. Se creará uno nuevo." << endl;
-            ofstream nuevo(rutaCompleta);
-            if (!nuevo) {
-                cout << "[ERROR] No se pudo crear el archivo en la ruta: " << rutaCompleta << endl;
-                return "";
-            }
-            nuevo.close();
-            return rutaCompleta;
-        }
-    }
+    return nombreArchivo.substr(nombreArchivo.length() - 4) == ".idx";
 }
 
-string pedirPathValido() {
-    string path;
-    while (true) {
-        cout << "Ingrese el path de la carpeta con los libros: ";
-        cin >> path;
-
-        if (fs::exists(path) && fs::is_directory(path)) {
-            return path;  // Path válido
-        } else {
-            cout << "[ERROR] La carpeta no existe. Intente nuevamente." << endl;
-        }
+bool validarDirectorio(const string& pathDirectorio) {
+    struct stat info;
+    if (stat(pathDirectorio.c_str(), &info) != 0) {
+        return false; // No existe
     }
+    return (info.st_mode & S_IFDIR) != 0; // Es un directorio
 }
 
-void ejecutarProgramaExterno(const string& archivo, const string& carpeta) {
-    string rutaPrograma = leerVariableEnv("CREATE_INDEX", ".env");
-    if (rutaPrograma.empty()) {
-        cout << "[ERROR] No se encontró CREATE_INDEX en el .env" << endl;
-        return;
-    }
+bool crearIndiceInvertido(const string& nombreArchivo, const string& pathCarpeta) {
+    cout << "\n=================================================" << endl;
+    cout << "           CREANDO ÍNDICE INVERTIDO              " << endl;
+    cout << "=================================================" << endl;
+    cout << "Archivo: " << nombreArchivo << endl;
+    cout << "Directorio libros: " << pathCarpeta << endl;
+    cout << "=================================================" << endl;
 
-    // Construimos el comando para ejecutar el programa externo
-    // Asumimos que main.cpp ya está compilado o lo compilamos temporalmente
-    string comando;
-    if (fs::exists(rutaPrograma)) {
-        // Compilar y ejecutar
-        comando = "g++ \"" + rutaPrograma + "\" -o temp_program.exe && temp_program.exe \"" + archivo + "\" \"" + carpeta + "\"";
-        system(comando.c_str());
-        // Opcional: eliminar ejecutable temporal
-        system("del temp_program.exe");
-    } else {
-        cout << "[ERROR] No se encontró el archivo " << rutaPrograma << endl;
-    }
+    // La función ejecutarProcesoExterno ya imprime sus propios mensajes
+    bool exito = ejecutarProcesoExterno("CREATE_INDEX", nombreArchivo, pathCarpeta);
+
+    return exito;
 }
 
-// Función principal
-void ejecutarMenuIndiceInvertido() {
-    string nombreArchivoRuta;
-    string pathCarpeta;
-    int confirmar;
-
+void ejecutarMenuIndice() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "         CREAR ÍNDICE INVERTIDO                  " << endl;
+    cout << "           CREAR ÍNDICE INVERTIDO                " << endl;
     cout << "=================================================" << endl;
+    
+    string nombreArchivo;
+    string pathCarpeta;
+    
+    // Paso 1: Ingresar y validar nombre del archivo con bucle
+    do {
+        cout << "\nIngrese el nombre del archivo a crear (debe terminar en .idx): ";
+        getline(cin, nombreArchivo);
+        
+        if (nombreArchivo.empty()) {
+            cout << "[ERROR] El nombre no puede estar vacío." << endl;
+        } else if (!validarNombreArchivo(nombreArchivo)) {
+            cout << "[ERROR] El archivo debe tener extensión .idx" << endl;
+        } else {
+            break;
+        }
+    } while (true);
+    
+    // Paso 2: Ingresar y validar path de la carpeta con bucle
+    do {
+        cout << "\nIngrese el path de la carpeta donde están los libros: ";
+        getline(cin, pathCarpeta);
+        
+        if (pathCarpeta.empty()) {
+            cout << "[ERROR] El path no puede estar vacío." << endl;
+        } else if (!validarDirectorio(pathCarpeta)) {
+            cout << "[ERROR] El directorio no existe o no es válido." << endl;
+            cout << "Verifique que el path sea correcto." << endl;
+        } else {
+            break;
+        }
+    } while (true);
+    
+    // Paso 3: Confirmar antes de ejecutar con validación
+    cout << "\n=================================================" << endl;
+    cout << "RESUMEN:" << endl;
+    cout << "Archivo a crear: " << nombreArchivo << endl;
+    cout << "Directorio de libros: " << pathCarpeta << endl;
+    cout << "=================================================" << endl;
+    
+    char confirmacion;
+    do {
+        cout << "¿Desea proceder? (s/n): ";
+        cin >> confirmacion;
+        cin.ignore(); // Limpiar buffer
 
-    // Pregunta 1 (usa la función nombreArchivo)
-    nombreArchivoRuta = nombreArchivo();
-    if (nombreArchivoRuta.empty()) {
-        pausarPantalla();
-        return; // Si el usuario canceló
-    }
+        if (confirmacion == 's' || confirmacion == 'S' || confirmacion == 'n' || confirmacion == 'N') {
+            break;
+        } else {
+            cout << "[ERROR] Por favor ingrese 's' para sí o 'n' para no." << endl;
+        }
+    } while (true);
 
-    // Pregunta 2
-    pathCarpeta = pedirPathValido();
-
-    // Pregunta 3 (confirmación)
-    cout << "¿Está seguro de ejecutar el programa externo? (1 = Aceptar, 0 = Cancelar): ";
-    cin >> confirmar;
-
-    if (confirmar == 1) {
-        cout << "Ejecutando programa externo con archivo '" << nombreArchivoRuta
-             << "' y carpeta '" << pathCarpeta << "'..." << endl;
-        ejecutarProgramaExterno(nombreArchivoRuta, pathCarpeta);
+    if (confirmacion == 's' || confirmacion == 'S') {
+        // Paso 4: Ejecutar programa externo
+        crearIndiceInvertido(nombreArchivo, pathCarpeta);
+        // El proceso hijo ya muestra los mensajes de resultado
     } else {
-        cout << "Ejecución cancelada. Volviendo al menú..." << endl;
+        cout << "\nOperación cancelada por el usuario." << endl;
     }
-
-    pausarPantalla();
 }

@@ -1,12 +1,19 @@
 #ifndef MULTI_MATRIX_H
 #define MULTI_MATRIX_H
 
-#include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
+#include <string>
+#include <unistd.h>  // Para getpid() y getcwd()
+#include <iomanip>   // Para formateo de decimales
 
-std::vector<std::vector<int>> readMatrixFromFile(const std::string& path, char separator);
-bool validateMatrix(const std::vector<std::vector<int>>& matrix);
-std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& A, const std::vector<std::vector<int>>& B);
-void printMatrix(const std::vector<std::vector<int>>& matrix);
+using namespace std;
+
+vector<vector<double>> readMatrixFromFile(const string& path, char separator);
+bool validateMatrix(const vector<vector<double>>& matrix);
+vector<vector<double>> multiplyMatrices(const vector<vector<double>>& A, const vector<vector<double>>& B);
+void printMatrix(const vector<vector<double>>& matrix);
 
 #endif // MULTI_MATRIX_H

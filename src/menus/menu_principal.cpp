@@ -3,11 +3,13 @@
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/menus/menu_funcion.h"
 #include "../../include/menus/menu_conteo.h"
+#include "../../include/menus/menu_indice.h"
+#include "../../include/menus/menu_matriz.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
 #include <algorithm>
-#include "../../include/menus/menu_indice.h"
 
 using namespace std;
 
@@ -16,6 +18,7 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
     cout << "=================================================" << endl;
     cout << "                MENÚ PRINCIPAL                   " << endl;
     cout << "=================================================" << endl;
+    cout << "OS PID: " << getpid() << endl;
     cout << "Usuario: " << usuario.nombre << " (" << usuario.username << ")" << endl;
     cout << "Perfil: " << usuario.perfil << endl;
     cout << "=================================================" << endl;
@@ -61,11 +64,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
             case 6:
                 cout << "6. Conteo sobre texto" << endl;
                 break;
-
             case 7:
-                cout << "7. Crear índice invertido" << endl;
+                cout << "7. Crea índice invertido" << endl;
                 break;
-
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
                 break;
@@ -120,11 +121,12 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 mostrarMensajeDespedida();
                 break;
             case 1:
-                //ejecutarMenuAdmin(usuario); para más adelante
-                mostrarEnConstruccion("Admin Users");
+                ejecutarAdminUsuarios();
+                //mostrarEnConstruccion("Admin Users");
+                pausarPantalla();
                 break;
             case 2:
-                mostrarEnConstruccion("Multi Matrices NxN");
+                ejecutarMenuMatriz();
                 break;
             case 3:
                 mostrarEnConstruccion("Juego");
@@ -139,7 +141,8 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 ejecutarMenuConteo(libro);
                 break;
             case 7:
-                ejecutarMenuIndiceInvertido();
+                ejecutarMenuIndice();
+                pausarPantalla();
                 break;
             default:
                 mostrarMensajeError("Opción inválida.");
@@ -148,4 +151,3 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
         }
     } while(opcion != 0);
 }
-

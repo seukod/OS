@@ -12,7 +12,5 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro);
 
 // Funciones para las opciones del menú
 void mostrarEnConstruccion(const string& funcionalidad);
-void ejecutarMenuIndiceInvertido();
-
 
 #endif // MENU_PRINCIPAL_H
