@@ -6,50 +6,22 @@
 #include <sys/stat.h>
 #include <cctype>
 
-CreadorIndice::CreadorIndice(const string& archivo, const string& directorio) 
-    : archivoSalida(archivo), directorioLibros(directorio) {}
-
-string CreadorIndice::limpiarPalabra(const string& palabra) {
+string limpiarPalabra(const string& palabra) {
     // La palabra ya viene limpia del procesamiento línea por línea,
     // solo aplicamos filtros para evitar palabras mal formadas
     
-    // 1. No palabras vacías
+    // No palabras vacías
     if (palabra.empty()) {
         return "";
-    }
-    
-    // 2. No palabras con solo un carácter repetido (como "aaa", "bbb")
-    if (palabra.length() > 2) {
-        bool todasIguales = true;
-        char primerChar = palabra[0];
-        for (char c : palabra) {
-            if (c != primerChar) {
-                todasIguales = false;
-                break;
-            }
-        }
-        if (todasIguales) {
-            return "";
-        }
-    }
-    
-    // 3. No palabras con patrones raros (más de 3 caracteres consecutivos iguales)
-    // Verificamos que tengamos al menos 3 caracteres antes de acceder
-    if (palabra.length() >= 3) {
-        for (size_t i = 0; i <= palabra.length() - 3; i++) {
-            if (palabra[i] == palabra[i+1] && palabra[i+1] == palabra[i+2]) {
-                return "";
-            }
-        }
     }
     
     return palabra;
 }
 
-bool CreadorIndice::procesarDirectorio() {
+bool procesarDirectorio(const string& directorioLibros, unordered_map<string, vector<DocumentoInfo>>& indiceInvertido) {
     DIR* dir = opendir(directorioLibros.c_str());
     if (!dir) {
-        cout << "[ERROR] No se pudo abrir el directorio: " << directorioLibros << endl;
+        cout << "ERROR: No se pudo abrir el directorio: " << directorioLibros << endl;
         return false;
     }
     
@@ -76,7 +48,7 @@ bool CreadorIndice::procesarDirectorio() {
                 nombreArchivo.substr(nombreArchivo.length() - 4) == ".txt") {
 
                 cout << "Procesando: " << nombreArchivo << endl;
-                procesarArchivo(nombreArchivo, rutaCompleta);
+                procesarArchivo(nombreArchivo, rutaCompleta, indiceInvertido);
                 archivosProcesados++;
             }
         }
@@ -88,10 +60,10 @@ bool CreadorIndice::procesarDirectorio() {
     return archivosProcesados > 0;
 }
 
-void CreadorIndice::procesarArchivo(const string& nombreArchivo, const string& rutaCompleta) {
+void procesarArchivo(const string& nombreArchivo, const string& rutaCompleta, unordered_map<string, vector<DocumentoInfo>>& indiceInvertido) {
     ifstream archivo(rutaCompleta);
     if (!archivo.is_open()) {
-        cout << "[WARNING] No se pudo abrir el archivo: " << nombreArchivo << endl;
+        cout << "No se pudo abrir el archivo: " << nombreArchivo << endl;
         return;
     }
     
@@ -143,10 +115,10 @@ void CreadorIndice::procesarArchivo(const string& nombreArchivo, const string& r
     }
 }
 
-bool CreadorIndice::guardarIndice() {
+bool guardarIndice(const string& archivoSalida, const unordered_map<string, vector<DocumentoInfo>>& indiceInvertido) {
     ofstream archivo(archivoSalida);
     if (!archivo.is_open()) {
-        cout << "[ERROR] No se pudo crear el archivo: " << archivoSalida << endl;
+        cout << "ERROR: No se pudo crear el archivo: " << archivoSalida << endl;
         return false;
     }
     
@@ -163,7 +135,7 @@ bool CreadorIndice::guardarIndice() {
     for (const string& palabra : palabrasOrdenadas) {
         archivo << palabra;
         
-        const vector<DocumentoInfo>& documentos = indiceInvertido[palabra];
+        const vector<DocumentoInfo>& documentos = indiceInvertido.at(palabra);
         for (const DocumentoInfo& doc : documentos) {
             archivo << ";(" << doc.nombre << "," << doc.cantidad << ")";
         }
@@ -176,7 +148,7 @@ bool CreadorIndice::guardarIndice() {
     return true;
 }
 
-bool CreadorIndice::crearIndice() {
+bool crearIndice(const string& archivoSalida, const string& directorioLibros) {
     cout << "=================================================" << endl;
     cout << "         CREADOR DE ÍNDICE INVERTIDO             " << endl;
     cout << "=================================================" << endl;
@@ -184,15 +156,18 @@ bool CreadorIndice::crearIndice() {
     cout << "Archivo de salida: " << archivoSalida << endl;
     cout << "=================================================" << endl;
     
-    // Paso 1: Procesar todos los archivos
-    if (!procesarDirectorio()) {
-        cout << "[ERROR] No se pudieron procesar los archivos." << endl;
+    // HashMap que almacena: palabra -> vector de documentos donde aparece
+    unordered_map<string, vector<DocumentoInfo>> indiceInvertido;
+    
+    // Procesar todos los archivos
+    if (!procesarDirectorio(directorioLibros, indiceInvertido)) {
+        cout << "ERROR: No se pudieron procesar los archivos." << endl;
         return false;
     }
     
-    // Paso 2: Guardar el índice
-    if (!guardarIndice()) {
-        cout << "[ERROR] No se pudo guardar el índice." << endl;
+    // Guardar el índice
+    if (!guardarIndice(archivoSalida, indiceInvertido)) {
+        cout << "ERROR: No se pudo guardar el índice." << endl;
         return false;
     }
     

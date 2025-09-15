@@ -3,7 +3,7 @@
 #include <filesystem>
 
 using namespace std;
-namespace fs = std::filesystem;
+namespace fs = filesystem;
 
 int main(int argc, char* argv[]) {
     // Verificar argumentos
@@ -19,31 +19,28 @@ int main(int argc, char* argv[]) {
     // Validar que el archivo tenga extensión .idx
     if (nombreArchivo.length() < 5 || 
         nombreArchivo.substr(nombreArchivo.length() - 4) != ".idx") {
-        cout << "[ERROR] El archivo debe tener extensión .idx" << endl;
+        cout << "ERROR: El archivo debe tener extensión .idx" << endl;
         return 2;
     }
     
     // Construir la ruta completa para guardar en OS/
-    // El programa se ejecuta desde OS/build, así que necesitamos subir un nivel
+    // El programa se ejecuta desde OS/build
     string rutaCompleta = "../" + nombreArchivo;
     
-    // Crear el objeto creador de índice
-    CreadorIndice creador(rutaCompleta, pathCarpeta);
-    
     try {
-        // Ejecutar el proceso de creación
-        if (creador.crearIndice()) {
+        // Ejecutar el proceso de creación usando la función
+        if (crearIndice(rutaCompleta, pathCarpeta)) {
             cout << "\n¡Índice invertido creado exitosamente!" << endl;
             return 0;
         } else {
-            cout << "\n[ERROR] No se pudo crear el índice invertido." << endl;
+            cout << "\nERROR: No se pudo crear el índice invertido." << endl;
             return 3;
         }
     } catch (const exception& e) {
-        cout << "[ERROR] Excepción capturada: " << e.what() << endl;
+        cout << "ERROR: " << e.what() << endl;
         return 4;
     } catch (...) {
-        cout << "[ERROR] Error desconocido durante la creación del índice." << endl;
+        cout << "ERROR: Error en la creación del índice." << endl;
         return 5;
     }
 }
