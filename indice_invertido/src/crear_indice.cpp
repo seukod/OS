@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <cctype>
 
+
 string limpiarPalabra(const string& palabra) {
     // La palabra ya viene limpia del procesamiento línea por línea,
     // solo aplicamos filtros para evitar palabras mal formadas
@@ -154,6 +155,7 @@ bool crearIndice(const string& archivoSalida, const string& directorioLibros) {
     cout << "=================================================" << endl;
     cout << "Directorio de entrada: " << directorioLibros << endl;
     cout << "Archivo de salida: " << archivoSalida << endl;
+    cout << "Proceso indice invertido iniciado, PID: " << getpid() << endl;
     cout << "=================================================" << endl;
     
     // HashMap que almacena: palabra -> vector de documentos donde aparece
