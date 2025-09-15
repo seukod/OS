@@ -3,6 +3,7 @@
 #include "../../include/utils/input_utils.h"
 #include "../../include/users_auth.h"
 #include <iostream>
+#include <unistd.h>
 #include <fstream>
 #include <cctype>
 #include <sstream>
@@ -11,6 +12,7 @@
 using namespace std;
 
 void ejecutarMenuConteo(const string& nombreLibro) {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     int opcion;
     do {
         mostrarMenuConteo();

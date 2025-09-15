@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <unistd.h>
 #include <cstdlib>
 #include <cctype>
 #include <vector>
@@ -78,6 +79,7 @@ void limpiarMemoria() {
 // Lee USUARIOS.txt y PERFILES.txt (o los archivos definidos por variables de entorno).
 // Devuelve true si la carga fue exitosa, false si hubo algún error.
 bool cargarDatosEnMemoria() {
+    cout << "[INFO] PID del proceso carga de datos: " << getpid() << endl;
     limpiarMemoria(); // Limpiar memoria primero
     
     // Cargar usuarios desde archivo

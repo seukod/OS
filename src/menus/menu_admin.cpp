@@ -4,6 +4,7 @@
 #include "../../include/users_auth.h"
 #include "../../include/utils/input_utils.h"
 #include <iostream>
+#include <unistd.h>
 #include <limits>
 
 using namespace std;
@@ -26,6 +27,7 @@ void mostrarMenuAdmin() {
 }
 
 void ejecutarMenuAdmin(const Usuario& usuario) {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     mostrarTitulo("MODO ADMINISTRACIÓN");
     cout << "Usuario administrador: " << usuario.nombre << endl;
     pausarPantalla();

@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 20)
 # Copia '.env' al directorio de build al configurar
 configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
-
 # Archivos fuente y cabecera en las carpetas src/ e include/
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h")
 
+# Crear ejecutable principal OS
 add_executable(OS ${SOURCES} ${HEADERS}
         src/menus/menu_funcion.cpp
 )
@@ -29,3 +29,6 @@ add_custom_command(TARGET OS POST_BUILD
 target_compile_definitions(OS PRIVATE
         DEFAULT_ENV_PATH="${CMAKE_SOURCE_DIR}/.env"
 )
+
+# Agregar subdirectorio para la aplicación externa admin_tool
+add_subdirectory(prog_extra/admin_tool)

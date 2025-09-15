@@ -1,3 +1,6 @@
-/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/OS.dir
-/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/edit_cache.dir
-/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/CMakeFiles/OS.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/CMakeFiles/edit_cache.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/prog_extra/admin_tool/CMakeFiles/admin_tool.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/prog_extra/admin_tool/CMakeFiles/edit_cache.dir
+/mnt/c/users/benja/Documents/GitHub/OS/build/prog_extra/admin_tool/CMakeFiles/rebuild_cache.dir

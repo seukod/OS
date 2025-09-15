@@ -5,10 +5,42 @@
 #include "../../include/menus/menu_conteo.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
+#include "../../include/users_auth.h"
+#include <sys/stat.h>
+#include <filesystem>
+#include <unistd.h>
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
+
+
+bool archivoExiste(const std::string& ruta) {
+    struct stat buffer;
+    return (stat(ruta.c_str(), &buffer) == 0);
+}
+
+
+
+
+void ejecutarAdminToolDesdeEnv() {
+    string rutaAdminTool = leerVariableEnv("ADMIN_SYS");
+    if (rutaAdminTool.empty()) {
+        cerr << "[ERROR] No se encontró la variable ADMIN_SYS en el entorno ni en el .env" << endl;
+        return;
+    }
+
+    if (!std::filesystem::exists(rutaAdminTool)) {
+        cerr << "[ERROR] El archivo especificado en ADMIN_SYS no existe: " << rutaAdminTool << endl;
+        return;
+    }
+
+    cout << "[INFO] Ejecutando admin_tool en: " << rutaAdminTool << endl;
+    int result = system(rutaAdminTool.c_str());
+    if (result == -1) {
+        cerr << "[ERROR] No se pudo ejecutar admin_tool." << endl;
+    }
+}
 
 void mostrarMenuPrincipal(const Usuario& usuario) {
     limpiarPantalla();
@@ -81,6 +113,7 @@ void mostrarEnConstruccion(const string& funcionalidad) {
 }
 
 void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     cout << "\nInicio de sesión exitoso." << endl;
     cout << "Bienvenido, " << usuario.nombre << endl;
     cout << "Libro seleccionado: " << libro << endl;
@@ -114,10 +147,12 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 mostrarMensajeDespedida();
                 break;
             case 1:
-                //ejecutarMenuAdmin(usuario); para más adelante
-                mostrarEnConstruccion("Admin Users");
+                ejecutarAdminToolDesdeEnv();
+                //ejecutarMenuAdmin(usuario);
+                //mostrarEnConstruccion("Admin Users");
                 break;
             case 2:
+
                 mostrarEnConstruccion("Multi Matrices NxN");
                 break;
             case 3:

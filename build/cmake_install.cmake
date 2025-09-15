@@ -1,4 +1,4 @@
-# Install script for directory: /home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS
+# Install script for directory: /mnt/c/users/benja/Documents/GitHub/OS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,7 +29,7 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
 # Is this installation the result of a crosscompile?
@@ -37,30 +37,23 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set path to fallback-tool for dependency-resolution.
+# Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/mnt/c/users/benja/Documents/GitHub/OS/build/prog_extra/admin_tool/cmake_install.cmake")
 endif()
+
 if(CMAKE_INSTALL_COMPONENT)
-  if(CMAKE_INSTALL_COMPONENT MATCHES "^[a-zA-Z0-9_.+-]+$")
-    set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-  else()
-    string(MD5 CMAKE_INST_COMP_HASH "${CMAKE_INSTALL_COMPONENT}")
-    set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INST_COMP_HASH}.txt")
-    unset(CMAKE_INST_COMP_HASH)
-  endif()
+  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/pancho/Desktop/SEXTO_SEMESTRE/SISTEMAS_OPERATIVOS/repo_github_proyecto/entrega_1/OS/build/${CMAKE_INSTALL_MANIFEST}"
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+file(WRITE "/mnt/c/users/benja/Documents/GitHub/OS/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()

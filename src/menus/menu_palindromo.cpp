@@ -2,6 +2,7 @@
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include <iostream>
+#include <unistd.h>
 #include <algorithm>
 #include <cctype>
 
@@ -18,6 +19,7 @@ void mostrarMenuPalindromo() {
 }
 
 void ejecutarMenuPalindromo() {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     string texto;
     int opcion;
     

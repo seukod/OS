@@ -3,6 +3,7 @@
 #include <limits>
 #include "../include/interfaz.h"
 #include "../include/usuarios.h"
+#include <unistd.h>
 #include "../include/users_auth.h"
 #include "../include/ArgParser.h"
 #include "../include/AppConfig.h"
@@ -12,6 +13,8 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     try {
+        //Mostrar PID
+        cout << "PID DEL PROCESO: " << getpid() << endl;
         // 1) Limpiar memoria y cargar datos de usuarios y perfiles al inicio
         cout << "[INFO] Iniciando sistema..." << endl;
         if (!cargarDatosEnMemoria()) {

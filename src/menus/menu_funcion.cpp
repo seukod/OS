@@ -1,10 +1,12 @@
 #include "../include/interfaz.h"
 #include "../../include/menus/menu_funcion.h"
 #include <iostream>
+#include <unistd.h>
 
 using namespace std;
 
 void calcular_f() {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     while (true) {
         mostrarTitulo("Calculadora de f(x) = x*x + 2x + 8");
 

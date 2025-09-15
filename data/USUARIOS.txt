@@ -6,3 +6,4 @@
 14,gato,flaite,123,ADMIN
 16,Javier,Notos,saturno,ADMIN
 17,Giorgio,Giors,admin,ADMIN
+18,penguin,nakyy,1234,ADMIN

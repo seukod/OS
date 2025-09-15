@@ -1,6 +1,7 @@
 // Implementación de funciones para gestión de usuarios y perfiles en memoria
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
 #include <sstream>
 #include <string>
 #include <cstdlib>
@@ -53,6 +54,7 @@ static bool fileEndsWithNewline(const string& path) {
 
 // Lista todos los usuarios cargados en memoria mostrando ID, nombre y perfil
 void listarUsuarios() {
+    cout << "[INFO] PID del proceso listar usuarios: " << getpid() << endl;
     if (g_usuarios.empty()) {
         cerr << "[listarUsuarios] No hay usuarios cargados en memoria." << endl;
         return;
