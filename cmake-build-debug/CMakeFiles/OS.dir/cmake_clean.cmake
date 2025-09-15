@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/OS.dir/link.d"
+  "CMakeFiles/OS.dir/src/AppConfig.cpp.o"
+  "CMakeFiles/OS.dir/src/AppConfig.cpp.o.d"
+  "CMakeFiles/OS.dir/src/ArgParser.cpp.o"
+  "CMakeFiles/OS.dir/src/ArgParser.cpp.o.d"
+  "CMakeFiles/OS.dir/src/interfaz.cpp.o"
+  "CMakeFiles/OS.dir/src/interfaz.cpp.o.d"
+  "CMakeFiles/OS.dir/src/main.cpp.o"
+  "CMakeFiles/OS.dir/src/main.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_admin.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_admin.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
+  "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o"
+  "CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o.d"
+  "CMakeFiles/OS.dir/src/users_auth.cpp.o"
+  "CMakeFiles/OS.dir/src/users_auth.cpp.o.d"
+  "CMakeFiles/OS.dir/src/usuarios.cpp.o"
+  "CMakeFiles/OS.dir/src/usuarios.cpp.o.d"
+  "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o"
+  "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o.d"
+  "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o"
+  "CMakeFiles/OS.dir/src/utils/string_utils.cpp.o.d"
+  "OS"
+  "OS.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/OS.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

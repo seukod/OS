@@ -1,0 +1,3 @@
+/home/giors/Desktop/6to_semestre/Repositorios/OS/cmake-build-debug/CMakeFiles/OS.dir
+/home/giors/Desktop/6to_semestre/Repositorios/OS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/giors/Desktop/6to_semestre/Repositorios/OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir

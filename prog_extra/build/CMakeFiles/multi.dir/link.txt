@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/multi.dir/source/multi_matrix.cpp.o -o /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/prog_extra/multi 
