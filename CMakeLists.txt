@@ -15,6 +15,8 @@ add_executable(OS ${SOURCES} ${HEADERS}
         src/menus/menu_funcion.cpp
         src/menus/menu_indice.cpp
         include/menus/menu_indice.h
+        invertir/crear_indices.cpp
+        invertir/main.cpp
 )
 
 # Incluir la carpeta de headers
