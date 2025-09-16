@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/src/main.cpp" "CMakeFiles/crear_indice.dir/src/main.cpp.o" "gcc" "CMakeFiles/crear_indice.dir/src/main.cpp.o.d"
+  "/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp" "CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o" "gcc" "CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o.d"
+  "/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/main.cpp" "CMakeFiles/crear_indice.dir/src/main.cpp.o" "gcc" "CMakeFiles/crear_indice.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp" "CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o" "gcc" "CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o.d"
   "/home/giors/Desktop/6to_semestre/Repositorios/OS/src/AppConfig.cpp" "CMakeFiles/OS.dir/src/AppConfig.cpp.o" "gcc" "CMakeFiles/OS.dir/src/AppConfig.cpp.o.d"
   "/home/giors/Desktop/6to_semestre/Repositorios/OS/src/ArgParser.cpp" "CMakeFiles/OS.dir/src/ArgParser.cpp.o" "gcc" "CMakeFiles/OS.dir/src/ArgParser.cpp.o.d"
   "/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp" "CMakeFiles/OS.dir/src/interfaz.cpp.o" "gcc" "CMakeFiles/OS.dir/src/interfaz.cpp.o.d"

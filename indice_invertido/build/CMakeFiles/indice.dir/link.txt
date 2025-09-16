@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/indice.dir/src/main.cpp.o -o indice 
+/usr/bin/c++ CMakeFiles/indice.dir/src/main.cpp.o CMakeFiles/indice.dir/src/crear_indice.cpp.o -o indice 

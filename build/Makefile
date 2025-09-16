@@ -129,6 +129,30 @@ OS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/build
 .PHONY : OS/fast
 
+indice_invertido/src/crear_indice.o: indice_invertido/src/crear_indice.cpp.o
+.PHONY : indice_invertido/src/crear_indice.o
+
+# target to build an object file
+indice_invertido/src/crear_indice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o
+.PHONY : indice_invertido/src/crear_indice.cpp.o
+
+indice_invertido/src/crear_indice.i: indice_invertido/src/crear_indice.cpp.i
+.PHONY : indice_invertido/src/crear_indice.i
+
+# target to preprocess a source file
+indice_invertido/src/crear_indice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.i
+.PHONY : indice_invertido/src/crear_indice.cpp.i
+
+indice_invertido/src/crear_indice.s: indice_invertido/src/crear_indice.cpp.s
+.PHONY : indice_invertido/src/crear_indice.s
+
+# target to generate assembly for a file
+indice_invertido/src/crear_indice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.s
+.PHONY : indice_invertido/src/crear_indice.cpp.s
+
 src/AppConfig.o: src/AppConfig.cpp.o
 .PHONY : src/AppConfig.o
 
@@ -522,6 +546,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... OS"
+	@echo "... indice_invertido/src/crear_indice.o"
+	@echo "... indice_invertido/src/crear_indice.i"
+	@echo "... indice_invertido/src/crear_indice.s"
 	@echo "... src/AppConfig.o"
 	@echo "... src/AppConfig.i"
 	@echo "... src/AppConfig.s"

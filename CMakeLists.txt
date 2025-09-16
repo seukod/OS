@@ -14,6 +14,8 @@ file(GLOB_RECURSE HEADERS "include/*.h")
 add_executable(OS ${SOURCES} ${HEADERS}
         src/process_tools/process_manager.cpp
         include/process_tools/process_manager.h
+        indice_invertido/src/crear_indice.cpp
+        indice_invertido/include/crear_indice.h
 )
 
 # Incluir la carpeta de headers

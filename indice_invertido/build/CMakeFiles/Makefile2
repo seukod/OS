@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/indice.dir/clean
 CMakeFiles/indice.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles --progress-num=1,2 "Built target indice"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles --progress-num=1,2,3 "Built target indice"
 .PHONY : CMakeFiles/indice.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/indice.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/indice.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles 0
 .PHONY : CMakeFiles/indice.dir/rule
 
 # Convenience name for target.

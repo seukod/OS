@@ -10,7 +10,8 @@ include_directories(include)
 
 # Definir archivos fuente
 set(SOURCES
-    src/main.cpp
+        src/main.cpp
+        src/crear_indice.cpp
 )
 
 # Crear el ejecutable
@@ -21,7 +22,7 @@ target_compile_options(indice PRIVATE -Wall -Wextra)
 
 # Configurar el directorio de salida
 set_target_properties(indice PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build
 )
 
 # Crear directorio build si no existe

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o"
+  "CMakeFiles/crear_indice.dir/src/crear_indice.cpp.o.d"
   "CMakeFiles/crear_indice.dir/src/main.cpp.o"
   "CMakeFiles/crear_indice.dir/src/main.cpp.o.d"
   "crear_indice"

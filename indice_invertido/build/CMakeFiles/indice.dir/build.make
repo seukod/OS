@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/indice.dir/depend.make
@@ -70,30 +70,46 @@ include CMakeFiles/indice.dir/progress.make
 include CMakeFiles/indice.dir/flags.make
 
 CMakeFiles/indice.dir/src/main.cpp.o: CMakeFiles/indice.dir/flags.make
-CMakeFiles/indice.dir/src/main.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/src/main.cpp
+CMakeFiles/indice.dir/src/main.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/main.cpp
 CMakeFiles/indice.dir/src/main.cpp.o: CMakeFiles/indice.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/indice.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/indice.dir/src/main.cpp.o -MF CMakeFiles/indice.dir/src/main.cpp.o.d -o CMakeFiles/indice.dir/src/main.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/indice.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/indice.dir/src/main.cpp.o -MF CMakeFiles/indice.dir/src/main.cpp.o.d -o CMakeFiles/indice.dir/src/main.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/main.cpp
 
 CMakeFiles/indice.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/indice.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/src/main.cpp > CMakeFiles/indice.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/main.cpp > CMakeFiles/indice.dir/src/main.cpp.i
 
 CMakeFiles/indice.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/indice.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/src/main.cpp -o CMakeFiles/indice.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/main.cpp -o CMakeFiles/indice.dir/src/main.cpp.s
+
+CMakeFiles/indice.dir/src/crear_indice.cpp.o: CMakeFiles/indice.dir/flags.make
+CMakeFiles/indice.dir/src/crear_indice.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp
+CMakeFiles/indice.dir/src/crear_indice.cpp.o: CMakeFiles/indice.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/indice.dir/src/crear_indice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/indice.dir/src/crear_indice.cpp.o -MF CMakeFiles/indice.dir/src/crear_indice.cpp.o.d -o CMakeFiles/indice.dir/src/crear_indice.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp
+
+CMakeFiles/indice.dir/src/crear_indice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/indice.dir/src/crear_indice.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp > CMakeFiles/indice.dir/src/crear_indice.cpp.i
+
+CMakeFiles/indice.dir/src/crear_indice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/indice.dir/src/crear_indice.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp -o CMakeFiles/indice.dir/src/crear_indice.cpp.s
 
 # Object files for target indice
 indice_OBJECTS = \
-"CMakeFiles/indice.dir/src/main.cpp.o"
+"CMakeFiles/indice.dir/src/main.cpp.o" \
+"CMakeFiles/indice.dir/src/crear_indice.cpp.o"
 
 # External object files for target indice
 indice_EXTERNAL_OBJECTS =
 
 indice: CMakeFiles/indice.dir/src/main.cpp.o
+indice: CMakeFiles/indice.dir/src/crear_indice.cpp.o
 indice: CMakeFiles/indice.dir/build.make
 indice: CMakeFiles/indice.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable indice"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable indice"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/indice.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -105,6 +121,6 @@ CMakeFiles/indice.dir/clean:
 .PHONY : CMakeFiles/indice.dir/clean
 
 CMakeFiles/indice.dir/depend:
-	cd /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles/indice.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles/indice.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/indice.dir/depend
 

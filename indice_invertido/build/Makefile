@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/indice_invertido/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,30 @@ indice/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/build
 .PHONY : indice/fast
 
+src/crear_indice.o: src/crear_indice.cpp.o
+.PHONY : src/crear_indice.o
+
+# target to build an object file
+src/crear_indice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/src/crear_indice.cpp.o
+.PHONY : src/crear_indice.cpp.o
+
+src/crear_indice.i: src/crear_indice.cpp.i
+.PHONY : src/crear_indice.i
+
+# target to preprocess a source file
+src/crear_indice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/src/crear_indice.cpp.i
+.PHONY : src/crear_indice.cpp.i
+
+src/crear_indice.s: src/crear_indice.cpp.s
+.PHONY : src/crear_indice.s
+
+# target to generate assembly for a file
+src/crear_indice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/indice.dir/build.make CMakeFiles/indice.dir/src/crear_indice.cpp.s
+.PHONY : src/crear_indice.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... indice"
+	@echo "... src/crear_indice.o"
+	@echo "... src/crear_indice.i"
+	@echo "... src/crear_indice.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

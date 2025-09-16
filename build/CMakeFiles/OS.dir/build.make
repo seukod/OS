@@ -293,6 +293,20 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/src/utils/string_utils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp -o CMakeFiles/OS.dir/src/utils/string_utils.cpp.s
 
+CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp
+CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o -MF CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o.d -o CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp
+
+CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp > CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.i
+
+CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp -o CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.s
+
 # Object files for target OS
 OS_OBJECTS = \
 "CMakeFiles/OS.dir/src/AppConfig.cpp.o" \
@@ -310,7 +324,8 @@ OS_OBJECTS = \
 "CMakeFiles/OS.dir/src/users_auth.cpp.o" \
 "CMakeFiles/OS.dir/src/usuarios.cpp.o" \
 "CMakeFiles/OS.dir/src/utils/input_utils.cpp.o" \
-"CMakeFiles/OS.dir/src/utils/string_utils.cpp.o"
+"CMakeFiles/OS.dir/src/utils/string_utils.cpp.o" \
+"CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o"
 
 # External object files for target OS
 OS_EXTERNAL_OBJECTS =
@@ -331,9 +346,10 @@ OS: CMakeFiles/OS.dir/src/users_auth.cpp.o
 OS: CMakeFiles/OS.dir/src/usuarios.cpp.o
 OS: CMakeFiles/OS.dir/src/utils/input_utils.cpp.o
 OS: CMakeFiles/OS.dir/src/utils/string_utils.cpp.o
+OS: CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o
 OS: CMakeFiles/OS.dir/build.make
 OS: CMakeFiles/OS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable OS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OS.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E copy_if_different /home/giors/Desktop/6to_semestre/Repositorios/OS/.env /home/giors/Desktop/6to_semestre/Repositorios/OS/build/.env
 

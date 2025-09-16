@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o"
+  "CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o.d"
   "CMakeFiles/OS.dir/src/AppConfig.cpp.o"
   "CMakeFiles/OS.dir/src/AppConfig.cpp.o.d"
   "CMakeFiles/OS.dir/src/ArgParser.cpp.o"
