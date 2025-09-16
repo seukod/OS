@@ -1,8 +1,10 @@
 #include "../../include/menus/menu_indiceinvertido.h"
 #include "../../include/interfaz.h"
+#include "../../include/menus/menu_principal.h"
 #include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
@@ -80,6 +82,7 @@ bool is_valid_directory(const string &path) {
     return (info.st_mode & S_IFDIR);
 }
 
+
 void crearIndiceInvertido() {
     limpiarPantalla();
     cout << "=================================================" << endl;
@@ -92,7 +95,9 @@ void crearIndiceInvertido() {
     getline(cin, path_ingresado);
 
     // Validar que la carpeta existe
+
     cout << "Validando carpeta de libros..." << endl;
+    path_ingresado = convertirRutaWSL(path_ingresado);
     if (!is_valid_directory(path_ingresado)) {
         cout << "[ERROR] No se puede acceder a la carpeta: " << path_ingresado << endl;
         pausarPantalla();

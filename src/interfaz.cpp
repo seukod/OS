@@ -45,6 +45,7 @@ void mostrarMensajeDespedida() {
 void pausarPantalla() {
     cout << endl;
     cout << "Presione Enter para continuar...";
+    
     cin.get();
 }
 

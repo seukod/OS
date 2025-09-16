@@ -6,21 +6,101 @@
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/users_auth.h"
+#include <cstdlib>
 #include <sys/stat.h>
+#include <string>
 #include <filesystem>
 #include <unistd.h>
 #include <iostream>
 #include <algorithm>
+#include <fstream>
+
 
 #include "menus/menu_indiceinvertido.h"
 
 using namespace std;
+// Convierte una ruta de Windows a ruta de WSL
+string convertirRutaWSL(const string& rutaWin) {
+    if (rutaWin.size() < 2 || rutaWin[1] != ':') {
+        // No parece ser ruta Windows, devolver igual
+        return rutaWin;
+    }
 
+    // Extraer letra de unidad y convertir a minúscula
+    char letraUnidad = tolower(rutaWin[0]);
+    string resto = rutaWin.substr(2); // Ignora ":"
 
-bool archivoExiste(const std::string& ruta) {
-    struct stat buffer;
-    return (stat(ruta.c_str(), &buffer) == 0);
+    // Reemplazar backslashes por slashes
+    replace(resto.begin(), resto.end(), '\\', '/');
+
+    // Construir ruta WSL
+    return "/mnt/" + string(1, letraUnidad) + resto;
 }
+
+void ejecutarMultiplicadorMatrices() {
+    limpiarPantalla();
+    mostrarTitulo("Multiplicador de Matrices");
+
+    int N = 0;
+    string pathA, pathB;
+    char opcion;
+
+    // Preguntar tamaño N
+    cout << "Ingrese el tamaño N de la matriz (NxN): ";
+    while (!(cin >> N) || N <= 0) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Entrada inválida. Ingrese un número entero positivo para N: ";
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar buffer
+
+    // Preguntar rutas de los archivos
+    cout << "Ingrese la ruta del archivo de la Matriz A: ";
+    getline(cin, pathA);
+
+    cout << "Ingrese la ruta del archivo de la Matriz B: ";
+    getline(cin, pathB);
+
+    pathA = convertirRutaWSL(pathA);
+    pathB = convertirRutaWSL(pathB);
+    // Verificar existencia de los archivos
+    if (!ifstream(pathA) || !ifstream(pathB)) {
+        mostrarMensajeError("No se encontraron los archivos de matrices.");
+        pausarPantalla();
+        return;
+    }
+
+    // Preguntar si desea ejecutar
+    cout << "\nDesea ejecutar la multiplicación? (S/N): ";
+    cin >> opcion;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar buffer
+
+    if (opcion != 'S' && opcion != 's') {
+        mostrarMensajeAdvertencia("Operación cancelada por el usuario.");
+        pausarPantalla();
+        return;
+    }
+
+    // Obtener la ruta del ejecutable desde variable de entorno
+    string rutaApp = leerVariableEnv("MULTI_M");
+    if (rutaApp.empty()) {
+        mostrarMensajeError("La variable de entorno MULTI_M no está definida.");
+        pausarPantalla();
+        return;
+    }
+
+    // Ejecutar la aplicación
+    string comando = rutaApp + " " + pathA + " " + pathB + " \",\"";
+    int ret = system(comando.c_str());
+    pausarPantalla();
+
+    if (ret != 0) {
+        mostrarMensajeError("Ocurrió un error al ejecutar la aplicación de multiplicación de matrices.");
+        pausarPantalla();
+    }
+}
+
+
 
 
 
@@ -157,8 +237,8 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 //mostrarEnConstruccion("Admin Users");
                 break;
             case 2:
-
-                mostrarEnConstruccion("Multi Matrices NxN");
+                ejecutarMultiplicadorMatrices();
+                //mostrarEnConstruccion("Multi Matrices NxN");
                 break;
             case 3:
                 mostrarEnConstruccion("Juego");

@@ -15,7 +15,7 @@ using namespace std;
 void mostrarMenuAdminExterno() {
     limpiarPantalla();
     cout << "=================================================" << endl;
-    cout << "       ADMINISTRACIÓN EXTERNA (APP SEPARADA)     " << endl;
+    cout << "       ADMINISTRACIÓN EXTERNA     " << endl;
     cout << "=================================================" << endl;
     cout << "1. Ingresar Usuario" << endl;
     cout << "2. Eliminar Usuario" << endl;

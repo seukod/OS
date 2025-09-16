@@ -14,6 +14,22 @@ struct DocumentCount {
     string doc_name;
     int count;
 };
+string convertirRutaWSL(const string& rutaWin) {
+    if (rutaWin.size() < 2 || rutaWin[1] != ':') {
+        // No parece ser ruta Windows, devolver igual
+        return rutaWin;
+    }
+
+    // Extraer letra de unidad y convertir a minúscula
+    char letraUnidad = tolower(rutaWin[0]);
+    string resto = rutaWin.substr(2); // Ignora ":"
+
+    // Reemplazar backslashes por slashes
+    replace(resto.begin(), resto.end(), '\\', '/');
+
+    // Construir ruta WSL
+    return "/mnt/" + string(1, letraUnidad) + resto;
+}
 
 void normalize_word(string &word) {
     string normalized;
@@ -90,6 +106,7 @@ int main(int argc, char *argv[]) {
 
     cout << "Validando ruta de la carpeta..." << endl;
 
+    folder_path = convertirRutaWSL(folder_path);
     if (!is_valid_directory(folder_path)) {
         cout << "✗ Error: No se puede acceder a la carpeta: " << folder_path << endl;
         cout << "Por favor, verifique la ruta e intente nuevamente." << endl;
