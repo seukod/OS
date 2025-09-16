@@ -1,5 +1,5 @@
 CMakeFiles/OS.dir/src/main.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/main.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -162,15 +162,15 @@ CMakeFiles/OS.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/interfaz.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/usuarios.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/interfaz.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/usuarios.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/users_auth.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/users_auth.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/ArgParser.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/AppConfig.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/menus/menu_principal.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/menus/../users_auth.h
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/ArgParser.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/AppConfig.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/menus/menu_principal.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/menus/../users_auth.h

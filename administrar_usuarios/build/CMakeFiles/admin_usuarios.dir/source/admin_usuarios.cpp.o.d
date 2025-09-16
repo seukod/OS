@@ -1,8 +1,8 @@
 CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/admin_usuarios.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/admin_usuarios.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/admin_usuarios.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/../../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/admin_usuarios.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/../../include/users_auth.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -121,10 +121,10 @@ CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/../../include/usuarios.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/../../include/users_auth.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/../../include/interfaz.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/../include/../../include/utils/input_utils.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/../../include/usuarios.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/../../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/../../include/interfaz.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/../include/../../include/utils/input_utils.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \

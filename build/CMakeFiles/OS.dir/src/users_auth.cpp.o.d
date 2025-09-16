@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/users_auth.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/users_auth.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -126,8 +126,8 @@ CMakeFiles/OS.dir/src/users_auth.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/AppConfig.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/utils/string_utils.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/AppConfig.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/utils/string_utils.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \

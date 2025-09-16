@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/admin_usuarios.dir/depend.make
@@ -70,110 +70,110 @@ include CMakeFiles/admin_usuarios.dir/progress.make
 include CMakeFiles/admin_usuarios.dir/flags.make
 
 CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/admin_usuarios.cpp
+CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/admin_usuarios.cpp
 CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o -MF CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o.d -o CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/admin_usuarios.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o -MF CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o.d -o CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/admin_usuarios.cpp
 
 CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/admin_usuarios.cpp > CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/admin_usuarios.cpp > CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.i
 
 CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/source/admin_usuarios.cpp -o CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/source/admin_usuarios.cpp -o CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.s
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o -c /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o: CMakeFiles/admin_usuarios.dir/flags.make
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o: CMakeFiles/admin_usuarios.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o -MF CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o.d -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o -c /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp > CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i
 
-CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s
+CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp -o CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s
 
 # Object files for target admin_usuarios
 admin_usuarios_OBJECTS = \
 "CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o" \
-"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o" \
-"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o" \
-"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o" \
-"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o" \
-"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o"
+"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o" \
+"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o" \
+"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o" \
+"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o" \
+"CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o"
 
 # External object files for target admin_usuarios
 admin_usuarios_EXTERNAL_OBJECTS =
 
 admin_usuarios: CMakeFiles/admin_usuarios.dir/source/admin_usuarios.cpp.o
-admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o
-admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o
-admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o
-admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o
-admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o
+admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o
+admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o
+admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o
+admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o
+admin_usuarios: CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o
 admin_usuarios: CMakeFiles/admin_usuarios.dir/build.make
 admin_usuarios: CMakeFiles/admin_usuarios.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable admin_usuarios"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable admin_usuarios"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/admin_usuarios.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +185,6 @@ CMakeFiles/admin_usuarios.dir/clean:
 .PHONY : CMakeFiles/admin_usuarios.dir/clean
 
 CMakeFiles/admin_usuarios.dir/depend:
-	cd /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles/admin_usuarios.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles/admin_usuarios.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/admin_usuarios.dir/depend
 

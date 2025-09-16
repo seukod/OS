@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,125 +129,125 @@ admin_usuarios/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/build
 .PHONY : admin_usuarios/fast
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.o: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.o: home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.o
 
 # target to build an object file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.o
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.i: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.i: home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.i
 
 # target to preprocess a source file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.i
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.s: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.s: home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.s
 
 # target to generate assembly for a file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp.s
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.o: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.o: home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.o
 
 # target to build an object file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.o
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.i: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.i: home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.i
 
 # target to preprocess a source file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.i
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.s: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.s: home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.s
 
 # target to generate assembly for a file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.cpp.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.cpp.s
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.o: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.o: home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.o
 
 # target to build an object file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.o
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.i: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.i: home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.i
 
 # target to preprocess a source file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.i
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.s: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.s: home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.s
 
 # target to generate assembly for a file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp.s
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.o: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.o: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.o
 
 # target to build an object file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.o
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.i: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.i: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.i
 
 # target to preprocess a source file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.i
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.s: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.s: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.s
 
 # target to generate assembly for a file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.cpp.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.cpp.s
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.o: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.o: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.o
 
 # target to build an object file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.o
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.o
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.i: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.i: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.i
 
 # target to preprocess a source file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.i
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.i
 
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.s: home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.s: home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.s
 
 # target to generate assembly for a file
-home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s
-.PHONY : home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp.s
+home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/admin_usuarios.dir/build.make CMakeFiles/admin_usuarios.dir/home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s
+.PHONY : home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp.s
 
 source/admin_usuarios.o: source/admin_usuarios.cpp.o
 .PHONY : source/admin_usuarios.o
@@ -282,21 +282,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... admin_usuarios"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.o"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.i"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.s"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.o"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.i"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/users_auth.s"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.o"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.i"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.s"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.o"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.i"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/input_utils.s"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.o"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.i"
-	@echo "... home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.s"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.o"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.i"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.s"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.o"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.i"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/users_auth.s"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.o"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.i"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.s"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.o"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.i"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/input_utils.s"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.o"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.i"
+	@echo "... home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.s"
 	@echo "... source/admin_usuarios.o"
 	@echo "... source/admin_usuarios.i"
 	@echo "... source/admin_usuarios.s"

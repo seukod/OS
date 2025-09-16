@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/menus/menu_conteo.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_conteo.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/menus/../../include/menus/menu_conteo.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/menus/menu_conteo.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -122,9 +122,9 @@ CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/menus/../../include/interfaz.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/menus/../../include/utils/input_utils.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/menus/../../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/interfaz.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/utils/input_utils.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/users_auth.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

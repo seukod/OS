@@ -1,4 +1,4 @@
-# Install script for directory: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC
+# Install script for directory: /home/giors/Desktop/6to_semestre/Repositorios/OS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/giors/Desktop/6to_semestre/Repositorios/OS/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

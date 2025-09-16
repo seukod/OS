@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/interfaz.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/interfaz.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/interfaz.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/interfaz.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -122,7 +122,7 @@ CMakeFiles/OS.dir/src/interfaz.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/utils/input_utils.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/utils/input_utils.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \

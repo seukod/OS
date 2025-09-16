@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/process_tools/process_manager.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/process_tools/process_manager.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/process_tools/../../include/process_tools/process_manager.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/process_tools/../../include/process_tools/process_manager.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -186,8 +186,8 @@ CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /usr/include/x86_64-linux-gnu/bits/types/idtype_t.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/process_tools/../../include/interfaz.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/process_tools/../../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/process_tools/../../include/interfaz.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/process_tools/../../include/users_auth.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

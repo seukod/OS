@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/AppConfig.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/AppConfig.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/AppConfig.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/AppConfig.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/AppConfig.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

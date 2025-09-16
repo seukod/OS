@@ -1,5 +1,5 @@
 CMakeFiles/OS.dir/src/usuarios.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/usuarios.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/usuarios.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -160,9 +160,9 @@ CMakeFiles/OS.dir/src/usuarios.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/users_auth.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/users_auth.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/utils/string_utils.h
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/utils/string_utils.h

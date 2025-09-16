@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC
+CMAKE_SOURCE_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/build
+CMAKE_BINARY_DIR = /home/giors/Desktop/6to_semestre/Repositorios/OS/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/OS.dir/clean
 CMakeFiles/OS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target OS"
 .PHONY : CMakeFiles/OS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OS.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/giors/Desktop/6to_semestre/Repositorios/OS/build/CMakeFiles 0
 .PHONY : CMakeFiles/OS.dir/rule
 
 # Convenience name for target.

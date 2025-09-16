@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/utils/string_utils.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/utils/string_utils.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/include/../include/utils/string_utils.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/include/../include/utils/string_utils.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

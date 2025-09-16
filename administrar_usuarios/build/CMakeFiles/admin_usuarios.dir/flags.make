@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/include -I/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/../include
+CXX_INCLUDES = -I/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/include -I/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/../include
 
 CXX_FLAGS = -std=gnu++17
 

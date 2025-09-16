@@ -1,7 +1,7 @@
 CMakeFiles/OS.dir/src/ArgParser.cpp.o: \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/ArgParser.cpp \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/ArgParser.cpp \
  /usr/include/stdc-predef.h \
- /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/src/../include/ArgParser.h \
+ /home/giors/Desktop/6to_semestre/Repositorios/OS/src/../include/ArgParser.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

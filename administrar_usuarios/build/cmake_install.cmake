@@ -1,4 +1,4 @@
-# Install script for directory: /home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios
+# Install script for directory: /home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giors/Desktop/6to_semestre/SO/OS-Problema1-FrC/administrar_usuarios/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/giors/Desktop/6to_semestre/Repositorios/OS/administrar_usuarios/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
