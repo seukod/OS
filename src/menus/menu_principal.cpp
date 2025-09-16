@@ -12,6 +12,8 @@
 #include <iostream>
 #include <algorithm>
 
+#include "menus/menu_indiceinvertido.h"
+
 using namespace std;
 
 
@@ -92,6 +94,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
             case 6:
                 cout << "6. Conteo sobre texto" << endl;
                 break;
+            case 7:
+                cout << "7. Crear Índice Invertido" << endl;
+                break;
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
                 break;
@@ -166,6 +171,9 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 break;
             case 6:
                 ejecutarMenuConteo(libro);
+                break;
+            case 7:
+                crearIndiceInvertido();
                 break;
             default:
                 mostrarMensajeError("Opción inválida.");

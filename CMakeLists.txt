@@ -6,14 +6,12 @@ set(CMAKE_CXX_STANDARD 20)
 # Copia '.env' al directorio de build al configurar
 configure_file(${CMAKE_SOURCE_DIR}/.env ${CMAKE_BINARY_DIR}/.env COPYONLY)
 
-# Archivos fuente y cabecera en las carpetas src/ e include/
+# Archivos fuente SOLO de src/ - EXCLUYENDO indice_invertido/
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-file(GLOB_RECURSE HEADERS "include/*.h")
+file(GLOB HEADERS "include/*.h")
 
-# Crear ejecutable principal OS
-add_executable(OS ${SOURCES} ${HEADERS}
-        src/menus/menu_funcion.cpp
-)
+# Crear ejecutable principal OS - SOLO con archivos de src/
+add_executable(OS ${SOURCES} ${HEADERS})
 
 # Incluir la carpeta de headers
 target_include_directories(OS PRIVATE ${CMAKE_SOURCE_DIR}/include)

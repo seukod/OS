@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/users/benja/Documents/GitHub/OS/prog_extra/admin_tool
+# Install script for directory: /home/angel_leal/CLionProjects/OS/prog_extra/admin_tool
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
