@@ -38,8 +38,10 @@ string convertirRutaWSL(const string& rutaWin) {
 }
 
 void ejecutarMultiplicadorMatrices() {
+
     limpiarPantalla();
     mostrarTitulo("Multiplicador de Matrices");
+    cout << "PID DEL PROCESO: " << getpid() << endl;
 
     int N = 0;
     string pathA, pathB;
@@ -106,6 +108,7 @@ void ejecutarMultiplicadorMatrices() {
 
 
 void ejecutarAdminToolDesdeEnv() {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     string rutaAdminTool = leerVariableEnv("ADMIN_SYS");
     if (rutaAdminTool.empty()) {
         cerr << "[ERROR] No se encontró la variable ADMIN_SYS en el entorno ni en el .env" << endl;

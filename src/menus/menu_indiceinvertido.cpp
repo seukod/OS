@@ -4,6 +4,7 @@
 #include "../../include/utils/input_utils.h"
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -88,6 +89,7 @@ void crearIndiceInvertido() {
     cout << "=================================================" << endl;
     cout << "           Crear Índice Invertido                " << endl;
     cout << "=================================================" << endl << endl;
+    cout << "PID DEL PROCESO: " << getpid() << endl;
 
     // ⭐⭐ 1. VALIDACIÓN DE PATH - Ingresar y verificar
     string path_ingresado;

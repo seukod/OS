@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cctype>
 #include <dirent.h>
+#include <unistd.h>
 #include <string>
 #include <sys/stat.h>
 
@@ -90,6 +91,7 @@ bool is_valid_directory(const string &path) {
 }
 
 int main(int argc, char *argv[]) {
+    cout << "PID DEL PROCESO: " << getpid() << endl;
     if (argc != 3) {
         cout << "Uso: " << argv[0] << " <nombre-archivo.idx> <path-carpeta-libros>" << endl;
         cout << "Ejemplo: " << argv[0] << " mi_indice.idx ./libros" << endl;
