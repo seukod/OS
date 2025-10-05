@@ -11,10 +11,8 @@ CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: /home/giors/Desktop/6
   /usr/include/asm-generic/int-ll64.h \
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/types.h \
-  /usr/include/c++/13/algorithm \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
-  /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/basic_ios.h \
@@ -61,32 +59,26 @@ CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: /home/giors/Desktop/6
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
   /usr/include/c++/13/bits/range_access.h \
-  /usr/include/c++/13/bits/ranges_algo.h \
-  /usr/include/c++/13/bits/ranges_algobase.h \
   /usr/include/c++/13/bits/ranges_base.h \
   /usr/include/c++/13/bits/ranges_cmp.h \
   /usr/include/c++/13/bits/ranges_util.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/std_abs.h \
-  /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_function.h \
-  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
-  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
-  /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
@@ -120,8 +112,6 @@ CMakeFiles/OS.dir/indice_invertido/src/crear_indice.cpp.o: /home/giors/Desktop/6
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
   /usr/include/c++/13/ostream \
-  /usr/include/c++/13/pstl/execution_defs.h \
-  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
@@ -1481,6 +1471,7 @@ CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o: /home/giors/Desktop/6to_semestre/
 CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_funcion.cpp \
   /home/giors/Desktop/6to_semestre/Repositorios/OS/include/interfaz.h \
   /home/giors/Desktop/6to_semestre/Repositorios/OS/include/menus/menu_funcion.h \
+  /home/giors/Desktop/6to_semestre/Repositorios/OS/include/process_tools/process_manager.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1585,34 +1576,55 @@ CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: /home/giors/Desktop/6to_semestre
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
+  /usr/include/signal.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/time.h \
+  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+  /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
@@ -1631,17 +1643,25 @@ CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: /home/giors/Desktop/6to_semestre
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/idtype_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
@@ -1650,6 +1670,7 @@ CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: /home/giors/Desktop/6to_semestre
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
@@ -1672,6 +1693,8 @@ CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o: /home/giors/Desktop/6to_semestre
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+  /usr/include/x86_64-linux-gnu/sys/wait.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
@@ -1935,7 +1958,6 @@ CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o: /home/giors/Desktop/6to_semestre/
   /home/giors/Desktop/6to_semestre/Repositorios/OS/include/interfaz.h \
   /home/giors/Desktop/6to_semestre/Repositorios/OS/include/menus/menu_matriz.h \
   /home/giors/Desktop/6to_semestre/Repositorios/OS/include/process_tools/process_manager.h \
-  /home/giors/Desktop/6to_semestre/Repositorios/OS/include/utils/input_utils.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -3643,7 +3665,21 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /home/giors/Desktop/6to_semestre/Repositorios/OS/include/menus/menu_palindromo.h:
 
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/13/pstl/execution_defs.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
 /usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/c++/13/bits/ranges_algobase.h:
+
+/usr/include/c++/13/algorithm:
 
 /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_conteo.cpp:
 
@@ -3683,35 +3719,19 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
+/usr/include/endian.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
+/usr/include/c++/13/bits/streambuf.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+/usr/include/c++/13/bits/max_size_type.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13/bits/range_access.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigcontext.h:
 
 /usr/include/c++/13/pstl/pstl_config.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/c++/13/pstl/glue_algorithm_defs.h:
-
-/usr/include/c++/13/pstl/execution_defs.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/linux/stddef.h:
 
 /usr/include/c++/13/ostream:
 
@@ -3720,6 +3740,10 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/c++/13/initializer_list:
 
@@ -3743,6 +3767,14 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
+/usr/include/errno.h:
+
+/usr/include/c++/13/bits/functional_hash.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
 /usr/include/c++/13/debug/assertions.h:
 
 /usr/include/c++/13/cstdlib:
@@ -3761,11 +3793,23 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
 /usr/include/c++/13/clocale:
 
 /usr/include/c++/13/bits/vector.tcc:
 
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/bits/stl_function.h:
+
 /usr/include/c++/13/bits/uses_allocator_args.h:
+
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/c++/13/exception:
 
@@ -3774,12 +3818,6 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/postypes.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/c++/13/bits/max_size_type.h:
-
-/usr/include/endian.h:
 
 /usr/include/c++/13/bits/unordered_map.h:
 
@@ -3805,51 +3843,27 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/c++/13/new:
-
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/bits/stl_heap.h:
-
 /usr/include/c++/13/bits/stl_bvector.h:
+
+/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp:
+
+/usr/include/c++/13/unordered_map:
+
+/usr/include/c++/13/bits/allocator.h:
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
-/usr/include/c++/13/bits/stl_algo.h:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/c++/13/vector:
 
 /usr/include/c++/13/cstddef:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
-/usr/include/c++/13/istream:
-
-/usr/include/c++/13/bits/ranges_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/c++/13/bits/stl_function.h:
-
-/usr/include/c++/13/bits/ranges_algobase.h:
-
-/home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_palindromo.cpp:
-
-/usr/include/c++/13/bits/ostream_insert.h:
-
-/usr/include/c++/13/stdexcept:
-
-/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/include/crear_indice.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
-
-/usr/include/c++/13/bits/ranges_util.h:
 
 /usr/include/asm-generic/bitsperlong.h:
 
@@ -3879,27 +3893,49 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
 
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/ranges_cmp.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_funcion.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/13/bits/fstream.tcc:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
 /usr/include/c++/13/bits/basic_string.h:
 
 /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_principal.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/include/c++/13/bits/stl_vector.h:
+/usr/include/features-time64.h:
 
-/usr/include/c++/13/bits/stl_tempbuf.h:
+/usr/include/c++/13/string_view:
+
+/usr/include/c++/13/istream:
+
+/usr/include/c++/13/bits/ranges_base.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/codecvt.h:
 
+/usr/include/dirent.h:
+
 /usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/c++/13/bits/algorithmfwd.h:
 
 /usr/include/c++/13/cerrno:
 
@@ -3907,9 +3943,13 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/c++/13/bits/enable_special_members.h:
 
+/usr/include/c++/13/type_traits:
+
 /usr/include/c++/13/bit:
 
 /usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/alloca.h:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
@@ -3918,10 +3958,6 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/c++/13/cwchar:
-
-/usr/include/c++/13/bits/ranges_cmp.h:
-
-/usr/include/asm-generic/int-ll64.h:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
@@ -3945,44 +3981,6 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/c++/13/bits/iterator_concepts.h:
 
-/usr/include/alloca.h:
-
-/usr/include/c++/13/bits/refwrap.h:
-
-/home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_funcion.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/c++/13/bits/fstream.tcc:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/c++/13/algorithm:
-
-/usr/include/c++/13/string_view:
-
-/usr/include/features-time64.h:
-
-/usr/include/c++/13/bits/hash_bytes.h:
-
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
-/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
-
-/usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
 /usr/include/c++/13/bits/exception.h:
 
 /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_admin.cpp:
@@ -3991,19 +3989,35 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
+/usr/include/c++/13/bits/hashtable_policy.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
 /usr/include/c++/13/bits/exception_ptr.h:
 
 /usr/include/c++/13/bits/istream.tcc:
 
 /home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/src/crear_indice.cpp:
 
-/usr/include/c++/13/bits/functional_hash.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
 
-/usr/include/errno.h:
+/usr/include/linux/stddef.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
+/usr/include/c++/13/tuple:
+
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/menu_palindromo.cpp:
+
+/usr/include/c++/13/bits/ostream_insert.h:
 
 /usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/ctype.h:
 
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
@@ -4037,25 +4051,9 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/c++/13/bits/node_handle.h:
 
-/usr/include/c++/13/bits/nested_exception.h:
+/home/giors/Desktop/6to_semestre/Repositorios/OS/indice_invertido/include/crear_indice.h:
 
-/usr/include/c++/13/tuple:
-
-/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
-
-/usr/include/c++/13/type_traits:
-
-/home/giors/Desktop/6to_semestre/Repositorios/OS/src/interfaz.cpp:
-
-/usr/include/c++/13/bits/allocator.h:
-
-/usr/include/c++/13/unordered_map:
-
-/usr/include/c++/13/vector:
-
-/usr/include/ctype.h:
-
-/usr/include/dirent.h:
+/usr/include/c++/13/stdexcept:
 
 /usr/include/features.h:
 
@@ -4217,6 +4215,8 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
@@ -4224,10 +4224,6 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/c++/13/bits/charconv.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
 
@@ -4244,6 +4240,10 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -4268,3 +4268,25 @@ CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /home/giors/Desktop/6to_semestre
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+
+/usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:

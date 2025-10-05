@@ -1,11 +1,13 @@
 #include "../include/interfaz.h"
 #include "../../include/menus/menu_funcion.h"
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
 
 using namespace std;
 
 void calcular_f() {
     while (true) {
+        cout << "PID de operación: " << obtenerPID() <<endl;
         mostrarTitulo("Calculadora de f(x) = x*x + 2x + 8");
 
         cout << "Ingrese un número para calcular f(x): ";

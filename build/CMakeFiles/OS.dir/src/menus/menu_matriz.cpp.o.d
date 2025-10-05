@@ -123,7 +123,6 @@ CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
  /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/interfaz.h \
- /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/utils/input_utils.h \
  /home/giors/Desktop/6to_semestre/Repositorios/OS/src/menus/../../include/process_tools/process_manager.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \

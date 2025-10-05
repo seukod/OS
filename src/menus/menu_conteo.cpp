@@ -1,4 +1,5 @@
 #include "../../include/menus/menu_conteo.h"
+#include "../../include/process_tools/process_manager.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/users_auth.h"
@@ -53,6 +54,8 @@ void mostrarMenuConteo() {
     limpiarPantalla();
     cout << "=================================================" << endl;
     cout << "             CONTEO SOBRE TEXTO                  " << endl;
+    cout << "=================================================" << endl;
+    cout << "PID del proceso:" << obtenerPID() << endl;
     cout << "=================================================" << endl;
     cout << "1. Realizar conteo del libro" << endl;
     cout << "0. Volver al menú principal" << endl;

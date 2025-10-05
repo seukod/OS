@@ -1,8 +1,7 @@
 #include "../../include/menus/menu_palindromo.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
-#include <iostream>
-#include <algorithm>
+#include "../../include/process_tools/process_manager.h"
 #include <cctype>
 
 using namespace std;
@@ -12,6 +11,7 @@ void mostrarMenuPalindromo() {
     cout << "=================================================" << endl;
     cout << "            VERIFICADOR DE PALÍNDROMOS           " << endl;
     cout << "=================================================" << endl;
+    cout << "PID del proceso:"<< obtenerPID() <<endl;
     cout << "Ingrese el texto que desea verificar:" << endl;
     cout << "(Los espacios, tildes y signos serán ignorados)" << endl;
     cout << "=================================================" << endl;
