@@ -24,6 +24,9 @@
               <option value="d616a257-e4bc-4750-9653-68b83abebe4e" />
               <option value="5560f976-27e3-4dc6-bcf7-62039e2a0410" />
               <option value="4db65fa4-0c65-44ce-affe-94e945b93a4c" />
+              <option value="d989025e-be13-4b34-a820-b43018a3f484" />
+              <option value="69564e39-2702-4a85-8d9e-96d066ecc4a3" />
+              <option value="fa96d56a-89f2-463b-b6b5-e28c693e6530" />
             </set>
           </value>
         </entry>
@@ -42,6 +45,7 @@
           <option value="file://$PROJECT_DIR$/include/menus/menu_indice_inv.h" />
           <option value="file://$PROJECT_DIR$/src/menus/menu_indice_inv.cpp" />
           <option value="file://$PROJECT_DIR$/src/menus/menu_principal.cpp" />
+          <option value="file://$PROJECT_DIR$/include/process_tools/process_manager.h" />
         </set>
       </entry>
     </pendingWorkingSetItems>
