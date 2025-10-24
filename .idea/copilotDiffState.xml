@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/indice_invertido_paralelo/include/Crear_indice_inv.h">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/indice_invertido_paralelo/include/Crear_indice_inv.h" />
+              <option name="originalContent" value="//&#10;// Created by Francisco Contreras on 24-10-25.&#10;//&#10;&#10;#ifndef OS_CREAR_INDICE_INV_H&#10;#define OS_CREAR_INDICE_INV_H&#10;&#10;#include &lt;filesystem&gt;&#10;#include &lt;iostream&gt;&#10;#include &lt;fstream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;string&gt;&#10;&#10;&#10;std::vector&lt;std::string&gt; escanearLibros();  // Debe retornar vector&#10;void actualizarMapaLibros(const std::vector&lt;std::string&gt;&amp; libros);&#10;//void crearIndiceInvertidoParalelo();&#10;&#10;&#10;#endif //OS_CREAR_INDICE_INV_H" />
+              <option name="updatedContent" value="//&#10;// Created by Francisco Contreras on 24-10-25.&#10;//&#10;&#10;#ifndef OS_CREAR_INDICE_INV_H&#10;#define OS_CREAR_INDICE_INV_H&#10;&#10;#include &lt;filesystem&gt;&#10;#include &lt;iostream&gt;&#10;#include &lt;fstream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;string&gt;&#10;&#10;&#10;std::vector&lt;std::string&gt; escanearLibros();  // Debe retornar vector&#10;void actualizarMapaLibros(const std::vector&lt;std::string&gt;&amp; libros);&#10;//void crearIndiceInvertidoParalelo();&#10;&#10;&#10;#endif //OS_CREAR_INDICE_INV_H" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
