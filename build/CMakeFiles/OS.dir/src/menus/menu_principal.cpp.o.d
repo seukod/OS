@@ -909,6 +909,7 @@ CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o: \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_funcion.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_conteo.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_indice.h \
+  /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_indice_inv.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_matriz.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/interfaz.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/utils/input_utils.h \

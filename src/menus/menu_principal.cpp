@@ -4,6 +4,7 @@
 #include "../../include/menus/menu_funcion.h"
 #include "../../include/menus/menu_conteo.h"
 #include "../../include/menus/menu_indice.h"
+#include "../../include/menus/menu_indice_inv.h"  // Agregar include del menú índice invertido paralelo
 #include "../../include/menus/menu_matriz.h"
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
@@ -145,6 +146,10 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 break;
             case 7:
                 ejecutarMenuIndice();
+                pausarPantalla();
+                break;
+            case 8:
+                ejecutarMenuIndiceInv();
                 pausarPantalla();
                 break;
             default:

@@ -40,7 +40,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeTestCompilerCommon.cmake"
-  "/opt/homebrew/share/cmake/Modules/CMakeUnixFindMake.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake"

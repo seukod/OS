@@ -2,9 +2,8 @@
 
 using namespace std;
 
-vector<string> escanearLibros() {
+vector<string> escanearLibros(const string& rutaLibros) {
     vector<string> nombresLibros;
-    string rutaLibros = "../../data/libros/";
 
     for (const auto& entrada: filesystem::directory_iterator(rutaLibros)) {
         if (entrada.is_regular_file()) {

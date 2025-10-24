@@ -321,6 +321,30 @@ src/menus/menu_indice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_indice.cpp.s
 .PHONY : src/menus/menu_indice.cpp.s
 
+src/menus/menu_indice_inv.o: src/menus/menu_indice_inv.cpp.o
+.PHONY : src/menus/menu_indice_inv.o
+
+# target to build an object file
+src/menus/menu_indice_inv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o
+.PHONY : src/menus/menu_indice_inv.cpp.o
+
+src/menus/menu_indice_inv.i: src/menus/menu_indice_inv.cpp.i
+.PHONY : src/menus/menu_indice_inv.i
+
+# target to preprocess a source file
+src/menus/menu_indice_inv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.i
+.PHONY : src/menus/menu_indice_inv.cpp.i
+
+src/menus/menu_indice_inv.s: src/menus/menu_indice_inv.cpp.s
+.PHONY : src/menus/menu_indice_inv.s
+
+# target to generate assembly for a file
+src/menus/menu_indice_inv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.s
+.PHONY : src/menus/menu_indice_inv.cpp.s
+
 src/menus/menu_matriz.o: src/menus/menu_matriz.cpp.o
 .PHONY : src/menus/menu_matriz.o
 
@@ -546,6 +570,9 @@ help:
 	@echo "... src/menus/menu_indice.o"
 	@echo "... src/menus/menu_indice.i"
 	@echo "... src/menus/menu_indice.s"
+	@echo "... src/menus/menu_indice_inv.o"
+	@echo "... src/menus/menu_indice_inv.i"
+	@echo "... src/menus/menu_indice_inv.s"
 	@echo "... src/menus/menu_matriz.o"
 	@echo "... src/menus/menu_matriz.i"
 	@echo "... src/menus/menu_matriz.s"

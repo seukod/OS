@@ -20,6 +20,10 @@
               <option value="6e6a12fc-e7fa-4ef4-9508-0775a112f8b5" />
               <option value="a3d2ea4d-5d96-43aa-b6c2-287eb7a73428" />
               <option value="ce7a350b-1336-47aa-b87a-fd7942351699" />
+              <option value="c988f7f4-bd46-41b7-8853-0dfd9ee86752" />
+              <option value="d616a257-e4bc-4750-9653-68b83abebe4e" />
+              <option value="5560f976-27e3-4dc6-bcf7-62039e2a0410" />
+              <option value="4db65fa4-0c65-44ce-affe-94e945b93a4c" />
             </set>
           </value>
         </entry>
@@ -33,6 +37,11 @@
           <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/src/Crear_indice_inv.cpp" />
           <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/CMakeLists.txt" />
           <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/include/Crear_indice_inv.h" />
+          <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/src/main.cpp" />
+          <option value="file://$PROJECT_DIR$/.env" />
+          <option value="file://$PROJECT_DIR$/include/menus/menu_indice_inv.h" />
+          <option value="file://$PROJECT_DIR$/src/menus/menu_indice_inv.cpp" />
+          <option value="file://$PROJECT_DIR$/src/menus/menu_principal.cpp" />
         </set>
       </entry>
     </pendingWorkingSetItems>

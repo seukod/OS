@@ -184,10 +184,24 @@ CMakeFiles/OS.dir/src/menus/menu_indice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/src/menus/menu_indice.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/francisco/CLionProjects/OS/src/menus/menu_indice.cpp -o CMakeFiles/OS.dir/src/menus/menu_indice.cpp.s
 
+CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o: CMakeFiles/OS.dir/flags.make
+CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o: /Users/francisco/CLionProjects/OS/src/menus/menu_indice_inv.cpp
+CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o -MF CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o.d -o CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o -c /Users/francisco/CLionProjects/OS/src/menus/menu_indice_inv.cpp
+
+CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/francisco/CLionProjects/OS/src/menus/menu_indice_inv.cpp > CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.i
+
+CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/francisco/CLionProjects/OS/src/menus/menu_indice_inv.cpp -o CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.s
+
 CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o: /Users/francisco/CLionProjects/OS/src/menus/menu_matriz.cpp
 CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o -MF CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o.d -o CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o -c /Users/francisco/CLionProjects/OS/src/menus/menu_matriz.cpp
 
 CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o: /Users/francisco/CLionProjects/OS/src/menus/menu_palindromo.cpp
 CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o -MF CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d -o CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o -c /Users/francisco/CLionProjects/OS/src/menus/menu_palindromo.cpp
 
 CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o: /Users/francisco/CLionProjects/OS/src/menus/menu_principal.cpp
 CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o -MF CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d -o CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o -c /Users/francisco/CLionProjects/OS/src/menus/menu_principal.cpp
 
 CMakeFiles/OS.dir/src/menus/menu_principal.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/OS.dir/src/menus/menu_principal.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o: /Users/francisco/CLionProjects/OS/src/process_tools/process_manager.cpp
 CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o -MF CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o.d -o CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.o -c /Users/francisco/CLionProjects/OS/src/process_tools/process_manager.cpp
 
 CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/OS.dir/src/process_tools/process_manager.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/users_auth.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/users_auth.cpp.o: /Users/francisco/CLionProjects/OS/src/users_auth.cpp
 CMakeFiles/OS.dir/src/users_auth.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OS.dir/src/users_auth.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OS.dir/src/users_auth.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/users_auth.cpp.o -MF CMakeFiles/OS.dir/src/users_auth.cpp.o.d -o CMakeFiles/OS.dir/src/users_auth.cpp.o -c /Users/francisco/CLionProjects/OS/src/users_auth.cpp
 
 CMakeFiles/OS.dir/src/users_auth.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/OS.dir/src/users_auth.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/usuarios.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/usuarios.cpp.o: /Users/francisco/CLionProjects/OS/src/usuarios.cpp
 CMakeFiles/OS.dir/src/usuarios.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OS.dir/src/usuarios.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OS.dir/src/usuarios.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/usuarios.cpp.o -MF CMakeFiles/OS.dir/src/usuarios.cpp.o.d -o CMakeFiles/OS.dir/src/usuarios.cpp.o -c /Users/francisco/CLionProjects/OS/src/usuarios.cpp
 
 CMakeFiles/OS.dir/src/usuarios.cpp.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/OS.dir/src/usuarios.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/utils/input_utils.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/utils/input_utils.cpp.o: /Users/francisco/CLionProjects/OS/src/utils/input_utils.cpp
 CMakeFiles/OS.dir/src/utils/input_utils.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OS.dir/src/utils/input_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OS.dir/src/utils/input_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/utils/input_utils.cpp.o -MF CMakeFiles/OS.dir/src/utils/input_utils.cpp.o.d -o CMakeFiles/OS.dir/src/utils/input_utils.cpp.o -c /Users/francisco/CLionProjects/OS/src/utils/input_utils.cpp
 
 CMakeFiles/OS.dir/src/utils/input_utils.cpp.i: cmake_force
@@ -285,7 +299,7 @@ CMakeFiles/OS.dir/src/utils/input_utils.cpp.s: cmake_force
 CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: CMakeFiles/OS.dir/flags.make
 CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: /Users/francisco/CLionProjects/OS/src/utils/string_utils.cpp
 CMakeFiles/OS.dir/src/utils/string_utils.cpp.o: CMakeFiles/OS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OS.dir/src/utils/string_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OS.dir/src/utils/string_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OS.dir/src/utils/string_utils.cpp.o -MF CMakeFiles/OS.dir/src/utils/string_utils.cpp.o.d -o CMakeFiles/OS.dir/src/utils/string_utils.cpp.o -c /Users/francisco/CLionProjects/OS/src/utils/string_utils.cpp
 
 CMakeFiles/OS.dir/src/utils/string_utils.cpp.i: cmake_force
@@ -306,6 +320,7 @@ OS_OBJECTS = \
 "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o" \
 "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o" \
 "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o" \
+"CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o" \
 "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o" \
 "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o" \
 "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o" \
@@ -326,6 +341,7 @@ OS: CMakeFiles/OS.dir/src/menus/menu_admin.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o
+OS: CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o
 OS: CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o
@@ -336,7 +352,7 @@ OS: CMakeFiles/OS.dir/src/utils/input_utils.cpp.o
 OS: CMakeFiles/OS.dir/src/utils/string_utils.cpp.o
 OS: CMakeFiles/OS.dir/build.make
 OS: CMakeFiles/OS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/francisco/CLionProjects/OS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable OS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OS.dir/link.txt --verbose=$(VERBOSE)
 	/opt/homebrew/bin/cmake -E copy_if_different /Users/francisco/CLionProjects/OS/.env /Users/francisco/CLionProjects/OS/build/.env
 

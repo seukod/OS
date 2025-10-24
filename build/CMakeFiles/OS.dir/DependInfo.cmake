@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/francisco/CLionProjects/OS/src/menus/menu_conteo.cpp" "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_conteo.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_funcion.cpp" "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_funcion.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_indice.cpp" "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o.d"
+  "/Users/francisco/CLionProjects/OS/src/menus/menu_indice_inv.cpp" "CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_matriz.cpp" "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_palindromo.cpp" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o.d"
   "/Users/francisco/CLionProjects/OS/src/menus/menu_principal.cpp" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o" "gcc" "CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o.d"
