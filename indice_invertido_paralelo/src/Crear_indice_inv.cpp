@@ -21,18 +21,18 @@ vector<string> escanearLibros(const string& rutaLibros) {
 }
 
 void actualizarMapaLibros(const vector<string>& libros) {
-    string rutaMapa = "../../data/MAPA-LIBROS.csv";
+    string rutaMapa = "../data/MAPA-LIBROS.csv";  // Ruta real desde el directorio de ejecución
     ofstream archivoMapa(rutaMapa);
 
     if (!archivoMapa.is_open()) {
-        cout << "ERROR: No se pudo crear el archivo de mapa de libros." << endl;
+        cout << "ERROR: No se pudo crear el archivo de mapa de libros en " << rutaMapa << endl;
         return;
     }
 
     // Escribir encabezado
     archivoMapa << "ID,NOMBRE_LIBRO" << endl;
 
-    // Corregir el tipo del bucle para evitar warning
+    // Escribir cada libro con su ID
     for (size_t i = 0; i < libros.size(); ++i) {
         archivoMapa << (i + 1) << "," << libros[i] << endl;
     }
@@ -191,7 +191,7 @@ void crearIndiceInvertidoParalelo(const string& archivoSalida, const string& dir
 
     // 2. Crear mapa de libros
     actualizarMapaLibros(libros);
-    unordered_map<string, int> mapaLibros = cargarMapaLibros("../../data/MAPA-LIBROS.csv");
+    unordered_map<string, int> mapaLibros = cargarMapaLibros("../data/MAPA-LIBROS.csv");  // Usar ruta real
 
     // 3. Dividir libros en lotes
     vector<vector<string>> lotes;

@@ -34,11 +34,7 @@ bool crearIndiceInvertidoParalelo(const string& nombreArchivo, const string& pat
     cout << "N-LOTE: " << nLote << endl;
     cout << "=================================================" << endl;
 
-    // Convertir los parámetros a strings para pasarlos al proceso
-    string strThreads = to_string(nThreads);
-    string strLote = to_string(nLote);
-
-    // Ejecutar el proceso con todos los parámetros usando la función existente
+    // Ejecutar el proceso usando la función existente (el ejecutable maneja internamente N-THREADS y N-LOTE)
     bool exito = ejecutarProcesoExterno("INDICE-INVET-PARALELO", nombreArchivo, pathCarpeta);
 
     return exito;
