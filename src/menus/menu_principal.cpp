@@ -67,6 +67,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
             case 7:
                 cout << "7. Crea índice invertido" << endl;
                 break;
+            case 8:
+                cout << "8. Crea índice invertido paralelo" << endl;
+                break;
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
                 break;
