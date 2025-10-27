@@ -6,6 +6,7 @@
 #include "../../include/menus/menu_indice.h"
 #include "../../include/menus/menu_indice_inv.h"  // Agregar include del menú índice invertido paralelo
 #include "../../include/menus/menu_matriz.h"
+#include "../../include/menus/menu_juego.h"  // Agregar include del menú de juego
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/process_tools/process_manager.h"
@@ -70,6 +71,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
                 break;
             case 8:
                 cout << "8. Crea índice invertido paralelo" << endl;
+                break;
+            case 9:
+                cout << "9. Battle City Multiplayer" << endl;
                 break;
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
@@ -151,6 +155,9 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
             case 8:
                 ejecutarMenuIndiceInv();
                 pausarPantalla();
+                break;
+            case 9:
+                ejecutarMenuJuego();
                 break;
             default:
                 mostrarMensajeError("Opción inválida.");
