@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AgentMigrationStateService">
-    <option name="pendingSessionIds">
-      <option value="ad8ee5a0-cd9a-455c-af33-92f63639edfc" />
-    </option>
-    <option name="pendingTurns">
-      <map>
-        <entry key="ad8ee5a0-cd9a-455c-af33-92f63639edfc">
-          <value>
-            <set>
-              <option value="62714905-7ac0-47b6-8108-7ae5f7f38afc" />
-              <option value="98cc1939-ab64-4960-a5a5-caa80717efdc" />
-              <option value="b5749e08-9577-46ac-a764-6f0659925ecf" />
-              <option value="28f7f7e3-9bcf-4198-a1af-9fd46ceba2c6" />
-              <option value="b5037123-e55f-4a29-913f-45fb9177f931" />
-              <option value="0327907a-9e10-4c20-9a78-99df1c3dce30" />
-              <option value="b5d317b7-f7e6-4219-ac3f-7fc31039557c" />
-              <option value="bbe01bcb-989b-4849-ac2a-5a15cbb4ea45" />
-              <option value="6e6a12fc-e7fa-4ef4-9508-0775a112f8b5" />
-              <option value="a3d2ea4d-5d96-43aa-b6c2-287eb7a73428" />
-              <option value="ce7a350b-1336-47aa-b87a-fd7942351699" />
-              <option value="c988f7f4-bd46-41b7-8853-0dfd9ee86752" />
-              <option value="d616a257-e4bc-4750-9653-68b83abebe4e" />
-              <option value="5560f976-27e3-4dc6-bcf7-62039e2a0410" />
-              <option value="4db65fa4-0c65-44ce-affe-94e945b93a4c" />
-              <option value="d989025e-be13-4b34-a820-b43018a3f484" />
-              <option value="69564e39-2702-4a85-8d9e-96d066ecc4a3" />
-              <option value="fa96d56a-89f2-463b-b6b5-e28c693e6530" />
-              <option value="c1bc5353-e63b-4f22-954c-add18d0c50b0" />
-              <option value="9c8b205e-3a3b-4225-9c44-88ae90640f97" />
-              <option value="4a93895d-2d17-4484-86f5-1dc21f125ddc" />
-              <option value="18fa487f-d59a-4a2f-aa75-9629dddfd693" />
-            </set>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <pendingWorkingSetItems>
-      <entry key="ad8ee5a0-cd9a-455c-af33-92f63639edfc">
-        <set>
-          <option value="file://$PROJECT_DIR$/indice_invertido/include/crear_indice.h" />
-          <option value="file://$PROJECT_DIR$/indice_invertido/src/crear_indice.cpp" />
-          <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/src/Crear_indice_inv.cpp" />
-          <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/CMakeLists.txt" />
-          <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/include/Crear_indice_inv.h" />
-          <option value="file://$PROJECT_DIR$/indice_invertido_paralelo/src/main.cpp" />
-          <option value="file://$PROJECT_DIR$/.env" />
-          <option value="file://$PROJECT_DIR$/include/menus/menu_indice_inv.h" />
-          <option value="file://$PROJECT_DIR$/src/menus/menu_indice_inv.cpp" />
-          <option value="file://$PROJECT_DIR$/src/menus/menu_principal.cpp" />
-          <option value="file://$PROJECT_DIR$/include/process_tools/process_manager.h" />
-        </set>
-      </entry>
-    </pendingWorkingSetItems>
+    <option name="migrationStatus" value="COMPLETED" />
   </component>
 </project>

@@ -334,7 +334,17 @@ class MultiplayerGame:
                 self.keys_pressed.discard(event.key)
     
     def update(self):
+        # Mantener la conexión activa incluso en el lobby
+        my_tank = self.tanks[self.player_id]
+        
         if not self.game_started:
+            # En el lobby, solo enviar estado básico para mantener conexión
+            if hasattr(self, '_last_lobby_update'):
+                if pygame.time.get_ticks() - self._last_lobby_update > 1000:  # Cada segundo
+                    self.network.send_update(my_tank.to_dict())
+                    self._last_lobby_update = pygame.time.get_ticks()
+            else:
+                self._last_lobby_update = pygame.time.get_ticks()
             return
         
         my_tank = self.tanks[self.player_id]

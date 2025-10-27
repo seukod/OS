@@ -10,6 +10,9 @@
 #else
 #include <unistd.h>
 #include <sys/wait.h>
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
+#endif
 #endif
 
 using namespace std;
@@ -74,20 +77,39 @@ void ejecutarMenuJuego() {
         
     #else
         // En Linux/Mac
-        pythonPath = "python3";
+        // Intentar usar el entorno virtual primero
+        pythonPath = ".venv/bin/python";
         
         // Obtener directorio del ejecutable
         char buffer[1024];
-        ssize_t len = readlink("/proc/self/exe", buffer, sizeof(buffer)-1);
-        if (len != -1) {
-            buffer[len] = '\0';
-            string exePath(buffer);
-            size_t pos = exePath.find_last_of("/");
-            string baseDir = exePath.substr(0, pos);
-            gamePath = baseDir + "/../Juego/game_multiplayer.py";
-        } else {
-            gamePath = "../Juego/game_multiplayer.py";
-        }
+        #ifdef __APPLE__
+            // En macOS, usar _NSGetExecutablePath
+            uint32_t size = sizeof(buffer);
+            if (_NSGetExecutablePath(buffer, &size) == 0) {
+                string exePath(buffer);
+                size_t pos = exePath.find_last_of("/");
+                string baseDir = exePath.substr(0, pos);
+                gamePath = baseDir + "/../Juego/game_multiplayer.py";
+                pythonPath = baseDir + "/../.venv/bin/python";
+            } else {
+                gamePath = "../Juego/game_multiplayer.py";
+                pythonPath = ".venv/bin/python";
+            }
+        #else
+            // En Linux
+            ssize_t len = readlink("/proc/self/exe", buffer, sizeof(buffer)-1);
+            if (len != -1) {
+                buffer[len] = '\0';
+                string exePath(buffer);
+                size_t pos = exePath.find_last_of("/");
+                string baseDir = exePath.substr(0, pos);
+                gamePath = baseDir + "/../Juego/game_multiplayer.py";
+                pythonPath = baseDir + "/../.venv/bin/python";
+            } else {
+                gamePath = "../Juego/game_multiplayer.py";
+                pythonPath = ".venv/bin/python";
+            }
+        #endif
         
         // Fork para ejecutar Python
         pid_t pid = fork();

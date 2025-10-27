@@ -911,6 +911,8 @@ CMakeFiles/OS.dir/src/menus/menu_principal.cpp.o: \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_indice.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_indice_inv.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_matriz.h \
+  /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/menu_juego.h \
+  /Users/francisco/CLionProjects/OS/src/menus/../../include/menus/../usuarios.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/interfaz.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/utils/input_utils.h \
   /Users/francisco/CLionProjects/OS/src/menus/../../include/process_tools/process_manager.h \
