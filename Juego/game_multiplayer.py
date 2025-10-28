@@ -1,8 +1,10 @@
 import pygame
 import sys
 import random
+import time
 from enum import Enum
-from network import NetworkManager, NetworkRole
+from network import NetworkManager, DedicatedServer
+import threading
 
 # Inicializar Pygame
 pygame.init()
@@ -13,16 +15,24 @@ SCREEN_HEIGHT = 600
 FPS = 60
 TILE_SIZE = 32
 
-# Colores mejorados por jugador
+# Colores por equipo
+# EQUIPO 0 (Azul): Jugadores 0 y 1
+# EQUIPO 1 (Rojo): Jugadores 2 y 3
 PLAYER_COLORS = [
-    (34, 139, 34),    # Verde bosque - Jugador 1 (Host)
-    (30, 144, 255),   # Azul dodger - Jugador 2
-    (255, 140, 0),    # Naranja oscuro - Jugador 3
-    (218, 112, 214),  # Orquídea - Jugador 4
+    (30, 144, 255),   # Azul claro - Jugador 1 (Equipo Azul)
+    (70, 130, 180),   # Azul acero - Jugador 2 (Equipo Azul)
+    (220, 20, 60),    # Rojo carmesí - Jugador 3 (Equipo Rojo)
+    (255, 69, 0),     # Rojo naranja - Jugador 4 (Equipo Rojo)
+]
+
+TEAM_COLORS = [
+    (30, 144, 255),   # Equipo 0 - Azul
+    (220, 20, 60),    # Equipo 1 - Rojo
 ]
 
 BLACK = (20, 20, 30)
 WHITE = (240, 240, 245)
+RED = (178, 34, 34)
 DARK_RED = (178, 34, 34)
 STEEL_BLUE = (70, 130, 180)
 CYAN = (100, 200, 255)
@@ -199,7 +209,10 @@ class Bullet:
             "y": self.y,
             "direction": self.direction.value,
             "owner_id": self.owner_id,
-            "active": self.active
+            "active": self.active,
+            "width": self.width,
+            "height": self.height,
+            "speed": self.speed
         }
     
     @staticmethod
@@ -228,33 +241,14 @@ class Wall:
             pygame.draw.line(screen, DARK_BROWN, (self.x + self.width//2, self.y), 
                            (self.x + self.width//2, self.y + self.height), 1)
 
-class Base:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.width = TILE_SIZE * 2
-        self.height = TILE_SIZE * 2
-        self.destroyed = False
-    
-    def get_rect(self):
-        return pygame.Rect(self.x, self.y, self.width, self.height)
-    
-    def draw(self, screen):
-        if not self.destroyed:
-            pygame.draw.rect(screen, STEEL_BLUE, self.get_rect())
-            pygame.draw.rect(screen, CYAN, self.get_rect(), 4)
-            center_x = self.x + self.width // 2
-            center_y = self.y + self.height // 2
-            pygame.draw.circle(screen, CYAN, (center_x, center_y), 8)
-            pygame.draw.circle(screen, STEEL_BLUE, (center_x, center_y), 5)
-
 class MultiplayerGame:
     """Juego Battle City Multijugador"""
     def __init__(self, network_manager):
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-        pygame.display.set_caption("Battle City - Multiplayer P2P")
+        pygame.display.set_caption("Battle City - Multiplayer Cliente-Servidor")
         self.clock = pygame.time.Clock()
         self.running = True
+        self.lock = threading.Lock()  # Lock para operaciones thread-safe
         
         self.network = network_manager
         self.player_id = network_manager.player_id
@@ -271,7 +265,6 @@ class MultiplayerGame:
         
         self.bullets = []
         self.walls = self.create_walls()
-        self.base = Base(SCREEN_WIDTH//2 - TILE_SIZE, SCREEN_HEIGHT - TILE_SIZE*2 - 10)
         
         self.keys_pressed = set()
         self.ready = False
@@ -296,25 +289,28 @@ class MultiplayerGame:
     
     def on_network_update(self, game_state):
         """Callback cuando se reciben actualizaciones de red"""
-        # Actualizar tanques de otros jugadores
-        for pid, player_data in game_state.players.items():
-            if pid != self.player_id:
+        with self.lock:
+            # Actualizar TODOS los tanques (incluyendo el local)
+            for pid, player_data in game_state.players.items():
                 if pid not in self.tanks:
                     self.tanks[pid] = Tank.from_dict(player_data, PLAYER_COLORS[pid])
                 else:
                     tank = self.tanks[pid]
-                    tank.x = player_data["x"]
-                    tank.y = player_data["y"]
-                    tank.direction = Direction(player_data["direction"])
+                    # Actualizar posición solo para otros jugadores
+                    # El jugador local maneja su propia posición
+                    if pid != self.player_id:
+                        tank.x = player_data["x"]
+                        tank.y = player_data["y"]
+                        tank.direction = Direction(player_data["direction"])
+                    # Actualizar vidas y estado para TODOS (incluyendo el local)
                     tank.lives = player_data["lives"]
                     tank.is_alive = player_data["is_alive"]
-        
-        # Actualizar balas
-        self.bullets = [Bullet.from_dict(b) for b in game_state.bullets if b["active"]]
-        
-        # Actualizar estado del juego
-        self.game_started = game_state.game_started
-        self.base.destroyed = game_state.base_destroyed
+            
+            # Actualizar balas
+            self.bullets = [Bullet.from_dict(b) for b in game_state.bullets if b["active"]]
+            
+            # Actualizar estado del juego
+            self.game_started = game_state.game_started
     
     def handle_events(self):
         for event in pygame.event.get():
@@ -335,6 +331,9 @@ class MultiplayerGame:
     
     def update(self):
         # Mantener la conexión activa incluso en el lobby
+        if self.player_id not in self.tanks:
+            return  # Esperar a que el tanque esté inicializado
+            
         my_tank = self.tanks[self.player_id]
         
         if not self.game_started:
@@ -347,8 +346,9 @@ class MultiplayerGame:
                 self._last_lobby_update = pygame.time.get_ticks()
             return
         
-        my_tank = self.tanks[self.player_id]
-        other_tanks = [t for pid, t in self.tanks.items() if pid != self.player_id]
+        # Obtener otros tanques de forma thread-safe
+        with self.lock:
+            other_tanks = [t for pid, t in self.tanks.items() if pid != self.player_id]
         
         # Mover tanque local
         if pygame.K_UP in self.keys_pressed:
@@ -363,35 +363,8 @@ class MultiplayerGame:
         # Enviar actualización de posición
         self.network.send_update(my_tank.to_dict())
         
-        # Actualizar balas (solo el host procesa colisiones)
-        if self.network.role == NetworkRole.HOST:
-            for bullet in self.bullets[:]:
-                bullet.update()
-                if not bullet.active:
-                    self.bullets.remove(bullet)
-                    continue
-                
-                # Colisiones con muros
-                for wall in self.walls:
-                    if not wall.destroyed and bullet.get_rect().colliderect(wall.get_rect()):
-                        wall.destroyed = True
-                        bullet.active = False
-                        break
-                
-                # Colisiones con tanques
-                for tank in self.tanks.values():
-                    if tank.is_alive and tank.player_id != bullet.owner_id:
-                        if bullet.get_rect().colliderect(tank.get_rect()):
-                            tank.lives -= 1
-                            if tank.lives <= 0:
-                                tank.is_alive = False
-                            bullet.active = False
-                            break
-                
-                # Colisión con base
-                if bullet.get_rect().colliderect(self.base.get_rect()):
-                    self.base.destroyed = True
-                    bullet.active = False
+        # Las balas y colisiones las maneja el servidor
+        # El cliente solo actualiza visualmente basado en el estado recibido
     
     def draw(self):
         self.screen.fill(BACKGROUND)
@@ -403,13 +376,14 @@ class MultiplayerGame:
         for y in range(0, SCREEN_HEIGHT, TILE_SIZE):
             pygame.draw.line(self.screen, grid_color, (0, y), (SCREEN_WIDTH, y), 1)
         
-        # Muros y base
+        # Muros
         for wall in self.walls:
             wall.draw(self.screen)
-        self.base.draw(self.screen)
         
-        # Tanques
-        for tank in self.tanks.values():
+        # Tanques (thread-safe)
+        with self.lock:
+            tanks_snapshot = list(self.tanks.values())
+        for tank in tanks_snapshot:
             tank.draw(self.screen)
         
         # Balas
@@ -419,6 +393,11 @@ class MultiplayerGame:
         # UI
         font = pygame.font.Font(None, 28)
         
+        # Obtener game_state del servidor
+        game_state = None
+        if hasattr(self.network, 'last_game_state'):
+            game_state = self.network.last_game_state
+        
         if not self.game_started:
             # Pantalla de espera
             title = font.render("Esperando jugadores...", True, WHITE)
@@ -427,15 +406,64 @@ class MultiplayerGame:
             ready_text = "Presiona R cuando estés listo" if not self.ready else "LISTO!"
             ready_surf = font.render(ready_text, True, BRIGHT_YELLOW if not self.ready else PLAYER_COLORS[0])
             self.screen.blit(ready_surf, (SCREEN_WIDTH//2 - 150, 150))
+        elif game_state and game_state.game_over:
+            # Pantalla de victoria/derrota
+            font_big = pygame.font.Font(None, 72)
+            team_name = "EQUIPO AZUL" if game_state.winning_team == 0 else "EQUIPO ROJO"
+            team_color = TEAM_COLORS[game_state.winning_team]
+            
+            # Fondo semi-transparente
+            overlay = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
+            overlay.set_alpha(200)
+            overlay.fill((0, 0, 0))
+            self.screen.blit(overlay, (0, 0))
+            
+            # Mensaje de victoria
+            victory_text = font_big.render(f"¡{team_name} GANA!", True, team_color)
+            text_rect = victory_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 50))
+            self.screen.blit(victory_text, text_rect)
+            
+            # Mi resultado
+            my_team = 0 if self.player_id in [0, 1] else 1
+            if my_team == game_state.winning_team:
+                result_text = font.render("¡VICTORIA!", True, BRIGHT_YELLOW)
+            else:
+                result_text = font.render("DERROTA", True, RED)
+            result_rect = result_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 + 30))
+            self.screen.blit(result_text, result_rect)
         else:
-            # Info de jugadores
+            # Info de equipos durante el juego
             y_offset = 10
-            for pid, tank in self.tanks.items():
-                color = PLAYER_COLORS[pid]
-                status = "VIVO" if tank.is_alive else "MUERTO"
-                text = font.render(f"P{pid+1}: {tank.lives} vidas - {status}", True, color)
-                self.screen.blit(text, (10, y_offset))
-                y_offset += 30
+            with self.lock:
+                tanks_info = [(pid, tank.lives, tank.is_alive) for pid, tank in self.tanks.items()]
+            
+            # Equipo Azul (jugadores 0 y 1)
+            team_blue_text = font.render("EQUIPO AZUL", True, TEAM_COLORS[0])
+            self.screen.blit(team_blue_text, (10, y_offset))
+            y_offset += 30
+            
+            for pid, lives, is_alive in tanks_info:
+                if pid in [0, 1]:
+                    color = PLAYER_COLORS[pid]
+                    status = "VIVO" if is_alive else "MUERTO"
+                    text = font.render(f"  P{pid+1}: {lives} vidas - {status}", True, color)
+                    self.screen.blit(text, (10, y_offset))
+                    y_offset += 25
+            
+            y_offset += 10
+            
+            # Equipo Rojo (jugadores 2 y 3)
+            team_red_text = font.render("EQUIPO ROJO", True, TEAM_COLORS[1])
+            self.screen.blit(team_red_text, (10, y_offset))
+            y_offset += 30
+            
+            for pid, lives, is_alive in tanks_info:
+                if pid in [2, 3]:
+                    color = PLAYER_COLORS[pid]
+                    status = "VIVO" if is_alive else "MUERTO"
+                    text = font.render(f"  P{pid+1}: {lives} vidas - {status}", True, color)
+                    self.screen.blit(text, (10, y_offset))
+                    y_offset += 25
         
         # Instrucciones
         font_small = pygame.font.Font(None, 20)
@@ -458,18 +486,19 @@ class MultiplayerGame:
         sys.exit()
 
 def main_menu():
-    """Menú principal para elegir rol"""
+    """Menú principal para elegir cómo jugar"""
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Battle City - Menú Principal")
     clock = pygame.time.Clock()
     
     font_title = pygame.font.Font(None, 64)
     font_option = pygame.font.Font(None, 36)
+    font_small = pygame.font.Font(None, 24)
     
     options = [
-        {"text": "1. HOSTEAR PARTIDA", "role": NetworkRole.HOST},
-        {"text": "2. UNIRSE A PARTIDA", "role": NetworkRole.CLIENT},
-        {"text": "3. SALIR", "role": None}
+        {"text": "1. INICIAR SERVIDOR Y JUGAR", "action": "server_and_play"},
+        {"text": "2. CONECTARSE A SERVIDOR", "action": "connect"},
+        {"text": "3. SALIR", "action": "exit"}
     ]
     
     selected = 0
@@ -481,27 +510,38 @@ def main_menu():
         
         # Título
         title = font_title.render("BATTLE CITY", True, BRIGHT_YELLOW)
-        screen.blit(title, (SCREEN_WIDTH//2 - 180, 100))
+        screen.blit(title, (SCREEN_WIDTH//2 - 180, 80))
         
-        subtitle = font_option.render("Multiplayer P2P", True, WHITE)
-        screen.blit(subtitle, (SCREEN_WIDTH//2 - 100, 170))
+        subtitle = font_option.render("Cliente-Servidor Multiplayer", True, WHITE)
+        screen.blit(subtitle, (SCREEN_WIDTH//2 - 200, 150))
         
         # Opciones
         for i, option in enumerate(options):
             color = PLAYER_COLORS[0] if i == selected else WHITE
             text = font_option.render(option["text"], True, color)
-            screen.blit(text, (SCREEN_WIDTH//2 - 150, 250 + i * 50))
+            screen.blit(text, (SCREEN_WIDTH//2 - 220, 230 + i * 50))
+        
+        # Información
+        if not entering_ip:
+            info_lines = [
+                "Opción 1: Inicia un servidor dedicado en segundo plano",
+                "          y te conectas como jugador",
+                "Opción 2: Solo te conectas a un servidor existente",
+            ]
+            y = 400
+            for line in info_lines:
+                text = font_small.render(line, True, CYAN)
+                screen.blit(text, (50, y))
+                y += 25
         
         # Si está ingresando IP
         if entering_ip:
-            prompt = font_option.render("IP del host:", True, WHITE)
-            screen.blit(prompt, (SCREEN_WIDTH//2 - 100, 400))
+            prompt = font_option.render("IP del servidor:", True, WHITE)
+            screen.blit(prompt, (SCREEN_WIDTH//2 - 130, 400))
             ip_text = font_option.render(host_input + "_", True, BRIGHT_YELLOW)
-            screen.blit(ip_text, (SCREEN_WIDTH//2 - 100, 440))
-            hint = font_option.render("(Enter para conectar, Esc para cancelar)", True, WHITE)
-            font_small = pygame.font.Font(None, 20)
-            hint_small = font_small.render("Deja vacío para localhost", True, WHITE)
-            screen.blit(hint_small, (SCREEN_WIDTH//2 - 120, 480))
+            screen.blit(ip_text, (SCREEN_WIDTH//2 - 130, 440))
+            hint_small = font_small.render("Presiona Enter (vacío = localhost) o Esc para cancelar", True, WHITE)
+            screen.blit(hint_small, (SCREEN_WIDTH//2 - 250, 480))
         
         pygame.display.flip()
         
@@ -514,9 +554,9 @@ def main_menu():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
                         host = host_input if host_input else "localhost"
-                        network = NetworkManager(NetworkRole.CLIENT, host=host)
+                        network = NetworkManager(host=host)
                         if network.start_client():
-                            return network
+                            return network, None
                         else:
                             entering_ip = False
                             host_input = ""
@@ -534,20 +574,40 @@ def main_menu():
                     elif event.key == pygame.K_DOWN:
                         selected = (selected + 1) % len(options)
                     elif event.key == pygame.K_RETURN:
-                        role = options[selected]["role"]
-                        if role == NetworkRole.HOST:
-                            network = NetworkManager(role)
-                            if network.start_host():
-                                return network
-                        elif role == NetworkRole.CLIENT:
+                        action = options[selected]["action"]
+                        
+                        if action == "server_and_play":
+                            # Iniciar servidor en thread separado
+                            server = DedicatedServer()
+                            if server.start():
+                                server_thread = threading.Thread(target=server.run_forever, daemon=True)
+                                server_thread.start()
+                                print("[INFO] Servidor iniciado en segundo plano")
+                                time.sleep(1)  # Esperar a que el servidor esté listo
+                                
+                                # Conectarse como cliente
+                                network = NetworkManager(host="localhost")
+                                if network.start_client():
+                                    return network, server
+                                else:
+                                    server.shutdown()
+                            
+                        elif action == "connect":
                             entering_ip = True
-                        else:
+                            
+                        elif action == "exit":
                             pygame.quit()
                             sys.exit()
         
         clock.tick(30)
 
 if __name__ == "__main__":
-    network = main_menu()
+    network, server = main_menu()
     game = MultiplayerGame(network)
-    game.run()
+    
+    try:
+        game.run()
+    finally:
+        # Cerrar servidor si existe
+        if server:
+            server.shutdown()
