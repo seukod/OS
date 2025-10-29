@@ -121,7 +121,15 @@ void ejecutarMenuJuego() {
             cerr << "[ERROR] No se pudo ejecutar Python" << endl;
             exit(1);
         } else if (pid > 0) {
-            // Proceso padre: esperar a que termine
+            // Proceso padre
+            cout << "=================================================" << endl;
+            cout << "       JUEGO BATTLE CITY - INICIADO             " << endl;
+            cout << "=================================================" << endl;
+            cout << "PID del proceso del juego: " << pid << endl;
+            cout << "=================================================" << endl;
+            cout << endl;
+            
+            // Esperar a que termine
             int status;
             waitpid(pid, &status, 0);
             

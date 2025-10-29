@@ -22,6 +22,8 @@ events:
     candidate_directories:
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -39,11 +41,13 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/local/opt/ruby/bin/uname"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/uname"
+      - "/Users/francisco/.cabal/bin/uname"
+      - "/Users/francisco/.ghcup/bin/uname"
       - "/Users/francisco/.rbenv/shims/uname"
       - "/opt/homebrew/bin/uname"
       - "/opt/homebrew/sbin/uname"
@@ -53,6 +57,14 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -76,11 +88,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -111,6 +120,8 @@ events:
     candidate_directories:
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -128,11 +139,13 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/local/opt/ruby/bin/gmake"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/gmake"
+      - "/Users/francisco/.cabal/bin/gmake"
+      - "/Users/francisco/.ghcup/bin/gmake"
       - "/Users/francisco/.rbenv/shims/gmake"
       - "/opt/homebrew/bin/gmake"
       - "/opt/homebrew/sbin/gmake"
@@ -150,10 +163,12 @@ events:
       - "/usr/local/share/dotnet/gmake"
       - "/Users/francisco/.dotnet/tools/gmake"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/gmake"
-      - "/Users/francisco/.cabal/bin/gmake"
-      - "/Users/francisco/.ghcup/bin/gmake"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/gmake"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
       - "/usr/local/opt/ruby/bin/make"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/make"
+      - "/Users/francisco/.cabal/bin/make"
+      - "/Users/francisco/.ghcup/bin/make"
       - "/Users/francisco/.rbenv/shims/make"
       - "/opt/homebrew/bin/make"
       - "/opt/homebrew/sbin/make"
@@ -163,6 +178,14 @@ events:
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -186,11 +209,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -219,6 +239,8 @@ events:
     candidate_directories:
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -236,11 +258,13 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/local/opt/ruby/bin/cc"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/cc"
+      - "/Users/francisco/.cabal/bin/cc"
+      - "/Users/francisco/.ghcup/bin/cc"
       - "/Users/francisco/.rbenv/shims/cc"
       - "/opt/homebrew/bin/cc"
       - "/opt/homebrew/sbin/cc"
@@ -250,6 +274,14 @@ events:
     found: "/usr/bin/cc"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -273,11 +305,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -311,6 +340,14 @@ events:
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
         - "/Users/francisco/.rbenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -328,11 +365,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -411,6 +445,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -427,11 +463,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -455,11 +499,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -483,6 +524,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -499,11 +542,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -527,11 +578,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -555,6 +603,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -571,11 +621,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -599,11 +657,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -627,6 +682,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -643,11 +700,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -671,11 +736,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -699,6 +761,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -715,11 +779,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -743,11 +815,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -771,6 +840,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -787,11 +858,19 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -815,11 +894,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -843,6 +919,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -859,12 +937,14 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/objcopy"
       - "/usr/local/opt/ruby/bin/objcopy"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/objcopy"
+      - "/Users/francisco/.cabal/bin/objcopy"
+      - "/Users/francisco/.ghcup/bin/objcopy"
       - "/Users/francisco/.rbenv/shims/objcopy"
       - "/opt/homebrew/bin/objcopy"
       - "/opt/homebrew/sbin/objcopy"
@@ -881,11 +961,19 @@ events:
       - "/usr/local/share/dotnet/objcopy"
       - "/Users/francisco/.dotnet/tools/objcopy"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/objcopy"
-      - "/Users/francisco/.cabal/bin/objcopy"
-      - "/Users/francisco/.ghcup/bin/objcopy"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/objcopy"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
     found: false
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -909,11 +997,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -937,6 +1022,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -953,12 +1040,14 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/readelf"
       - "/usr/local/opt/ruby/bin/readelf"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/readelf"
+      - "/Users/francisco/.cabal/bin/readelf"
+      - "/Users/francisco/.ghcup/bin/readelf"
       - "/Users/francisco/.rbenv/shims/readelf"
       - "/opt/homebrew/bin/readelf"
       - "/opt/homebrew/sbin/readelf"
@@ -975,11 +1064,19 @@ events:
       - "/usr/local/share/dotnet/readelf"
       - "/Users/francisco/.dotnet/tools/readelf"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/readelf"
-      - "/Users/francisco/.cabal/bin/readelf"
-      - "/Users/francisco/.ghcup/bin/readelf"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/readelf"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
     found: false
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -1003,11 +1100,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1031,6 +1125,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1047,12 +1143,14 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/dlltool"
       - "/usr/local/opt/ruby/bin/dlltool"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/dlltool"
+      - "/Users/francisco/.cabal/bin/dlltool"
+      - "/Users/francisco/.ghcup/bin/dlltool"
       - "/Users/francisco/.rbenv/shims/dlltool"
       - "/opt/homebrew/bin/dlltool"
       - "/opt/homebrew/sbin/dlltool"
@@ -1069,11 +1167,19 @@ events:
       - "/usr/local/share/dotnet/dlltool"
       - "/Users/francisco/.dotnet/tools/dlltool"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/dlltool"
-      - "/Users/francisco/.cabal/bin/dlltool"
-      - "/Users/francisco/.ghcup/bin/dlltool"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
     found: false
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -1097,11 +1203,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1125,6 +1228,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1141,12 +1246,14 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/addr2line"
       - "/usr/local/opt/ruby/bin/addr2line"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/addr2line"
+      - "/Users/francisco/.cabal/bin/addr2line"
+      - "/Users/francisco/.ghcup/bin/addr2line"
       - "/Users/francisco/.rbenv/shims/addr2line"
       - "/opt/homebrew/bin/addr2line"
       - "/opt/homebrew/sbin/addr2line"
@@ -1163,11 +1270,19 @@ events:
       - "/usr/local/share/dotnet/addr2line"
       - "/Users/francisco/.dotnet/tools/addr2line"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/addr2line"
-      - "/Users/francisco/.cabal/bin/addr2line"
-      - "/Users/francisco/.ghcup/bin/addr2line"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/addr2line"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
     found: false
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -1191,11 +1306,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1219,6 +1331,8 @@ events:
       - "/usr/bin/"
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1235,12 +1349,14 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/tapi"
       - "/usr/local/opt/ruby/bin/tapi"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/tapi"
+      - "/Users/francisco/.cabal/bin/tapi"
+      - "/Users/francisco/.ghcup/bin/tapi"
       - "/Users/francisco/.rbenv/shims/tapi"
       - "/opt/homebrew/bin/tapi"
       - "/opt/homebrew/sbin/tapi"
@@ -1257,11 +1373,19 @@ events:
       - "/usr/local/share/dotnet/tapi"
       - "/Users/francisco/.dotnet/tools/tapi"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/tapi"
-      - "/Users/francisco/.cabal/bin/tapi"
-      - "/Users/francisco/.ghcup/bin/tapi"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
     found: false
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -1285,11 +1409,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1326,6 +1447,14 @@ events:
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
         - "/Users/francisco/.rbenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1343,11 +1472,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1381,6 +1507,14 @@ events:
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
         - "/Users/francisco/.rbenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1398,11 +1532,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -1480,6 +1611,8 @@ events:
     candidate_directories:
       - "/usr/local/opt/ruby/bin/"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/"
+      - "/Users/francisco/.cabal/bin/"
+      - "/Users/francisco/.ghcup/bin/"
       - "/Users/francisco/.rbenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1497,11 +1630,13 @@ events:
       - "/usr/local/share/dotnet/"
       - "/Users/francisco/.dotnet/tools/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/Users/francisco/.cabal/bin/"
-      - "/Users/francisco/.ghcup/bin/"
+      - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/local/opt/ruby/bin/install_name_tool"
       - "/usr/local/lib/ruby/gems/3.2.0/bin/install_name_tool"
+      - "/Users/francisco/.cabal/bin/install_name_tool"
+      - "/Users/francisco/.ghcup/bin/install_name_tool"
       - "/Users/francisco/.rbenv/shims/install_name_tool"
       - "/opt/homebrew/bin/install_name_tool"
       - "/opt/homebrew/sbin/install_name_tool"
@@ -1511,6 +1646,14 @@ events:
     found: "/usr/bin/install_name_tool"
     search_context:
       ENV{PATH}:
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/lib/ruby/gems/3.2.0/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/usr/local/opt/ruby/bin"
+        - "/Users/francisco/.cabal/bin"
+        - "/Users/francisco/.ghcup/bin"
         - "/usr/local/opt/ruby/bin"
         - "/usr/local/lib/ruby/gems/3.2.0/bin"
         - "/usr/local/opt/ruby/bin"
@@ -1534,11 +1677,8 @@ events:
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/francisco/.cabal/bin"
-        - "/Users/francisco/.ghcup/bin"
-        - "/usr/local/opt/ruby/bin"
-        - "/usr/local/lib/ruby/gems/3.2.0/bin"
-        - "/Users/francisco/.rbenv/shims"
+        - "/Users/francisco/.vscode/extensions/ms-python.debugpy-2025.14.1-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/francisco/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
@@ -1549,8 +1689,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB"
-      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB"
+      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6"
+      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1562,18 +1702,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB'
+        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_819c1/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_819c1.dir/build.make CMakeFiles/cmTC_819c1.dir/build
-        Building C object CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f046d/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f046d.dir/build.make CMakeFiles/cmTC_f046d.dir/build
+        Building C object CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1585,13 +1725,13 @@ events:
          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
          /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_819c1
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_819c1.dir/link.txt --verbose=1
+        Linking C executable cmTC_f046d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f046d.dir/link.txt --verbose=1
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_819c1 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f046d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1115.7.3
         BUILD 23:52:02 Dec  5 2024
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1604,7 +1744,7 @@ events:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -o cmTC_819c1
+        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -o cmTC_f046d
         
       exitCode: 0
   -
@@ -1648,18 +1788,18 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB']
+        ignore line: [Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_819c1/fast]
-        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_819c1.dir/build.make CMakeFiles/cmTC_819c1.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f046d/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f046d.dir/build.make CMakeFiles/cmTC_f046d.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qHbyGB -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-fs0Lv6 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"]
@@ -1671,13 +1811,13 @@ events:
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_819c1]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_819c1.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_f046d]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f046d.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_819c1 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f046d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1694,12 +1834,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_819c1] ==> ignore
+          arg [cmTC_f046d] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_819c1.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_f046d.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
         linker tool for 'C': /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
@@ -1742,8 +1882,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ"
-      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ"
+      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5"
+      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1756,19 +1896,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ'
+        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_47caf/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_47caf.dir/build.make CMakeFiles/cmTC_47caf.dir/build
-        Building CXX object CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f7038/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f7038.dir/build.make CMakeFiles/cmTC_f7038.dir/build
+        Building CXX object CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1781,13 +1921,13 @@ events:
          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
          /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_47caf
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47caf.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_f7038
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7038.dir/link.txt --verbose=1
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_47caf -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f7038 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1115.7.3
         BUILD 23:52:02 Dec  5 2024
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1800,7 +1940,7 @@ events:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_47caf
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f7038
         
       exitCode: 0
   -
@@ -1846,19 +1986,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ']
+        ignore line: [Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_47caf/fast]
-        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_47caf.dir/build.make CMakeFiles/cmTC_47caf.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f7038/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f7038.dir/build.make CMakeFiles/cmTC_f7038.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-qJAOaQ -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-VGY3A5 -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"]
@@ -1871,13 +2011,13 @@ events:
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_47caf]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47caf.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_f7038]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7038.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_47caf -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f7038 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1894,12 +2034,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_47caf] ==> ignore
+          arg [cmTC_f7038] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_47caf.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_f7038.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
@@ -1945,8 +2085,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-Mzs1Bf"
-      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-Mzs1Bf"
+      source: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-czRPrQ"
+      binary: "/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-czRPrQ"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1958,15 +2098,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-Mzs1Bf'
+        Change Dir: '/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-czRPrQ'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1c662/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1c662.dir/build.make CMakeFiles/cmTC_1c662.dir/build
-        Building C object CMakeFiles/cmTC_1c662.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_1c662.dir/src.c.o -MF CMakeFiles/cmTC_1c662.dir/src.c.o.d -o CMakeFiles/cmTC_1c662.dir/src.c.o -c /Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-Mzs1Bf/src.c
-        Linking C executable cmTC_1c662
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c662.dir/link.txt --verbose=1
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1c662.dir/src.c.o -o cmTC_1c662
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f7a7c/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f7a7c.dir/build.make CMakeFiles/cmTC_f7a7c.dir/build
+        Building C object CMakeFiles/cmTC_f7a7c.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_f7a7c.dir/src.c.o -MF CMakeFiles/cmTC_f7a7c.dir/src.c.o.d -o CMakeFiles/cmTC_f7a7c.dir/src.c.o -c /Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/CMakeScratch/TryCompile-czRPrQ/src.c
+        Linking C executable cmTC_f7a7c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7a7c.dir/link.txt --verbose=1
+        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f7a7c.dir/src.c.o -o cmTC_f7a7c
         
       exitCode: 0
 ...
