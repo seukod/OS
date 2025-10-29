@@ -1,4 +1,5 @@
 #include "../include/Crear_indice_inv.h"
+#include "../../include/process_tools/process_manager.h"
 #include <iostream>
 #include <string>
 
@@ -20,12 +21,13 @@ int main(int argc, char* argv[]) {
     string archivoSalida = argv[1];
     string directorioLibros = argv[2];
 
-    // Configuración paralela con valores fijos
-    ConfigParalelo config(4, 4);  // 4 threads, 4 libros por lote
-
+    // Configuración paralela
+    ConfigParalelo config(0, 0);
+    config.nThreads = solicitarCantidadThreads();
+    config.nLote = solicitarCantidadLotes();
     cout << "Archivo de salida: " << archivoSalida << endl;
     cout << "Directorio de libros: " << directorioLibros << endl;
-    cout << "Configuración fija: " << config.nThreads << " threads, " << config.nLote << " libros por lote" << endl;
+    cout << "Configuración: " << config.nThreads << " threads, " << config.nLote << " libros por lote" << endl;
     cout << "=================================================" << endl;
 
     // Ejecutar procesamiento paralelo

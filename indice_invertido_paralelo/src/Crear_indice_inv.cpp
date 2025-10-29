@@ -2,16 +2,70 @@
 
 using namespace std;
 
+// ============================================================
+// agregado para logging global
+// ============================================================
+mutex mutexLog;
+ofstream logFile("../data/log_procesamiento.txt");
+
+void registrarLog(const thread::id& tid, int libroId, int totalPalabras,
+                  const chrono::system_clock::time_point& inicio,
+                  const chrono::system_clock::time_point& fin) {
+    lock_guard<mutex> lock(mutexLog);
+    logFile << "THREAD: " << tid
+            << ", LIBRO: " << libroId
+            << ", PALABRAS: " << totalPalabras
+            << ", INICIO: " << chrono::duration_cast<chrono::milliseconds>(inicio.time_since_epoch()).count()
+            << ", FIN: " << chrono::duration_cast<chrono::milliseconds>(fin.time_since_epoch()).count()
+            << endl;
+}
+
+// ============================================================
+// funciones originales (no se modifican, solo se usan)
+// ============================================================
+
+int solicitarCantidadLotes() {
+    int nLote;
+    while (true) {
+        cout << "Ingrese la cantidad de libros por lote (mayor a 0): ";
+        if (!(cin >> nLote)) {
+            cout << "Entrada inválida. Ingrese un número entero." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        if (nLote <= 0) cout << "El tamaño de lote debe ser mayor que 0." << endl;
+        else break;
+    }
+    return nLote;
+}
+
+int solicitarCantidadThreads() {
+    unsigned int maxThreads = thread::hardware_concurrency();
+    if (maxThreads == 0) maxThreads = 4;
+    cout << "Número máximo de hilos disponibles: " << maxThreads << endl;
+
+    int nThreads;
+    while (true) {
+        cout << "Ingrese la cantidad de hilos a utilizar (1 - " << maxThreads << "): ";
+        if (!(cin >> nThreads)) {
+            cout << "Entrada inválida. Ingrese un número entero." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        if (nThreads < 1 || nThreads > (int)maxThreads) cout << "Cantidad fuera de rango." << endl;
+        else break;
+    }
+    return nThreads;
+}
+
 vector<string> escanearLibros(const string& rutaLibros) {
     vector<string> nombresLibros;
-
     for (const auto& entrada: filesystem::directory_iterator(rutaLibros)) {
         if (entrada.is_regular_file()) {
             string nombreArchivo = entrada.path().filename().string();
-
-            // Cambiar ends_with() por substr() para compatibilidad con C++17
-            if (nombreArchivo.length() >= 4 &&
-                nombreArchivo.substr(nombreArchivo.length() - 4) == ".txt") {
+            if (nombreArchivo.length() >= 4 && nombreArchivo.substr(nombreArchivo.length() - 4) == ".txt") {
                 nombresLibros.push_back(nombreArchivo);
                 cout << "Libro encontrado: " << nombreArchivo << endl;
             }
@@ -21,59 +75,41 @@ vector<string> escanearLibros(const string& rutaLibros) {
 }
 
 void actualizarMapaLibros(const vector<string>& libros) {
-    string rutaMapa = "../data/MAPA-LIBROS.csv";  // Ruta real desde el directorio de ejecución
+    string rutaMapa = "../data/MAPA-LIBROS.csv";
     ofstream archivoMapa(rutaMapa);
-
     if (!archivoMapa.is_open()) {
-        cout << "ERROR: No se pudo crear el archivo de mapa de libros en " << rutaMapa << endl;
+        cout << "ERROR: No se pudo crear archivo de mapa de libros" << endl;
         return;
     }
-
-    // Escribir encabezado
     archivoMapa << "ID,NOMBRE_LIBRO" << endl;
-
-    // Escribir cada libro con su ID
-    for (size_t i = 0; i < libros.size(); ++i) {
+    for (size_t i = 0; i < libros.size(); ++i)
         archivoMapa << (i + 1) << "," << libros[i] << endl;
-    }
 
     archivoMapa.close();
     cout << "Mapa de libros creado exitosamente: " << rutaMapa << endl;
     cout << "Total de libros registrados: " << libros.size() << endl;
 }
 
-/*
-void crearIndiceInvertidoParalelo() {
-
-}
-*/
-
-// Función para limpiar y normalizar palabras
 string limpiarPalabra(const string& palabra) {
-    if (palabra.empty()) return "";
-
     string palabraLimpia;
-    for (char c : palabra) {
-        if (isalpha(c)) {
-            palabraLimpia += tolower(c);
-        }
-    }
-    return palabraLimpia.empty() ? "" : palabraLimpia;
+    for (char c : palabra)
+        if (isalpha(c)) palabraLimpia += tolower(c);
+    return palabraLimpia;
 }
 
-// Función para cargar el mapa de libros desde el CSV
+// ============================================================
+// funciones nuevas y paralelas (usa log global agregado)
+// ============================================================
+
 unordered_map<string, int> cargarMapaLibros(const string& rutaMapa) {
     unordered_map<string, int> mapa;
     ifstream archivo(rutaMapa);
-
     if (!archivo.is_open()) {
-        cout << "ERROR: No se pudo cargar el mapa de libros desde " << rutaMapa << endl;
+        cout << "ERROR: No se pudo cargar el mapa de libros" << endl;
         return mapa;
     }
-
     string linea;
-    getline(archivo, linea); // Saltar encabezado
-
+    getline(archivo, linea);
     while (getline(archivo, linea)) {
         size_t coma = linea.find(',');
         if (coma != string::npos) {
@@ -82,176 +118,112 @@ unordered_map<string, int> cargarMapaLibros(const string& rutaMapa) {
             mapa[nombre] = id;
         }
     }
-
     archivo.close();
-    cout << "Mapa de libros cargado: " << mapa.size() << " entradas" << endl;
     return mapa;
 }
 
-// Función para procesar un lote de libros en paralelo
 void procesarLoteLibros(const vector<string>& loteLibros, const string& directorioLibros,
-                       unordered_map<string, vector<DocumentoInfo>>& indiceGlobal,
-                       mutex& mutexIndice, const unordered_map<string, int>& mapaLibros) {
+                        unordered_map<string, vector<DocumentoInfo>>& indiceGlobal,
+                        mutex& mutexIndice,
+                        const unordered_map<string, int>& mapaLibros) {
 
-    // Índice local para este thread
     unordered_map<string, vector<DocumentoInfo>> indiceLocal;
 
-    cout << "[THREAD " << this_thread::get_id() << "] Procesando lote de " << loteLibros.size() << " libros" << endl;
-
     for (const string& nombreLibro : loteLibros) {
-        string rutaCompleta = directorioLibros + "/" + nombreLibro;
-        ifstream archivo(rutaCompleta);
+        auto inicio = chrono::system_clock::now();
 
-        if (!archivo.is_open()) {
-            cout << "[ERROR] No se pudo abrir: " << nombreLibro << endl;
-            continue;
-        }
-
-        // Obtener ID del libro
         auto it = mapaLibros.find(nombreLibro);
-        if (it == mapaLibros.end()) {
-            cout << "[ERROR] ID no encontrado para: " << nombreLibro << endl;
-            continue;
-        }
+        if (it == mapaLibros.end()) continue;
         int libroId = it->second;
 
-        // Procesar contenido del archivo
+        ifstream archivo(directorioLibros + "/" + nombreLibro);
+        if (!archivo.is_open()) continue;
+
         unordered_map<string, int> contadorPalabras;
         string linea;
-
         while (getline(archivo, linea)) {
-            string palabraActual = "";
-
+            string palabraActual;
             for (char c : linea) {
-                if (isalpha(c)) {
-                    palabraActual += tolower(c);
-                } else {
-                    if (!palabraActual.empty()) {
-                        string palabraLimpia = limpiarPalabra(palabraActual);
-                        if (!palabraLimpia.empty()) {
-                            contadorPalabras[palabraLimpia]++;
-                        }
-                        palabraActual = "";
-                    }
+                if (isalpha(c)) palabraActual += tolower(c);
+                else if (!palabraActual.empty()) {
+                    contadorPalabras[limpiarPalabra(palabraActual)]++;
+                    palabraActual.clear();
                 }
             }
-
-            // Procesar última palabra de la línea
-            if (!palabraActual.empty()) {
-                string palabraLimpia = limpiarPalabra(palabraActual);
-                if (!palabraLimpia.empty()) {
-                    contadorPalabras[palabraLimpia]++;
-                }
-            }
+            if (!palabraActual.empty()) contadorPalabras[limpiarPalabra(palabraActual)]++;
         }
-
         archivo.close();
 
-        // Agregar al índice local
-        for (const auto& par : contadorPalabras) {
+        for (const auto& par : contadorPalabras)
             indiceLocal[par.first].emplace_back(libroId, par.second);
-        }
 
-        cout << "[THREAD " << this_thread::get_id() << "] Procesado: " << nombreLibro << " (ID: " << libroId << ")" << endl;
+        auto fin = chrono::system_clock::now();
+        int totalPalabras = 0;
+        for (auto& p : contadorPalabras)
+            totalPalabras += p.second;
+
+        // 🔹 registrar log sin pasarlo como parámetro
+        registrarLog(this_thread::get_id(), libroId, totalPalabras, inicio, fin);
     }
 
-    // Fusionar índice local con el global (sección crítica)
-    {
-        lock_guard<mutex> lock(mutexIndice);
-        for (const auto& par : indiceLocal) {
-            const string& palabra = par.first;
-            const vector<DocumentoInfo>& documentos = par.second;
-
-            for (const DocumentoInfo& doc : documentos) {
-                indiceGlobal[palabra].push_back(doc);
-            }
-        }
-    }
-
-    cout << "[THREAD " << this_thread::get_id() << "] Lote completado y fusionado al índice global" << endl;
+    lock_guard<mutex> lock(mutexIndice);
+    for (const auto& par : indiceLocal)
+        for (const auto& doc : par.second)
+            indiceGlobal[par.first].push_back(doc);
 }
 
-// Función principal para crear el índice invertido paralelo
 void crearIndiceInvertidoParalelo(const string& archivoSalida, const string& directorioLibros, const ConfigParalelo& config) {
-    cout << "\n=================================================" << endl;
-    cout << "      ÍNDICE INVERTIDO PARALELO - INICIANDO     " << endl;
-    cout << "=================================================" << endl;
-    cout << "N-THREADS: " << config.nThreads << endl;
-    cout << "N-LOTE: " << config.nLote << endl;
-    cout << "Directorio: " << directorioLibros << endl;
-    cout << "Archivo salida: " << archivoSalida << endl;
-    cout << "=================================================" << endl;
+    cout << "\n=== INICIO ÍNDICE INVERTIDO PARALELO ===" << endl;
+    cout << "Threads: " << config.nThreads << ", Lote: " << config.nLote << endl;
 
-    // 1. Escanear libros
     vector<string> libros = escanearLibros(directorioLibros);
     if (libros.empty()) {
-        cout << "ERROR: No se encontraron libros" << endl;
+        cout << "No se encontraron libros" << endl;
         return;
     }
 
-    // 2. Crear mapa de libros
     actualizarMapaLibros(libros);
-    unordered_map<string, int> mapaLibros = cargarMapaLibros("../data/MAPA-LIBROS.csv");  // Usar ruta real
+    unordered_map<string, int> mapaLibros = cargarMapaLibros("../data/MAPA-LIBROS.csv");
 
-    // 3. Dividir libros en lotes
+    // dividir en lotes
     vector<vector<string>> lotes;
     for (size_t i = 0; i < libros.size(); i += config.nLote) {
         vector<string> lote;
-        for (size_t j = i; j < min(i + config.nLote, libros.size()); ++j) {
+        for (size_t j = i; j < min(i + config.nLote, libros.size()); ++j)
             lote.push_back(libros[j]);
-        }
         lotes.push_back(lote);
     }
 
-    cout << "Total de libros: " << libros.size() << endl;
-    cout << "Total de lotes: " << lotes.size() << endl;
-
-    // 4. Procesar lotes en paralelo
     unordered_map<string, vector<DocumentoInfo>> indiceGlobal;
     mutex mutexIndice;
     vector<thread> hilos;
 
-    // Crear y lanzar threads
     for (size_t i = 0; i < lotes.size(); ++i) {
-        if (hilos.size() >= config.nThreads) {
-            // Esperar a que termine un thread antes de crear uno nuevo
+        if (hilos.size() >= static_cast<size_t>(config.nThreads)) {
             hilos[i % config.nThreads].join();
             hilos[i % config.nThreads] = thread(procesarLoteLibros, lotes[i], directorioLibros,
-                                               ref(indiceGlobal), ref(mutexIndice), ref(mapaLibros));
+                                                ref(indiceGlobal), ref(mutexIndice), ref(mapaLibros));
         } else {
             hilos.emplace_back(procesarLoteLibros, lotes[i], directorioLibros,
-                              ref(indiceGlobal), ref(mutexIndice), ref(mapaLibros));
+                               ref(indiceGlobal), ref(mutexIndice), ref(mapaLibros));
         }
     }
 
-    // Esperar a que terminen todos los threads
-    for (auto& hilo : hilos) {
-        if (hilo.joinable()) {
-            hilo.join();
-        }
-    }
+    for (auto& hilo : hilos)
+        if (hilo.joinable()) hilo.join();
 
-    // 5. Guardar índice
-    cout << "\nGuardando índice invertido..." << endl;
     ofstream archivo(archivoSalida);
     if (!archivo.is_open()) {
         cout << "ERROR: No se pudo crear " << archivoSalida << endl;
         return;
     }
-
     for (const auto& par : indiceGlobal) {
         archivo << par.first;
-        for (const DocumentoInfo& doc : par.second) {
+        for (const auto& doc : par.second)
             archivo << ";(" << doc.libroId << "," << doc.cantidad << ")";
-        }
         archivo << endl;
     }
-
     archivo.close();
 
-    cout << "=================================================" << endl;
-    cout << "ÍNDICE INVERTIDO PARALELO COMPLETADO" << endl;
-    cout << "Palabras procesadas: " << indiceGlobal.size() << endl;
-    cout << "Archivo generado: " << archivoSalida << endl;
-    cout << "=================================================" << endl;
+    cout << "=== ÍNDICE INVERTIDO COMPLETADO ===" << endl;
 }
