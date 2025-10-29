@@ -345,6 +345,30 @@ src/menus/menu_indice_inv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.s
 .PHONY : src/menus/menu_indice_inv.cpp.s
 
+src/menus/menu_juego.o: src/menus/menu_juego.cpp.o
+.PHONY : src/menus/menu_juego.o
+
+# target to build an object file
+src/menus/menu_juego.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_juego.cpp.o
+.PHONY : src/menus/menu_juego.cpp.o
+
+src/menus/menu_juego.i: src/menus/menu_juego.cpp.i
+.PHONY : src/menus/menu_juego.i
+
+# target to preprocess a source file
+src/menus/menu_juego.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_juego.cpp.i
+.PHONY : src/menus/menu_juego.cpp.i
+
+src/menus/menu_juego.s: src/menus/menu_juego.cpp.s
+.PHONY : src/menus/menu_juego.s
+
+# target to generate assembly for a file
+src/menus/menu_juego.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS.dir/build.make CMakeFiles/OS.dir/src/menus/menu_juego.cpp.s
+.PHONY : src/menus/menu_juego.cpp.s
+
 src/menus/menu_matriz.o: src/menus/menu_matriz.cpp.o
 .PHONY : src/menus/menu_matriz.o
 
@@ -573,6 +597,9 @@ help:
 	@echo "... src/menus/menu_indice_inv.o"
 	@echo "... src/menus/menu_indice_inv.i"
 	@echo "... src/menus/menu_indice_inv.s"
+	@echo "... src/menus/menu_juego.o"
+	@echo "... src/menus/menu_juego.i"
+	@echo "... src/menus/menu_juego.s"
 	@echo "... src/menus/menu_matriz.o"
 	@echo "... src/menus/menu_matriz.i"
 	@echo "... src/menus/menu_matriz.s"
