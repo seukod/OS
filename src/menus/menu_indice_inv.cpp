@@ -24,14 +24,12 @@ bool validarDirectorioLibros(const string& pathDirectorio) {
     return (info.st_mode & S_IFDIR) != 0; // Es un directorio
 }
 
-bool crearIndiceInvertidoParalelo(const string& nombreArchivo, const string& pathCarpeta, int nThreads, int nLote) {
+bool crearIndiceInvertidoParalelo(const string& nombreArchivo, const string& pathCarpeta) {
     cout << "\n=================================================" << endl;
     cout << "      CREANDO ÍNDICE INVERTIDO PARALELO         " << endl;
     cout << "=================================================" << endl;
     cout << "Archivo: " << nombreArchivo << endl;
     cout << "Directorio libros: " << pathCarpeta << endl;
-    cout << "N-THREADS: " << nThreads << endl;
-    cout << "N-LOTE: " << nLote << endl;
     cout << "=================================================" << endl;
 
     // Ejecutar el proceso usando la función existente (el ejecutable maneja internamente N-THREADS y N-LOTE)
@@ -48,8 +46,6 @@ void ejecutarMenuIndiceInv() {
 
     string nombreArchivo;
     string pathCarpeta;
-    int nThreads = 4;    // Valor fijo
-    int nLote = 4;       // Valor fijo
 
     // Paso 1: Ingresar y validar nombre del archivo con bucle
     do {
@@ -73,18 +69,17 @@ void ejecutarMenuIndiceInv() {
         }
     } while (!validarDirectorioLibros(pathCarpeta));
 
-    cout << "\nConfiguración automática:" << endl;
-    cout << "- Threads: " << nThreads << endl;
-    cout << "- Lote: " << nLote << " libros" << endl;
+    cout << "\nConfiguración:" << endl;
     cout << "- Archivo: " << nombreArchivo << endl;
     cout << "- Directorio: " << pathCarpeta << endl;
 
     // Paso 3: Crear el índice invertido paralelo
-    if (crearIndiceInvertidoParalelo(nombreArchivo, pathCarpeta, nThreads, nLote)) {
+    if (crearIndiceInvertidoParalelo(nombreArchivo, pathCarpeta)) {
         mostrarMensajeExito("Índice invertido paralelo creado exitosamente.");
         cout << "\nArchivos generados:" << endl;
         cout << "- Índice: " << nombreArchivo << endl;
         cout << "- Mapa de libros: MAPA-LIBROS.csv" << endl;
+        cout << "- Ultimo Log de proceso: log_procesamiento"<< endl;
     } else {
         mostrarMensajeError("Error al crear el índice invertido paralelo.");
     }
