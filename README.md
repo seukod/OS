@@ -9,6 +9,7 @@ Este trabajo busca simular un sistema real de administración de usuarios, difer
  ### Prerrequisitos
 - Compilador C++ (g++, clang++, etc.)
 - CMake (opcional, para usar el sistema de build)
+- Python 3.8+ y pygame (se recomienda usar la versión instalada en el sistema)
 
 ### Compilación y Ejecución
 
@@ -80,11 +81,21 @@ Y contiene los siguientes parámetros:
 
 ##  Juego
 
-
-- En desarrollo.
--  Funcionalidad en construcción.
+- Módulo de juego tipo battle city que incluye modo local y modo multijugador sobre red.
+- Implementado en Python. Código de red y servidor incluidos para pruebas locales.
+- ### Estructura
+- `game_multiplayer.py` \- Cliente para modo multijugador.
+- `server_dedicated.py` \- Servidor dedicado para partidas multijugador.
+- `network.py` \- Capa de red (sockets, mensajes, configuración por defecto).
+- `test_network.py` \- Pruebas básicas para la capa de red.
+- `README_MULTIPLAYER.md` \- Documentación adicional del modo multijugador.
 
 ---
+
+## Indice Invertido Inverso
+
+- Implementación en C++ que construye un índice invertido a partir de una colección de archivos de texto.
+- Paraleliza el procesamiento para acelerar la tokenización e indexación en máquinas con varios núcleos.
 
 ##  ¿Es palíndromo?
 
