@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OS.dir/src/menus/menu_indice.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o"
   "CMakeFiles/OS.dir/src/menus/menu_indice_inv.cpp.o.d"
+  "CMakeFiles/OS.dir/src/menus/menu_juego.cpp.o"
+  "CMakeFiles/OS.dir/src/menus/menu_juego.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o"
   "CMakeFiles/OS.dir/src/menus/menu_matriz.cpp.o.d"
   "CMakeFiles/OS.dir/src/menus/menu_palindromo.cpp.o"
