@@ -313,10 +313,26 @@ class MultiplayerGame:
             self.game_started = game_state.game_started
     
     def handle_events(self):
+        # Obtener game_state para verificar si el juego terminó
+        game_state = None
+        if hasattr(self.network, 'last_game_state'):
+            game_state = self.network.last_game_state
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
             elif event.type == pygame.KEYDOWN:
+                # Si el juego terminó, manejar opciones post-juego
+                if game_state and game_state.game_over:
+                    if event.key == pygame.K_ESCAPE:
+                        # Salir al menú principal
+                        self.running = False
+                    elif event.key == pygame.K_r:
+                        # Reiniciar juego - volver al menú para nueva partida
+                        self.running = False
+                        # El main_menu se encargará de mostrar las opciones nuevamente
+                    continue  # No procesar otras teclas durante game over
+                
                 self.keys_pressed.add(event.key)
                 if event.key == pygame.K_SPACE:
                     bullet = self.tanks[self.player_id].shoot()
@@ -326,6 +342,9 @@ class MultiplayerGame:
                 elif event.key == pygame.K_r and not self.ready:
                     self.ready = True
                     self.network.send_ready()
+                elif event.key == pygame.K_ESCAPE:
+                    # ESC durante el juego también sale
+                    self.running = False
             elif event.type == pygame.KEYUP:
                 self.keys_pressed.discard(event.key)
     
@@ -409,6 +428,7 @@ class MultiplayerGame:
         elif game_state and game_state.game_over:
             # Pantalla de victoria/derrota
             font_big = pygame.font.Font(None, 72)
+            font_medium = pygame.font.Font(None, 36)
             team_name = "EQUIPO AZUL" if game_state.winning_team == 0 else "EQUIPO ROJO"
             team_color = TEAM_COLORS[game_state.winning_team]
             
@@ -420,7 +440,7 @@ class MultiplayerGame:
             
             # Mensaje de victoria
             victory_text = font_big.render(f"¡{team_name} GANA!", True, team_color)
-            text_rect = victory_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 50))
+            text_rect = victory_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 80))
             self.screen.blit(victory_text, text_rect)
             
             # Mi resultado
@@ -429,8 +449,18 @@ class MultiplayerGame:
                 result_text = font.render("¡VICTORIA!", True, BRIGHT_YELLOW)
             else:
                 result_text = font.render("DERROTA", True, RED)
-            result_rect = result_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 + 30))
+            result_rect = result_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 10))
             self.screen.blit(result_text, result_rect)
+            
+            # Opciones post-juego
+            options_y = SCREEN_HEIGHT//2 + 60
+            option1_text = font_medium.render("R - Jugar de nuevo", True, BRIGHT_YELLOW)
+            option1_rect = option1_text.get_rect(center=(SCREEN_WIDTH//2, options_y))
+            self.screen.blit(option1_text, option1_rect)
+            
+            option2_text = font_medium.render("ESC - Salir al menú", True, WHITE)
+            option2_rect = option2_text.get_rect(center=(SCREEN_WIDTH//2, options_y + 45))
+            self.screen.blit(option2_text, option2_rect)
         else:
             # Info de equipos durante el juego
             y_offset = 10
@@ -602,12 +632,18 @@ def main_menu():
         clock.tick(30)
 
 if __name__ == "__main__":
-    network, server = main_menu()
-    game = MultiplayerGame(network)
-    
-    try:
-        game.run()
-    finally:
-        # Cerrar servidor si existe
-        if server:
-            server.shutdown()
+    # Bucle principal que permite reiniciar el juego
+    while True:
+        network, server = main_menu()
+        game = MultiplayerGame(network)
+        
+        try:
+            game.run()
+        finally:
+            # Cerrar servidor si existe
+            if server:
+                server.shutdown()
+        
+        # Después de terminar el juego, preguntar si quiere jugar de nuevo
+        # El usuario ya vio las opciones en pantalla (R o ESC)
+        # Si llegamos aquí, el juego terminó y volvemos al menú principal
