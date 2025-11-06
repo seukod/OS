@@ -322,15 +322,10 @@ class MultiplayerGame:
             if event.type == pygame.QUIT:
                 self.running = False
             elif event.type == pygame.KEYDOWN:
-                # Si el juego terminó, manejar opciones post-juego
+                # Si el juego terminó, solo permitir ESC para salir
                 if game_state and game_state.game_over:
                     if event.key == pygame.K_ESCAPE:
-                        # Salir al menú principal
                         self.running = False
-                    elif event.key == pygame.K_r:
-                        # Reiniciar juego - volver al menú para nueva partida
-                        self.running = False
-                        # El main_menu se encargará de mostrar las opciones nuevamente
                     continue  # No procesar otras teclas durante game over
                 
                 self.keys_pressed.add(event.key)
@@ -452,15 +447,11 @@ class MultiplayerGame:
             result_rect = result_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 10))
             self.screen.blit(result_text, result_rect)
             
-            # Opciones post-juego
-            options_y = SCREEN_HEIGHT//2 + 60
-            option1_text = font_medium.render("R - Jugar de nuevo", True, BRIGHT_YELLOW)
-            option1_rect = option1_text.get_rect(center=(SCREEN_WIDTH//2, options_y))
-            self.screen.blit(option1_text, option1_rect)
-            
-            option2_text = font_medium.render("ESC - Salir al menú", True, WHITE)
-            option2_rect = option2_text.get_rect(center=(SCREEN_WIDTH//2, options_y + 45))
-            self.screen.blit(option2_text, option2_rect)
+            # Opción para salir
+            options_y = SCREEN_HEIGHT//2 + 80
+            option_text = font_medium.render("ESC - Salir", True, WHITE)
+            option_rect = option_text.get_rect(center=(SCREEN_WIDTH//2, options_y))
+            self.screen.blit(option_text, option_rect)
         else:
             # Info de equipos durante el juego
             y_offset = 10
@@ -632,18 +623,12 @@ def main_menu():
         clock.tick(30)
 
 if __name__ == "__main__":
-    # Bucle principal que permite reiniciar el juego
-    while True:
-        network, server = main_menu()
-        game = MultiplayerGame(network)
-        
-        try:
-            game.run()
-        finally:
-            # Cerrar servidor si existe
-            if server:
-                server.shutdown()
-        
-        # Después de terminar el juego, preguntar si quiere jugar de nuevo
-        # El usuario ya vio las opciones en pantalla (R o ESC)
-        # Si llegamos aquí, el juego terminó y volvemos al menú principal
+    network, server = main_menu()
+    game = MultiplayerGame(network)
+    
+    try:
+        game.run()
+    finally:
+        # Cerrar servidor si existe
+        if server:
+            server.shutdown()
