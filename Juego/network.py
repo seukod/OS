@@ -187,6 +187,7 @@ class DedicatedServer:
             try:
                 data = self._receive_data(client_socket)
                 if not data:
+                    print(f"[SERVER] ⚠️  Jugador {player_id + 1} perdió la conexión (sin datos)")
                     break
                 
                 if data["type"] == "update":
@@ -209,17 +210,41 @@ class DedicatedServer:
                             print(f"[SERVER] 🎮 Juego iniciado! Todos los jugadores listos.")
                         self._broadcast_state()
                         
+            except (ConnectionResetError, BrokenPipeError, OSError) as e:
+                print(f"[SERVER] ⚠️  Jugador {player_id + 1} desconectado inesperadamente: {type(e).__name__}")
+                break
             except Exception as e:
-                print(f"[ERROR] Error manejando cliente {player_id + 1}: {e}")
+                print(f"[SERVER] ❌ Error manejando cliente {player_id + 1}: {e}")
                 break
         
-        print(f"[SERVER] Jugador {player_id + 1} desconectado")
+        # Limpieza al desconectar
+        print(f"[SERVER] 🔌 Jugador {player_id + 1} desconectado - Limpiando...")
         with self.lock:
+            # Remover de lista de clientes
             self.clients = [c for c in self.clients if c["id"] != player_id]
+            
+            # Si el jugador estaba en el juego, marcarlo como muerto
             if player_id in self.game_state.players:
-                del self.game_state.players[player_id]
+                if self.game_state.game_started:
+                    # Durante el juego, marcar como muerto pero mantener en el estado
+                    self.game_state.players[player_id]["is_alive"] = False
+                    self.game_state.players[player_id]["lives"] = 0
+                    print(f"[SERVER] 💀 Jugador {player_id + 1} marcado como eliminado (desconexión)")
+                    
+                    # Verificar si esto causa victoria
+                    if self.game_state.check_victory():
+                        print(f"[SERVER] 🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA por desconexión del enemigo!")
+                else:
+                    # En el lobby, simplemente remover
+                    del self.game_state.players[player_id]
+            
+            # Remover de jugadores listos
             self.game_state.players_ready.discard(player_id)
+            
+            # Notificar a otros jugadores
+            self._broadcast_state()
         
+        # Cerrar socket de forma segura
         try:
             client_socket.shutdown(socket.SHUT_RDWR)
         except:
@@ -228,6 +253,8 @@ class DedicatedServer:
             client_socket.close()
         except:
             pass
+        
+        print(f"[SERVER] ✓ Limpieza completada para Jugador {player_id + 1}")
     
     def _broadcast_state(self):
         """Enviar estado del juego a todos los clientes"""
@@ -240,20 +267,34 @@ class DedicatedServer:
         
         for client in self.clients[:]:
             try:
+                # Verificar si el socket sigue válido
                 if client["socket"].fileno() == -1:
+                    print(f"[SERVER] ⚠️  Socket inválido para Jugador {client['id'] + 1}")
                     clients_to_remove.append(client["id"])
                     continue
                 
                 self._send_data(client["socket"], state_data)
-            except (BrokenPipeError, OSError, Exception) as e:
+            except (BrokenPipeError, OSError) as e:
+                print(f"[SERVER] ⚠️  Error enviando a Jugador {client['id'] + 1}: {type(e).__name__}")
+                clients_to_remove.append(client["id"])
+            except Exception as e:
+                print(f"[SERVER] ❌ Error inesperado con Jugador {client['id'] + 1}: {e}")
                 clients_to_remove.append(client["id"])
         
         if clients_to_remove:
+            print(f"[SERVER] 🧹 Limpiando {len(clients_to_remove)} cliente(s) desconectado(s)")
             with self.lock:
                 self.clients = [c for c in self.clients if c["id"] not in clients_to_remove]
                 for client_id in clients_to_remove:
                     if client_id in self.game_state.players:
-                        del self.game_state.players[client_id]
+                        if self.game_state.game_started:
+                            # Durante el juego, marcar como muerto
+                            self.game_state.players[client_id]["is_alive"] = False
+                            self.game_state.players[client_id]["lives"] = 0
+                            print(f"[SERVER] 💀 Jugador {client_id + 1} marcado como eliminado (broadcast)")
+                        else:
+                            # En lobby, remover completamente
+                            del self.game_state.players[client_id]
                     self.game_state.players_ready.discard(client_id)
     
     def _game_loop(self):
@@ -487,6 +528,7 @@ class NetworkManager:
                 data = self._receive_data(self.socket)
                 if not data:
                     print("[CLIENT] ⚠️  Servidor cerró la conexión")
+                    self.running = False
                     break
                 
                 if data["type"] == "state":
@@ -497,26 +539,40 @@ class NetworkManager:
                     if self.receive_callback:
                         self.receive_callback(self.game_state)
                         
+            except (ConnectionResetError, BrokenPipeError, OSError) as e:
+                print(f"[CLIENT] ⚠️  Conexión perdida con el servidor: {type(e).__name__}")
+                self.running = False
+                break
             except Exception as e:
                 print(f"[CLIENT] ❌ Error recibiendo actualizaciones: {e}")
+                self.running = False
                 break
         
-        print("[CLIENT] Desconectado del servidor")
-        self.running = False
+        print("[CLIENT] 🔌 Desconectado del servidor")
     
     def send_update(self, player_data):
         """Enviar actualización del jugador local"""
+        if not self.running:
+            return
         try:
             self._send_data(self.socket, {"type": "update", "player_data": player_data})
+        except (ConnectionResetError, BrokenPipeError, OSError) as e:
+            print(f"[CLIENT] ⚠️  Error de conexión al enviar actualización: {type(e).__name__}")
+            self.running = False
         except Exception as e:
-            print(f"[ERROR] Error enviando actualización: {e}")
+            print(f"[CLIENT] ❌ Error enviando actualización: {e}")
     
     def send_shoot(self, bullet_data):
         """Enviar evento de disparo"""
+        if not self.running:
+            return
         try:
             self._send_data(self.socket, {"type": "shoot", "bullet": bullet_data})
+        except (ConnectionResetError, BrokenPipeError, OSError) as e:
+            print(f"[CLIENT] ⚠️  Error de conexión al enviar disparo: {type(e).__name__}")
+            self.running = False
         except Exception as e:
-            print(f"[ERROR] Error enviando disparo: {e}")
+            print(f"[CLIENT] ❌ Error enviando disparo: {e}")
     
     def send_ready(self):
         """Enviar señal de listo"""

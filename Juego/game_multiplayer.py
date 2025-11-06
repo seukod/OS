@@ -493,10 +493,22 @@ class MultiplayerGame:
             text = font_small.render(inst, True, WHITE)
             self.screen.blit(text, (SCREEN_WIDTH - 150, 10 + i * 20))
         
+        # Indicador de conexión
+        if not self.network.running:
+            disconnect_text = font.render("⚠️  DESCONECTADO", True, RED)
+            disconnect_rect = disconnect_text.get_rect(center=(SCREEN_WIDTH//2, 20))
+            self.screen.blit(disconnect_text, disconnect_rect)
+        
         pygame.display.flip()
     
     def run(self):
         while self.running:
+            # Si se pierde la conexión, mostrar mensaje y salir
+            if not self.network.running:
+                print("[GAME] ⚠️  Conexión perdida. Cerrando juego...")
+                self.running = False
+                break
+            
             self.handle_events()
             self.update()
             self.draw()
