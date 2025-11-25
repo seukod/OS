@@ -17,8 +17,18 @@ bool validarNombreArchivoIdx(const string& nombreArchivo) {
 }
 
 bool validarDirectorioLibros(const string& pathDirectorio) {
+    string ruta = pathDirectorio;
+
+    bool esWindows =
+        (ruta.find('\\') != std::string::npos) ||
+        (ruta.size() > 2 && ruta[1] == ':');
     struct stat info;
-    if (stat(pathDirectorio.c_str(), &info) != 0) {
+
+    if (esWindows) {
+        ruta = windowsToLinuxPath(ruta);
+    }
+
+    if (stat(ruta.c_str(), &info) != 0) {
         return false; // No existe
     }
     return (info.st_mode & S_IFDIR) != 0; // Es un directorio
@@ -34,8 +44,14 @@ bool crearIndiceInvertidoParalelo(const string& nombreArchivo, const string& pat
 
     // Ejecutar el proceso usando la función existente (el ejecutable maneja internamente N-THREADS y N-LOTE)
     bool exito = ejecutarProcesoExterno("INDICE-INVET-PARALELO", nombreArchivo, pathCarpeta);
-
+    if (exito) {
+        cout << "exitooooooo" << endl;
+    }
+    else {
+        cout << "no exito :c" << endl;
+    }
     return exito;
+
 }
 
 void ejecutarMenuIndiceInv() {
@@ -61,6 +77,7 @@ void ejecutarMenuIndiceInv() {
     // Paso 2: Ingresar y validar directorio con bucle
     do {
         cout << "Ingrese la ruta del directorio de libros: ";
+
         getline(cin, pathCarpeta);
 
         if (!validarDirectorioLibros(pathCarpeta)) {

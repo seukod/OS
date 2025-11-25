@@ -15,7 +15,6 @@ pid_t obtenerPID() {
 bool ejecutarProcesoExterno(const string& varEntorno, const string& arg1, const string& arg2) {
     cout << "Iniciando proceso externo..." << endl;
     cout << "Proceso padre, PID: " << obtenerPID() << endl;
-
     // Leer la variable de entorno correspondiente
     string executablePathStr = leerVariableEnv(varEntorno, ".env");
 
@@ -23,7 +22,6 @@ bool ejecutarProcesoExterno(const string& varEntorno, const string& arg1, const 
         cout << "Error: Variable " << varEntorno << " no encontrada" << endl;
         return false;
     }
-
     const char* executablePath = executablePathStr.c_str();
     cout << "debug: " << executablePath << endl;
 

@@ -26,12 +26,17 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
     cout << "=================================================" << endl;
 
     // Buscar el perfil del usuario en g_perfiles
+
     const vector<int>* permisos = nullptr;
     for (const auto& perfil : g_perfiles) {
-        if (perfil.nombre == usuario.perfil) {
+        std::cout << "perfil.nombre: " << perfil.nombre << std::endl;
+        std::cout << "usuario.perfil: " << usuario.perfil << std::endl;
+        bool coincide = false;
+        if (perfil.nombre == limpiarCadena(usuario.perfil)) {
             permisos = &perfil.permisos;
             break;
         }
+
     }
 
     if (!permisos) {
@@ -109,7 +114,7 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
         // Validar si la opción está dentro de los permisos del perfil
         bool permitido = false;
         for (const auto& perfil : g_perfiles) {
-            if (perfil.nombre == usuario.perfil) {
+            if (perfil.nombre == limpiarCadena(usuario.perfil)) {
                 if (find(perfil.permisos.begin(), perfil.permisos.end(), opcion) != perfil.permisos.end()) {
                     permitido = true;
                 }
@@ -130,7 +135,6 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 break;
             case 1:
                 ejecutarAdminUsuarios();
-                //mostrarEnConstruccion("Admin Users");
                 pausarPantalla();
                 break;
             case 2:
