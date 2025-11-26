@@ -29,9 +29,6 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
 
     const vector<int>* permisos = nullptr;
     for (const auto& perfil : g_perfiles) {
-        std::cout << "perfil.nombre: " << perfil.nombre << std::endl;
-        std::cout << "usuario.perfil: " << usuario.perfil << std::endl;
-        bool coincide = false;
         if (perfil.nombre == limpiarCadena(usuario.perfil)) {
             permisos = &perfil.permisos;
             break;
