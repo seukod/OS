@@ -4,6 +4,7 @@ import random
 import time
 from enum import Enum
 from network import NetworkManager, DedicatedServer
+from maps import CURRENT_MAP, SPAWN_POSITIONS
 import threading
 
 # Inicializar Pygame
@@ -253,18 +254,21 @@ class MultiplayerGame:
         self.network = network_manager
         self.player_id = network_manager.player_id
         
-        # Inicializar jugadores
+        # Inicializar jugadores desde la matriz de spawn
         self.tanks = {}
-        spawn_positions = [(50, 50), (750, 50), (50, 550), (750, 550)]
+        spawn_row, spawn_col = SPAWN_POSITIONS[self.player_id]
+        spawn_x = spawn_col * TILE_SIZE
+        spawn_y = spawn_row * TILE_SIZE
+        
         self.tanks[self.player_id] = Tank(
-            spawn_positions[self.player_id][0],
-            spawn_positions[self.player_id][1],
+            spawn_x,
+            spawn_y,
             PLAYER_COLORS[self.player_id],
             self.player_id
         )
         
         self.bullets = []
-        self.walls = self.create_walls()
+        self.walls = self.create_walls_from_matrix()
         
         self.keys_pressed = set()
         self.ready = False
@@ -273,18 +277,15 @@ class MultiplayerGame:
         # Callback para actualizaciones de red
         self.network.set_receive_callback(self.on_network_update)
     
-    def create_walls(self):
+    def create_walls_from_matrix(self):
+        """Crea muros a partir de la matriz importada desde maps.py"""
         walls = []
-        for x in range(150, 350, TILE_SIZE):
-            walls.append(Wall(x, 200))
-        for x in range(450, 650, TILE_SIZE):
-            walls.append(Wall(x, 300))
-        for y in range(100, 200, TILE_SIZE):
-            walls.append(Wall(100, y))
-        for y in range(350, 450, TILE_SIZE):
-            walls.append(Wall(700, y))
-        for x in range(SCREEN_WIDTH//2 - TILE_SIZE*2, SCREEN_WIDTH//2 + TILE_SIZE*2, TILE_SIZE):
-            walls.append(Wall(x, SCREEN_HEIGHT - TILE_SIZE*3))
+        for row_idx, row in enumerate(CURRENT_MAP):
+            for col_idx, cell in enumerate(row):
+                if cell == 1:  # 1 = Muro
+                    x = col_idx * TILE_SIZE
+                    y = row_idx * TILE_SIZE
+                    walls.append(Wall(x, y))
         return walls
     
     def on_network_update(self, game_state):

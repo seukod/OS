@@ -13,7 +13,49 @@ Sistema de juego multiplayer Battle City integrado al sistema operativo. Soporta
 - ✅ **Lobby con sistema de "Ready"**: Los jugadores marcan cuando están listos
 - ✅ **Gráficos mejorados**: Colores diferentes por jugador
 
-## 🚀 Cómo usar
+## � Requisitos
+
+### Python
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+
+### Dependencias
+Las dependencias están listadas en `requirements.txt`:
+- pygame==2.6.1
+
+## 🔧 Instalación
+
+### 1. Crear entorno virtual (recomendado)
+
+```bash
+# Crear entorno virtual en la raíz del proyecto
+cd /path/to/OS
+python3 -m venv .venv
+
+# Activar el entorno virtual
+# En macOS/Linux:
+source .venv/bin/activate
+# En Windows:
+.venv\Scripts\activate
+```
+
+### 2. Instalar dependencias
+
+```bash
+# Con el entorno virtual activado:
+pip install -r Juego/requirements.txt
+
+# O directamente:
+pip install pygame==2.6.1
+```
+
+### 3. Verificar instalación
+
+```bash
+python3 -c "import pygame; print(f'Pygame {pygame.version.ver} instalado correctamente')"
+```
+
+## �🚀 Cómo usar
 
 ### Desde el menú del sistema operativo
 
@@ -25,8 +67,9 @@ Sistema de juego multiplayer Battle City integrado al sistema operativo. Soporta
 ### Ejecutar directamente (para testing)
 
 ```bash
+# Asegúrate de tener el entorno virtual activado
 cd Juego
-python game_multiplayer.py
+python3 game_multiplayer.py
 ```
 
 ## 🎯 Flujo del juego

@@ -1,4 +1,6 @@
 """
+"""
+"""
 Sistema de networking Cliente-Servidor para Battle City Multiplayer
 Servidor dedicado que maneja hasta 4 clientes jugadores
 """
@@ -6,7 +8,17 @@ import socket
 import threading
 import pickle
 import time
+import logging
+import os
+from datetime import datetime
 from enum import Enum
+
+# Importar configuración de mapas
+try:
+    from maps import CURRENT_MAP
+except ImportError:
+    # Fallback si no encuentra el archivo
+    CURRENT_MAP = [[0] * 25 for _ in range(18)]
 
 def get_local_ip():
     """Obtiene la IP local de la máquina"""
@@ -88,32 +100,68 @@ class DedicatedServer:
         self.game_state = GameState()
         self.lock = threading.Lock()
         self.tick_rate = 60  # Actualizaciones por segundo
-        self._initialize_walls()  # Inicializar muros
+        self._setup_logging()  # Configurar sistema de logs primero
+        self._initialize_walls()  # Inicializar muros después
+        
+    def _setup_logging(self):
+        """Configurar sistema de logging"""
+        # Crear carpeta de logs si no existe
+        if not os.path.exists("logs"):
+            os.makedirs("logs")
+        
+        # Crear logger
+        self.logger = logging.getLogger("GameServer")
+        self.logger.setLevel(logging.DEBUG)
+        
+        # Archivo de log con timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        log_filename = f"logs/game_{timestamp}.log"
+        
+        # Handler para archivo
+        file_handler = logging.FileHandler(log_filename)
+        file_handler.setLevel(logging.DEBUG)
+        
+        # Handler para consola
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        
+        # Formato del log
+        formatter = logging.Formatter(
+            '[%(asctime)s] %(levelname)s - %(message)s',
+            datefmt='%H:%M:%S'
+        )
+        file_handler.setFormatter(formatter)
+        console_handler.setFormatter(formatter)
+        
+        # Agregar handlers
+        self.logger.addHandler(file_handler)
+        self.logger.addHandler(console_handler)
+        
+        self.logger.info("="*60)
+        self.logger.info("SERVIDOR DE JUEGO INICIADO")
+        self.logger.info(f"Archivo de log: {log_filename}")
+        self.logger.info("="*60)
         
     def _initialize_walls(self):
-        """Inicializar los muros del servidor (deben coincidir con los del cliente)"""
+        """Inicializar los muros del servidor desde la matriz (sincronizado con cliente)"""
         TILE_SIZE = 32
-        SCREEN_WIDTH = 800
-        SCREEN_HEIGHT = 600
-        
         walls = []
-        # Línea horizontal superior izquierda
-        for x in range(150, 350, TILE_SIZE):
-            walls.append({"x": x, "y": 200, "width": TILE_SIZE, "height": TILE_SIZE})
-        # Línea horizontal superior derecha
-        for x in range(450, 650, TILE_SIZE):
-            walls.append({"x": x, "y": 300, "width": TILE_SIZE, "height": TILE_SIZE})
-        # Línea vertical izquierda
-        for y in range(100, 200, TILE_SIZE):
-            walls.append({"x": 100, "y": y, "width": TILE_SIZE, "height": TILE_SIZE})
-        # Línea vertical derecha
-        for y in range(350, 450, TILE_SIZE):
-            walls.append({"x": 700, "y": y, "width": TILE_SIZE, "height": TILE_SIZE})
-        # Línea horizontal inferior (centro)
-        for x in range(SCREEN_WIDTH//2 - TILE_SIZE*2, SCREEN_WIDTH//2 + TILE_SIZE*2, TILE_SIZE):
-            walls.append({"x": x, "y": SCREEN_HEIGHT - TILE_SIZE*3, "width": TILE_SIZE, "height": TILE_SIZE})
+        
+        # Generar muros desde la matriz importada
+        for row_idx, row in enumerate(CURRENT_MAP):
+            for col_idx, cell in enumerate(row):
+                if cell == 1:  # 1 = Muro
+                    x = col_idx * TILE_SIZE
+                    y = row_idx * TILE_SIZE
+                    walls.append({
+                        "x": x,
+                        "y": y,
+                        "width": TILE_SIZE,
+                        "height": TILE_SIZE
+                    })
         
         self.game_state.walls = walls
+        self.logger.info(f"Mapa inicializado: {len(walls)} muros generados desde matriz")
         
     def start(self):
         """Iniciar el servidor dedicado"""
@@ -126,16 +174,15 @@ class DedicatedServer:
             
             local_ip = get_local_ip()
             
-            print(f"\n{'='*60}")
-            print(f"[SERVER] ✓ Servidor dedicado iniciado")
-            print(f"{'='*60}")
-            print(f"[SERVER] Puerto: {self.port}")
-            print(f"[SERVER] Máximo jugadores: {self.max_players}")
-            print(f"[SERVER] IP para compartir: {local_ip}")
-            print(f"{'='*60}")
-            print(f"[SERVER] Los jugadores deben conectarse a: {local_ip}")
-            print(f"{'='*60}")
-            print(f"[SERVER] Esperando jugadores...\n")
+            self.logger.info("="*60)
+            self.logger.info("SERVIDOR DEDICADO INICIADO")
+            self.logger.info("="*60)
+            self.logger.info(f"Puerto: {self.port}")
+            self.logger.info(f"Máximo jugadores: {self.max_players}")
+            self.logger.info(f"IP local: {local_ip}")
+            self.logger.info(f"Los jugadores deben conectarse a: {local_ip}")
+            self.logger.info("="*60)
+            self.logger.info("Esperando jugadores...")
             
             accept_thread = threading.Thread(target=self._accept_connections, daemon=True)
             accept_thread.start()
@@ -146,7 +193,7 @@ class DedicatedServer:
             
             return True
         except Exception as e:
-            print(f"[ERROR] No se pudo iniciar el servidor: {e}")
+            self.logger.error(f"No se pudo iniciar el servidor: {e}")
             return False
     
     def _accept_connections(self):
@@ -167,8 +214,8 @@ class DedicatedServer:
                 
                 self._send_data(client_socket, {"type": "assign_id", "player_id": player_id})
                 
-                print(f"[SERVER] ✓ Jugador {player_id + 1} conectado desde {address[0]}:{address[1]}")
-                print(f"[SERVER] Jugadores conectados: {len(self.clients)}/{self.max_players}")
+                self.logger.info(f"✓ Jugador {player_id + 1} conectado desde {address[0]}:{address[1]}")
+                self.logger.info(f"Jugadores conectados: {len(self.clients)}/{self.max_players}")
                 
                 client_thread = threading.Thread(
                     target=self._handle_client,
@@ -179,7 +226,7 @@ class DedicatedServer:
                 
             except Exception as e:
                 if self.running:
-                    print(f"[ERROR] Error aceptando conexión: {e}")
+                    self.logger.error(f"Error aceptando conexión: {e}")
     
     def _handle_client(self, client_socket, player_id):
         """Manejar mensajes de un cliente"""
@@ -187,7 +234,7 @@ class DedicatedServer:
             try:
                 data = self._receive_data(client_socket)
                 if not data:
-                    print(f"[SERVER] ⚠️  Jugador {player_id + 1} perdió la conexión (sin datos)")
+                    self.logger.warning(f"Jugador {player_id + 1} perdió la conexión (sin datos)")
                     break
                 
                 if data["type"] == "update":
@@ -198,27 +245,35 @@ class DedicatedServer:
                 elif data["type"] == "shoot":
                     with self.lock:
                         bullet_data = data["bullet"]
-                        print(f"[SERVER] 🔫 Disparo recibido: {bullet_data}")
+                        player_team = self.game_state.players[player_id].get('team', 0)
+                        self.logger.info(f"🔫 Jugador {player_id + 1} disparó en ({bullet_data['x']}, {bullet_data['y']}) dirección {bullet_data['direction']}")
+                        # Log estructurado para estadísticas
+                        self.logger.info(f"SHOT_FIRED|player_id={player_id}|team={player_team}|x={bullet_data['x']}|y={bullet_data['y']}")
                         self.game_state.bullets.append(bullet_data)
                         self._broadcast_state()
                 
                 elif data["type"] == "ready":
                     with self.lock:
                         self.game_state.players_ready.add(player_id)
+                        self.logger.info(f"✓ Jugador {player_id + 1} está listo ({len(self.game_state.players_ready)}/{len(self.clients)})")
                         if len(self.game_state.players_ready) == len(self.clients):
                             self.game_state.game_started = True
-                            print(f"[SERVER] 🎮 Juego iniciado! Todos los jugadores listos.")
+                            self.logger.info("🎮 JUEGO INICIADO - Todos los jugadores están listos")
+                            # Log estructurado para estadísticas
+                            team_blue = [pid for pid, p in self.game_state.players.items() if p.get('team') == 0]
+                            team_red = [pid for pid, p in self.game_state.players.items() if p.get('team') == 1]
+                            self.logger.info(f"GAME_START|team_blue={len(team_blue)}|team_red={len(team_red)}|total_players={len(self.game_state.players)}")
                         self._broadcast_state()
                         
             except (ConnectionResetError, BrokenPipeError, OSError) as e:
-                print(f"[SERVER] ⚠️  Jugador {player_id + 1} desconectado inesperadamente: {type(e).__name__}")
+                self.logger.warning(f"Jugador {player_id + 1} desconectado inesperadamente: {type(e).__name__}")
                 break
             except Exception as e:
-                print(f"[SERVER] ❌ Error manejando cliente {player_id + 1}: {e}")
+                self.logger.error(f"Error manejando cliente {player_id + 1}: {e}")
                 break
         
         # Limpieza al desconectar
-        print(f"[SERVER] 🔌 Jugador {player_id + 1} desconectado - Limpiando...")
+        self.logger.info(f"🔌 Jugador {player_id + 1} desconectado - Limpiando...")
         with self.lock:
             # Remover de lista de clientes
             self.clients = [c for c in self.clients if c["id"] != player_id]
@@ -229,11 +284,11 @@ class DedicatedServer:
                     # Durante el juego, marcar como muerto pero mantener en el estado
                     self.game_state.players[player_id]["is_alive"] = False
                     self.game_state.players[player_id]["lives"] = 0
-                    print(f"[SERVER] 💀 Jugador {player_id + 1} marcado como eliminado (desconexión)")
+                    self.logger.warning(f"💀 Jugador {player_id + 1} marcado como eliminado (desconexión)")
                     
                     # Verificar si esto causa victoria
                     if self.game_state.check_victory():
-                        print(f"[SERVER] 🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA por desconexión del enemigo!")
+                        self.logger.critical(f"🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA por desconexión del enemigo!")
                 else:
                     # En el lobby, simplemente remover
                     del self.game_state.players[player_id]
@@ -254,7 +309,7 @@ class DedicatedServer:
         except:
             pass
         
-        print(f"[SERVER] ✓ Limpieza completada para Jugador {player_id + 1}")
+        self.logger.debug(f"✓ Limpieza completada para Jugador {player_id + 1}")
     
     def _broadcast_state(self):
         """Enviar estado del juego a todos los clientes"""
@@ -275,14 +330,14 @@ class DedicatedServer:
                 
                 self._send_data(client["socket"], state_data)
             except (BrokenPipeError, OSError) as e:
-                print(f"[SERVER] ⚠️  Error enviando a Jugador {client['id'] + 1}: {type(e).__name__}")
+                self.logger.warning(f"Error enviando a Jugador {client['id'] + 1}: {type(e).__name__}")
                 clients_to_remove.append(client["id"])
             except Exception as e:
-                print(f"[SERVER] ❌ Error inesperado con Jugador {client['id'] + 1}: {e}")
+                self.logger.error(f"Error inesperado con Jugador {client['id'] + 1}: {e}")
                 clients_to_remove.append(client["id"])
         
         if clients_to_remove:
-            print(f"[SERVER] 🧹 Limpiando {len(clients_to_remove)} cliente(s) desconectado(s)")
+            self.logger.debug(f"🧹 Limpiando {len(clients_to_remove)} cliente(s) desconectado(s)")
             with self.lock:
                 self.clients = [c for c in self.clients if c["id"] not in clients_to_remove]
                 for client_id in clients_to_remove:
@@ -291,7 +346,7 @@ class DedicatedServer:
                             # Durante el juego, marcar como muerto
                             self.game_state.players[client_id]["is_alive"] = False
                             self.game_state.players[client_id]["lives"] = 0
-                            print(f"[SERVER] 💀 Jugador {client_id + 1} marcado como eliminado (broadcast)")
+                            self.logger.warning(f"💀 Jugador {client_id + 1} marcado como eliminado (broadcast)")
                         else:
                             # En lobby, remover completamente
                             del self.game_state.players[client_id]
@@ -306,10 +361,6 @@ class DedicatedServer:
         while self.running:
             if self.game_state.game_started:
                 with self.lock:
-                    # Debug: mostrar cantidad de balas
-                    if len(self.game_state.bullets) > 0:
-                        print(f"[SERVER] 🎯 Procesando {len(self.game_state.bullets)} balas")
-                    
                     # Actualizar balas
                     for bullet in self.game_state.bullets[:]:
                         if not bullet.get("active", True):
@@ -348,9 +399,7 @@ class DedicatedServer:
                             if self._check_collision(bullet_rect, wall):
                                 bullet["active"] = False
                                 hit_wall = True
-                                print(f"[SERVER] 💥 Bala impactó un muro en ({wall['x']}, {wall['y']})")
-                                print(f"[SERVER]    Bala rect: {bullet_rect}")
-                                print(f"[SERVER]    Muro rect: {wall}")
+                                self.logger.debug(f"💥 Bala impactó un muro en ({wall['x']}, {wall['y']})")
                                 break
                         
                         if hit_wall:
@@ -376,11 +425,17 @@ class DedicatedServer:
                             
                             if self._check_collision(bullet_rect, tank_rect):
                                 # Reducir vida del tanque
+                                owner_name = f"Jugador {bullet['owner_id'] + 1}"
+                                target_name = f"Jugador {player_id + 1}"
                                 player_data["lives"] = player_data.get("lives", 3) - 1
-                                print(f"[SERVER] 🎯 Jugador {player_id + 1} impactado! Vidas: {player_data['lives']}")
+                                self.logger.info(f"🎯 {owner_name} impactó a {target_name}! Vidas restantes: {player_data['lives']}")
                                 if player_data["lives"] <= 0:
                                     player_data["is_alive"] = False
-                                    print(f"[SERVER] 💀 Jugador {player_id + 1} eliminado!")
+                                    owner_team = self.game_state.players[bullet['owner_id']].get('team', 0)
+                                    target_team = player_data.get('team', 0)
+                                    self.logger.warning(f"💀 {target_name} ELIMINADO por {owner_name}")
+                                    # Log estructurado para estadísticas
+                                    self.logger.warning(f"PLAYER_KILLED|killer_id={bullet['owner_id']}|killer_team={owner_team}|victim_id={player_id}|victim_team={target_team}")
                                 
                                 # Desactivar bala
                                 bullet["active"] = False
@@ -390,12 +445,12 @@ class DedicatedServer:
                     active_before = len(self.game_state.bullets)
                     self.game_state.bullets = [b for b in self.game_state.bullets if b.get("active", True)]
                     active_after = len(self.game_state.bullets)
-                    if active_before != active_after:
-                        print(f"[SERVER] 🧹 Limpiadas {active_before - active_after} balas. Activas: {active_after}")
                     
                     # Verificar victoria
                     if self.game_state.check_victory():
-                        print(f"[SERVER] 🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA!")
+                        self.logger.critical(f"🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA LA PARTIDA!")
+                        # Log estructurado para estadísticas
+                        self.logger.critical(f"GAME_END|winner_team={self.game_state.winning_team}|team_name={'AZUL' if self.game_state.winning_team == 0 else 'ROJO'}")
                     
                     # Broadcast del estado actualizado
                     self._broadcast_state()
@@ -449,16 +504,17 @@ class DedicatedServer:
     
     def run_forever(self):
         """Mantener el servidor corriendo"""
-        print(f"[SERVER] Servidor ejecutándose. Presiona Ctrl+C para detener.")
+        self.logger.info("Servidor ejecutándose. Presiona Ctrl+C para detener.")
         try:
             while self.running:
                 time.sleep(1)
         except KeyboardInterrupt:
-            print(f"\n[SERVER] Deteniendo servidor...")
+            self.logger.info("Deteniendo servidor...")
             self.shutdown()
     
     def shutdown(self):
         """Cerrar servidor"""
+        self.logger.info("Cerrando servidor...")
         self.running = False
         for client in self.clients:
             try:
@@ -470,7 +526,13 @@ class DedicatedServer:
                 self.socket.close()
             except:
                 pass
-        print(f"[SERVER] Servidor detenido")
+        self.logger.info("="*60)
+        self.logger.info("SERVIDOR DETENIDO")
+        self.logger.info("="*60)
+        # Cerrar handlers de logging
+        for handler in self.logger.handlers[:]:
+            handler.close()
+            self.logger.removeHandler(handler)
 
 class NetworkManager:
     """Cliente de red (todos los jugadores son clientes)"""
