@@ -1,0 +1,3 @@
+/home/parra/OS/BUSCADOR/buscador/build/CMakeFiles/buscador.dir
+/home/parra/OS/BUSCADOR/buscador/build/CMakeFiles/edit_cache.dir
+/home/parra/OS/BUSCADOR/buscador/build/CMakeFiles/rebuild_cache.dir

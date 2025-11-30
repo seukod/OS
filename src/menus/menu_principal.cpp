@@ -7,6 +7,7 @@
 #include "../../include/menus/menu_indice_inv.h"  // Agregar include del menú índice invertido paralelo
 #include "../../include/menus/menu_matriz.h"
 #include "../../include/menus/menu_juego.h"  // Agregar include del menú de juego
+#include "../../include/menus/menu_buscador.h"  // Agregar include del menú buscador
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/process_tools/process_manager.h"
@@ -80,7 +81,9 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
             case 10:
                 cout << "10. Análisis de rendimiento (threads)" << endl;
                 break;
-
+            case 11:
+                cout << "11. Buscador SistOpe" << endl;
+                break;
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
                 break;
@@ -169,7 +172,10 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
                 ejecutarMenuAnalisis();
                 break;
             }
-
+            case 11:
+                ejecutarMenuBuscador();
+                pausarPantalla();
+                break;
             default:
                 mostrarMensajeError("Opción inválida.");
                 pausarPantalla();

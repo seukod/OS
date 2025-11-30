@@ -28,12 +28,19 @@ bool crearIndiceInvertidoParalelo(const string& nombreArchivo, const string& pat
     cout << "\n=================================================" << endl;
     cout << "      CREANDO ÍNDICE INVERTIDO PARALELO         " << endl;
     cout << "=================================================" << endl;
-    cout << "Archivo: " << nombreArchivo << endl;
+    
+    // Si el archivo no tiene ruta, guardarlo en la raíz del proyecto
+    string rutaArchivo = nombreArchivo;
+    if (nombreArchivo.find('/') == string::npos) {
+        rutaArchivo = "../" + nombreArchivo;
+    }
+    
+    cout << "Archivo: " << rutaArchivo << endl;
     cout << "Directorio libros: " << pathCarpeta << endl;
     cout << "=================================================" << endl;
 
     // Ejecutar el proceso usando la función existente (el ejecutable maneja internamente N-THREADS y N-LOTE)
-    bool exito = ejecutarProcesoExterno("INDICE-INVET-PARALELO", nombreArchivo, pathCarpeta);
+    bool exito = ejecutarProcesoExterno("INDICE-INVET-PARALELO", rutaArchivo, pathCarpeta);
 
     return exito;
 }

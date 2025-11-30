@@ -1,4 +1,4 @@
-#include "../include/crear_indice.hw"
+#include "../include/crear_indice.h"
 #include <iostream>
 #include <filesystem>
 

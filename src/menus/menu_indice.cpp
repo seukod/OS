@@ -28,12 +28,19 @@ bool crearIndiceInvertido(const string& nombreArchivo, const string& pathCarpeta
     cout << "\n=================================================" << endl;
     cout << "           CREANDO ÍNDICE INVERTIDO              " << endl;
     cout << "=================================================" << endl;
-    cout << "Archivo: " << nombreArchivo << endl;
+    
+    // Si el archivo no tiene ruta, guardarlo en la raíz del proyecto
+    string rutaArchivo = nombreArchivo;
+    if (nombreArchivo.find('/') == string::npos) {
+        rutaArchivo = "../" + nombreArchivo;
+    }
+    
+    cout << "Archivo: " << rutaArchivo << endl;
     cout << "Directorio libros: " << pathCarpeta << endl;
     cout << "=================================================" << endl;
 
     // La función ejecutarProcesoExterno ya imprime sus propios mensajes
-    bool exito = ejecutarProcesoExterno("CREATE_INDEX", nombreArchivo, pathCarpeta);
+    bool exito = ejecutarProcesoExterno("CREATE_INDEX", rutaArchivo, pathCarpeta);
 
     return exito;
 }
