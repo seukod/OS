@@ -10,6 +10,8 @@
 #include "../../include/interfaz.h"
 #include "../../include/utils/input_utils.h"
 #include "../../include/process_tools/process_manager.h"
+#include "../../include/menus/menu_analisis.h"
+
 #include <iostream>
 #include <algorithm>
 
@@ -75,6 +77,10 @@ void mostrarMenuPrincipal(const Usuario& usuario) {
             case 9:
                 cout << "9. Battle City Multiplayer" << endl;
                 break;
+            case 10:
+                cout << "10. Análisis de rendimiento (threads)" << endl;
+                break;
+
             default:
                 cout << opcion << ". [OPCIÓN NO DEFINIDA]" << endl;
                 break;
@@ -159,6 +165,11 @@ void ejecutarMenuPrincipal(const Usuario& usuario, const string& libro) {
             case 9:
                 ejecutarMenuJuego();
                 break;
+            case 10: {
+                ejecutarMenuAnalisis();
+                break;
+            }
+
             default:
                 mostrarMensajeError("Opción inválida.");
                 pausarPantalla();
