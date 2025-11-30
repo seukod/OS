@@ -94,6 +94,7 @@ bool cargarDatosEnMemoria() {
     
     string line;
     while (getline(fileUsuarios, line)) {
+        trim(line);
         if (line.empty()) continue;
 
         stringstream ss(line);
@@ -105,8 +106,13 @@ bool cargarDatosEnMemoria() {
             getline(ss, u.nombre, ',') &&
             getline(ss, u.username, ',') &&
             getline(ss, u.password, ',') &&
-            getline(ss, u.perfil, ',')) {
+            getline(ss, u.perfil)) {
             try {
+                trim(idStr);
+                trim(u.nombre);
+                trim(u.username);
+                trim(u.password);
+                trim(u.perfil);
                 u.id = stoi(idStr);
                 g_usuarios.push_back(u);
             } catch (...) {
@@ -129,6 +135,7 @@ bool cargarDatosEnMemoria() {
     }
     
     while (getline(filePerfiles, line)) {
+        trim(line);
         if (line.empty()) continue;
         
         // Espera el formato: nombre;permiso1,permiso2,...
@@ -137,12 +144,15 @@ bool cargarDatosEnMemoria() {
 
         Perfil p;
         p.nombre = line.substr(0, pos);
+        trim(p.nombre);
         string permisosStr = line.substr(pos + 1);
+        trim(permisosStr);
 
         // Parsear permisos separados por coma
         stringstream ss(permisosStr);
         string permiso;
         while (getline(ss, permiso, ',')) {
+            trim(permiso);
             try {
                 p.permisos.push_back(stoi(permiso));
             } catch (...) {
