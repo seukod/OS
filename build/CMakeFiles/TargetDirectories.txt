@@ -1,3 +1,3 @@
-/home/javier/github/OS/build/CMakeFiles/OS.dir
-/home/javier/github/OS/build/CMakeFiles/edit_cache.dir
-/home/javier/github/OS/build/CMakeFiles/rebuild_cache.dir
+/Users/francisco/CLionProjects/OS/build/CMakeFiles/OS.dir
+/Users/francisco/CLionProjects/OS/build/CMakeFiles/edit_cache.dir
+/Users/francisco/CLionProjects/OS/build/CMakeFiles/rebuild_cache.dir
