@@ -194,7 +194,7 @@ void Buscador::iniciar() {
     cout << "==================================================" << endl;
     
     // Cargar mapa de libros
-    cargarMapaLibros("../data/MAPA-LIBROS.csv");
+    cargarMapaLibros("../../../data/MAPA-LIBROS.csv");
     
     // Buscar archivos .idx disponibles en el directorio raíz del proyecto
     vector<string> archivosIdx;

@@ -1,3 +1,3 @@
-/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/indice_invertido_paralelo.dir
-/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/edit_cache.dir
-/Users/francisco/CLionProjects/OS/indice_invertido_paralelo/build/CMakeFiles/rebuild_cache.dir
+/home/parra/OS/indice_invertido_paralelo/build/CMakeFiles/indice_invertido_paralelo.dir
+/home/parra/OS/indice_invertido_paralelo/build/CMakeFiles/edit_cache.dir
+/home/parra/OS/indice_invertido_paralelo/build/CMakeFiles/rebuild_cache.dir
