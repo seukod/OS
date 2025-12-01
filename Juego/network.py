@@ -46,6 +46,7 @@ class GameState:
         self.teams = {0: [0, 1], 1: [2, 3]}  # Equipo 0: jugadores 0,1 | Equipo 1: jugadores 2,3
         self.game_over = False
         self.winning_team = None
+        self.victory_logged = False  # Para evitar log duplicado
     
     def to_dict(self):
         return {
@@ -105,9 +106,13 @@ class DedicatedServer:
         
     def _setup_logging(self):
         """Configurar sistema de logging"""
+        # Obtener el directorio del script actual (Juego/)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        logs_dir = os.path.join(script_dir, "logs")
+        
         # Crear carpeta de logs si no existe
-        if not os.path.exists("logs"):
-            os.makedirs("logs")
+        if not os.path.exists(logs_dir):
+            os.makedirs(logs_dir)
         
         # Crear logger
         self.logger = logging.getLogger("GameServer")
@@ -115,7 +120,7 @@ class DedicatedServer:
         
         # Archivo de log con timestamp
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        log_filename = f"logs/game_{timestamp}.log"
+        log_filename = os.path.join(logs_dir, f"game_{timestamp}.log")
         
         # Handler para archivo
         file_handler = logging.FileHandler(log_filename)
@@ -287,8 +292,10 @@ class DedicatedServer:
                     self.logger.warning(f"💀 Jugador {player_id + 1} marcado como eliminado (desconexión)")
                     
                     # Verificar si esto causa victoria
-                    if self.game_state.check_victory():
+                    if self.game_state.check_victory() and not self.game_state.victory_logged:
+                        self.game_state.victory_logged = True
                         self.logger.critical(f"🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA por desconexión del enemigo!")
+                        self.logger.critical(f"GAME_END|winner_team={self.game_state.winning_team}|team_name={'AZUL' if self.game_state.winning_team == 0 else 'ROJO'}")
                 else:
                     # En el lobby, simplemente remover
                     del self.game_state.players[player_id]
@@ -446,8 +453,9 @@ class DedicatedServer:
                     self.game_state.bullets = [b for b in self.game_state.bullets if b.get("active", True)]
                     active_after = len(self.game_state.bullets)
                     
-                    # Verificar victoria
-                    if self.game_state.check_victory():
+                    # Verificar victoria (registrar solo una vez)
+                    if self.game_state.check_victory() and not self.game_state.victory_logged:
+                        self.game_state.victory_logged = True
                         self.logger.critical(f"🏆 ¡EQUIPO {self.game_state.winning_team + 1} GANA LA PARTIDA!")
                         # Log estructurado para estadísticas
                         self.logger.critical(f"GAME_END|winner_team={self.game_state.winning_team}|team_name={'AZUL' if self.game_state.winning_team == 0 else 'ROJO'}")

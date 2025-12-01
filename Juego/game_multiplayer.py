@@ -151,13 +151,16 @@ class Tank:
         return False
     
     def to_dict(self):
+        # Determinar equipo según player_id: 0,1 = Equipo 0 (AZUL), 2,3 = Equipo 1 (ROJO)
+        team = 0 if self.player_id in [0, 1] else 1
         return {
             "x": self.x,
             "y": self.y,
             "direction": self.direction.value,
             "lives": self.lives,
             "is_alive": self.is_alive,
-            "player_id": self.player_id
+            "player_id": self.player_id,
+            "team": team
         }
     
     @staticmethod
