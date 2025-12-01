@@ -6,8 +6,10 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <cstring>
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
 
 Buscador::Buscador(const string& host, int port) 
     : cacheHost(host), cachePort(port), socketFd(-1) {
@@ -26,11 +28,14 @@ void Buscador::cargarMapaLibros(const string& rutaMapa) {
     }
     
     string linea;
+    // Saltar la primera línea (encabezado)
+    getline(archivo, linea);
+    
     while (getline(archivo, linea)) {
         stringstream ss(linea);
         string idStr, nombre;
         
-        if (getline(ss, idStr, ';') && getline(ss, nombre)) {
+        if (getline(ss, idStr, ',') && getline(ss, nombre)) {
             try {
                 int id = stoi(idStr);
                 mapaLibros[id] = nombre;
@@ -110,21 +115,53 @@ string Buscador::enviarConsulta(const string& palabra) {
 vector<ResultadoBusqueda> Buscador::parsearRespuestaJSON(const string& json) {
     vector<ResultadoBusqueda> resultados;
     
-    // TODO: Implementar parser JSON completo
-    // Por ahora, implementación simple
-    // Formato esperado: {"palabra": "...", "resultados": [{"id": 1, "frecuencia": 10, "posiciones": [1,2,3]}, ...]}
-    
+    // Parser simple para formato: [{"libro":"nombre","score":26}, ...]
     cout << "[DEBUG] JSON recibido: " << json << endl;
     
-    // Placeholder: retornar resultados vacíos
+    if (json.empty() || json == "[]") {
+        return resultados;
+    }
+    
+    // Buscar cada objeto {"libro":"...","score":...}
+    size_t pos = 0;
+    while ((pos = json.find("{\"libro\":\"", pos)) != string::npos) {
+        ResultadoBusqueda res;
+        
+        // Extraer nombre del libro
+        size_t inicioNombre = pos + 10; // longitud de {"libro":"
+        size_t finNombre = json.find("\"", inicioNombre);
+        if (finNombre == string::npos) break;
+        
+        res.libro = json.substr(inicioNombre, finNombre - inicioNombre);
+        
+        // Extraer score
+        size_t inicioScore = json.find("\"score\":", finNombre);
+        if (inicioScore == string::npos) break;
+        inicioScore += 8; // longitud de "score":
+        
+        size_t finScore = json.find_first_of(",}", inicioScore);
+        if (finScore == string::npos) break;
+        
+        string scoreStr = json.substr(inicioScore, finScore - inicioScore);
+        try {
+            res.frecuencia = (int)stod(scoreStr);
+        } catch (...) {
+            res.frecuencia = 0;
+        }
+        
+        resultados.push_back(res);
+        pos = finScore;
+    }
+    
     return resultados;
 }
 
-void Buscador::mostrarResultados(const vector<ResultadoBusqueda>& resultados, const string& palabra) {
+void Buscador::mostrarResultados(const vector<ResultadoBusqueda>& resultados, const string& palabra, long long tiempoMs) {
     cout << "\n==================================================" << endl;
     cout << "           RESULTADOS DE BÚSQUEDA                 " << endl;
     cout << "==================================================" << endl;
     cout << "Palabra: " << palabra << endl;
+    cout << "Tiempo de búsqueda: " << tiempoMs << " ms" << endl;
     cout << "Total de resultados: " << resultados.size() << endl;
     cout << "==================================================" << endl;
     
@@ -134,18 +171,7 @@ void Buscador::mostrarResultados(const vector<ResultadoBusqueda>& resultados, co
         for (size_t i = 0; i < resultados.size(); i++) {
             const auto& res = resultados[i];
             cout << (i + 1) << ". " << res.libro << endl;
-            cout << "   Frecuencia: " << res.frecuencia << " veces" << endl;
-            cout << "   Primeras posiciones: ";
-            
-            size_t maxPosiciones = min(res.posiciones.size(), size_t(5));
-            for (size_t j = 0; j < maxPosiciones; j++) {
-                cout << res.posiciones[j];
-                if (j < maxPosiciones - 1) cout << ", ";
-            }
-            if (res.posiciones.size() > 5) {
-                cout << "...";
-            }
-            cout << endl << endl;
+            cout << "   Score: " << res.frecuencia << endl << endl;
         }
     }
     
@@ -155,6 +181,9 @@ void Buscador::mostrarResultados(const vector<ResultadoBusqueda>& resultados, co
 void Buscador::buscar(const string& palabra) {
     cout << "\n[BUSCADOR] Buscando: '" << palabra << "'" << endl;
     
+    // Iniciar medición de tiempo
+    auto inicio = high_resolution_clock::now();
+    
     // Conectar al servidor CACHE
     if (!conectarCache()) {
         cerr << "[ERROR] No se pudo establecer conexión con CACHE" << endl;
@@ -163,6 +192,10 @@ void Buscador::buscar(const string& palabra) {
     
     // Enviar consulta y recibir respuesta
     string respuestaJSON = enviarConsulta(palabra);
+    
+    // Finalizar medición de tiempo
+    auto fin = high_resolution_clock::now();
+    auto duracion = duration_cast<milliseconds>(fin - inicio);
     
     if (respuestaJSON.empty()) {
         cerr << "[ERROR] No se recibió respuesta del servidor" << endl;
@@ -180,8 +213,8 @@ void Buscador::buscar(const string& palabra) {
         // (implementación pendiente con el parser JSON completo)
     }
     
-    // Mostrar resultados
-    mostrarResultados(resultados, palabra);
+    // Mostrar resultados con tiempo
+    mostrarResultados(resultados, palabra, duracion.count());
     
     cerrarConexion();
 }
@@ -194,7 +227,7 @@ void Buscador::iniciar() {
     cout << "==================================================" << endl;
     
     // Cargar mapa de libros
-    cargarMapaLibros("../../../data/MAPA-LIBROS.csv");
+    cargarMapaLibros("../data/MAPA-LIBROS.csv");
     
     // Buscar archivos .idx disponibles en el directorio raíz del proyecto
     vector<string> archivosIdx;

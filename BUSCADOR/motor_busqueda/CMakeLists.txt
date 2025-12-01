@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SOURCES
     src/main.cpp
+    src/motor_busqueda.cpp
 )
 
 include_directories(include)

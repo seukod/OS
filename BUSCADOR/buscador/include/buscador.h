@@ -25,7 +25,7 @@ private:
     std::string enviarConsulta(const std::string& palabra);
     void cargarMapaLibros(const std::string& rutaMapa);
     std::vector<ResultadoBusqueda> parsearRespuestaJSON(const std::string& json);
-    void mostrarResultados(const std::vector<ResultadoBusqueda>& resultados, const std::string& palabra);
+    void mostrarResultados(const std::vector<ResultadoBusqueda>& resultados, const std::string& palabra, long long tiempoMs);
     
 public:
     Buscador(const std::string& host, int port);

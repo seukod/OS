@@ -17,11 +17,30 @@ int main(int argc, char* argv[]) {
     cout << "[CONFIG] CACHE_HOST: " << host << endl;
     cout << "[CONFIG] CACHE_PORT: " << port << endl;
     
+    // Verificar si se pasó el archivo .idx como argumento
+    string archivoIdx = "";
+    if (argc > 1) {
+        archivoIdx = argv[1];
+        cout << "[CONFIG] Archivo índice: " << archivoIdx << endl;
+    }
+    
     // Crear instancia del buscador
     Buscador buscador(host, port);
     
-    // Iniciar interfaz de búsqueda (el usuario seleccionará el archivo .idx)
-    buscador.iniciar();
+    // Si se pasó archivo, buscar directamente; sino, mostrar menú
+    if (!archivoIdx.empty()) {
+        // Solicitar solo la palabra a buscar
+        string palabra;
+        cout << "\nIngrese la palabra a buscar: ";
+        getline(cin, palabra);
+        
+        if (!palabra.empty()) {
+            buscador.buscar(palabra);
+        }
+    } else {
+        // Iniciar interfaz completa (seleccionar archivo + buscar)
+        buscador.iniciar();
+    }
     
     return 0;
 }
